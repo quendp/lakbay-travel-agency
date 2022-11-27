@@ -1,0 +1,43 @@
+@font-face {
+    font-family: "Bona-Nova-Bold";
+    src: url("../fonts/BonaNova/Bona-NovaFreePackBonaNova-Bold.otf");
+}
+@font-face {
+    font-family: "Bona-Nova-Italic";
+    src: url("../fonts/BonaNova/Bona-NovaFreePackBonaNova-Italic.otf");
+}
+@font-face {
+    font-family: "Bona-Nova-Regular";
+    src: url("../fonts/BonaNova/Bona-NovaFreePackBonaNova-Regular.otf");
+}
+@font-face {
+    font-family: "exmouth";
+    src: url("../fonts/exmouth/exmouth_.ttf");
+}
+@font-face {
+    font-family: "Poppins-Bold";
+    src: url("../fonts/Poppins/Poppins-Bold.ttf");
+}
+@font-face {
+    font-family: "Poppins-Regular";
+    src: url("../fonts/Poppins/Poppins-Regular.ttf");
+}
+@font-face {
+    font-family: "Poppins-Light";
+    src: url("../fonts/Poppins/Poppins-Light.ttf");
+}
+
+
+
+:root {
+    /* Font family */
+    --ff-heading-primary-bold: "Bona-Nova-Bold", serif;
+    --ff-heading-primary-semibold: "Bona-Nova-Italic", serif;
+    --ff-heading-primary-regular: "Bona-Nova-Regular", serif;
+
+    --ff-heading-secondary: "exmouth", "Brush Script MT", serif;
+
+    --ff-body-bold: "Poppins-Bold", sans-serif;
+    --ff-body-regular: "Poppins-Regular", sans-serif;
+    --ff-body-light: "Poppins-Light", sans-serif;
+}
