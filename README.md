@@ -1,6 +1,6 @@
 # Lakbay - Philippine Travel Agency Website (v1.0.0)
 
-[VIEW LIVE WEBSITE]()
+[VIEW LIVE WEBSITE](https://quendp.github.io/lakbay-travel-agency/)
 
 ---
 
@@ -40,13 +40,15 @@ v1.0.0 - November 27, 2022
 ---
 
 ## ⚙️ Tools and Languages
-- *HTML
-- *CSS
-- *JavaScript
-- *Bootstrap 5
-- *Git, GitHub, GitHub Pages
+- HTML *
+- CSS *
+- JavaScript *
+- Bootstrap 5 *
+- Git, GitHub, GitHub Pages *
 
-<sub>* means required in project instructions</sub>
+<sub>* Required in project instructions</sub>
+
+---
 
 ### 💛 Acknowledgement
 - CREDITS
