@@ -26,18 +26,3 @@
     font-family: "Poppins-Light";
     src: url("../fonts/Poppins/Poppins-Light.ttf");
 }
-
-
-
-:root {
-    /* Font family */
-    --ff-heading-primary-bold: "Bona-Nova-Bold", serif;
-    --ff-heading-primary-semibold: "Bona-Nova-Italic", serif;
-    --ff-heading-primary-regular: "Bona-Nova-Regular", serif;
-
-    --ff-heading-secondary: "exmouth", "Brush Script MT", serif;
-
-    --ff-body-bold: "Poppins-Bold", sans-serif;
-    --ff-body-regular: "Poppins-Regular", sans-serif;
-    --ff-body-light: "Poppins-Light", sans-serif;
-}
