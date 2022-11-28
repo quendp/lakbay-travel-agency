@@ -1,14 +1,6 @@
 @font-face {
-    font-family: "Bona-Nova-Bold";
-    src: url("../fonts/BonaNova/Bona-NovaFreePackBonaNova-Bold.otf");
-}
-@font-face {
-    font-family: "Bona-Nova-Italic";
-    src: url("../fonts/BonaNova/Bona-NovaFreePackBonaNova-Italic.otf");
-}
-@font-face {
-    font-family: "Bona-Nova-Regular";
-    src: url("../fonts/BonaNova/Bona-NovaFreePackBonaNova-Regular.otf");
+    font-family: "Oranienbaum";
+    src: url("../fonts/oranienbaum/Oranienbaum.ttf");
 }
 @font-face {
     font-family: "exmouth";
