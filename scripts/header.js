@@ -49,9 +49,6 @@ const hShowNav = () => {
 const hShowImage = (category) => {
     const hPreviewImage = document.getElementById("hPreviewImage");
     const hTitle = document.getElementById("hPreviewImageTitle");
-    const hTitleTop = document.getElementById("hPreviewImageTitle-top");
-
-    // hTitleTop.style.color = "var(--clr-primary-dark)";
 
     hTitle.innerText = category.title;
     hTitle.style.color = category.color;
@@ -69,9 +66,6 @@ const hShowImage = (category) => {
 const hHideImage = () => {
     const hPreviewImage = document.getElementById("hPreviewImage");
     const hTitle = document.getElementById("hPreviewImageTitle");
-    const hTitleTop = document.getElementById("hPreviewImageTitle-top");
-
-    // hTitleTop.style.color = "var(--clr-secondary-400)";
 
     hTitle.style.display = "none";
     hTitle.style.opacity = "0";

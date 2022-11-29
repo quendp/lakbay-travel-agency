@@ -273,7 +273,7 @@
     font-size: 5vw;
 }
 
-#hPreviewImageTitle-top {
+.hPreviewImageTitle-top {
     font-family: var(--ff-body-bold);
     color: var(--clr-secondary-400);
     font-size: var(--fz--header-cat-title);
