@@ -4,35 +4,35 @@ const hCategories = [
         "title" : "LIVELY CITIES",
         "color" : "var(--clr-accent-lights)",
         "textShadow" : "0 0 1rem var(--clr-accent-lights)",
-        "url" : "url(../images/cosmopolitan-lights/manila-city-skyline-david-milmont-3WX60TlLIdw-unsplash.jpg)"
+        "url" : "url(./images/cosmopolitan-lights/manila-city-skyline-david-milmont-3WX60TlLIdw-unsplash.jpg)"
     },
     {
         "category" : "water",
         "title" : "UNDER THE SEA",
         "color" : "var(--clr-accent-water)",
         "textShadow" : "0 0 1rem var(--clr-accent-water)",
-        "url" : "url(../images/dive-under-water/el-nido-eibner-saliba-3T9dDY0WqDI-unsplash.jpg)"
+        "url" : "url(./images/dive-under-water/el-nido-eibner-saliba-3T9dDY0WqDI-unsplash.jpg)"
     },
     {
         "category" : "summit",
         "title" : "MOUNTAIN PEAKS",
         "color" : "var(--clr-accent-summit)",
         "textShadow" : "0 0 1rem var(--clr-accent-summit)",
-        "url" : "url(../images/explore-the-summit/mount-pulag-joanne-caselyn-kCGhXLU32Bg-unsplash.jpg)"
+        "url" : "url(./images/explore-the-summit/mount-pulag-joanne-caselyn-kCGhXLU32Bg-unsplash.jpg)"
     },
     {
         "category" : "history",
         "title" : "HERITAGE SITES",
         "color" : "var(--clr-accent-history)",
         "textShadow" : "0 0 1rem var(--clr-accent-history)",
-        "url" : "url(../images/look-back-in-history/calle-crisologo-593843_1920.jpg)"
+        "url" : "url(./images/look-back-in-history/calle-crisologo-593843_1920.jpg)"
     },
     {
         "category" : "culture",
         "title" : "THE BEAUTY OF NATURE",
         "color" : "var(--clr-accent-culture)",
         "textShadow" : "0 0 1rem var(--clr-accent-culture)",
-        "url" : "url(../images/nature-and-culture/ifugao-ar-2FsniOcLPj8-unsplash.jpg)"
+        "url" : "url(./images/nature-and-culture/ifugao-ar-2FsniOcLPj8-unsplash.jpg)"
     }
 ];
 
