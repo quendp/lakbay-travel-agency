@@ -1,28 +1,28 @@
 const hCategories = [
     {
         "category" : "lights",
-        "title" : "LIVELY CITIES",
+        "title" : "THE LIVELY CITIES",
         "color" : "var(--clr-accent-lights)",
         "textShadow" : "0 0 1rem var(--clr-accent-lights)",
         "url" : "url(./images/cosmopolitan-lights/manila-city-skyline-david-milmont-3WX60TlLIdw-unsplash.jpg)"
     },
     {
         "category" : "water",
-        "title" : "UNDER THE SEA",
+        "title" : "THE AQUATIC LIFE",
         "color" : "var(--clr-accent-water)",
         "textShadow" : "0 0 1rem var(--clr-accent-water)",
         "url" : "url(./images/dive-under-water/el-nido-eibner-saliba-3T9dDY0WqDI-unsplash.jpg)"
     },
     {
         "category" : "summit",
-        "title" : "MOUNTAIN PEAKS",
+        "title" : "THE MOUNTAIN PEAKS",
         "color" : "var(--clr-accent-summit)",
         "textShadow" : "0 0 1rem var(--clr-accent-summit)",
         "url" : "url(./images/explore-the-summit/mount-pulag-joanne-caselyn-kCGhXLU32Bg-unsplash.jpg)"
     },
     {
         "category" : "history",
-        "title" : "HERITAGE SITES",
+        "title" : "THE HERITAGE SITES",
         "color" : "var(--clr-accent-history)",
         "textShadow" : "0 0 1rem var(--clr-accent-history)",
         "url" : "url(./images/look-back-in-history/calle-crisologo-593843_1920.jpg)"
@@ -42,32 +42,41 @@ const hSummit = hCategories[2];
 const hHistory = hCategories[3];
 const hCulture = hCategories[4];
 
-function hShowNav(){
+const hShowNav = () => {
     document.getElementById("h-header-wrapper").classList.toggle("h-active");
 };
 
-function hShowImage(category) {
+const hShowImage = (category) => {
     const hPreviewImage = document.getElementById("hPreviewImage");
     const hTitle = document.getElementById("hPreviewImageTitle");
+    const hTitleTop = document.getElementById("hPreviewImageTitle-top");
+
+    // hTitleTop.style.color = "var(--clr-primary-dark)";
 
     hTitle.innerText = category.title;
     hTitle.style.color = category.color;
     hTitle.style.textShadow = category.textShadow;
-    hTitle.style.fontSize = "5vw";
+    hTitle.style.display = "block";
+    setTimeout(() => (hTitle.style.opacity = "1"), 1);
+    
+
+    hPreviewImage.style.height = "100%";
     hPreviewImage.style.backgroundImage = category.url;
     hPreviewImage.style.backgroundPosition = "bottom";
-    hPreviewImage.style.transitionDuration = "3000ms";
+    hPreviewImage.style.transitionDuration = "500ms, 3000ms";
 };
 
-function hHideImage() {
+const hHideImage = () => {
     const hPreviewImage = document.getElementById("hPreviewImage");
     const hTitle = document.getElementById("hPreviewImageTitle");
+    const hTitleTop = document.getElementById("hPreviewImageTitle-top");
 
-    hTitle.innerText = "DISCOVER";
-    hTitle.style.color = "var(--clr-secondary-100)";
-    hTitle.style.textShadow = "none";
-    hTitle.style.fontSize = "18vw";
-    hPreviewImage.style.backgroundImage = "";
-    hPreviewImage.style.transitionDuration = "10ms";
+    // hTitleTop.style.color = "var(--clr-secondary-400)";
+
+    hTitle.style.display = "none";
+    hTitle.style.opacity = "0";
+
+    hPreviewImage.style.height = "0";
+    hPreviewImage.style.transitionDuration = "500ms, 10ms";
     hPreviewImage.style.backgroundPosition = "top";
 };

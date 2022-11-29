@@ -26,7 +26,7 @@
     --fz--header-title: clamp(0.5rem, 0.9vw, 0.7rem);
     --fz--header-sub: clamp(2rem, 10vw, 5rem);
     --fz--header-menu: clamp(1rem, 6vw, 3rem);
-    --fz--header-cat-title: 18vw;
+    --fz--header-cat-title: 20vw;
     --fz--header-cat-list: clamp(1rem, 1.5vw, 2rem);
 }
 
@@ -227,26 +227,46 @@
     position: relative;
 }
 
-.h-header-wrapper.h-active .h-categories-container #hPreviewImage {
+#hPreviewImage-sub {
+    position: relative;
     height: 100%;
     width: 100%;
     opacity: 0;
     animation: fade-in 400ms ease-in-out 400ms forwards;
+}
+
+#hPreviewImage {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
     border-radius: 1rem;
+
     background-image:url();
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
-    /* transition: background-position 3000ms ease-in-out; */
-    transition-property: background-position;
-    transition-duration: 3000ms;
-    transition-timing-function: ease-in-out;
+
+    transition-property: height, background-position;
+    transition-duration: 500ms, 3000ms;
+    transition-timing-function: ease-out, ease-out;
+    transition-delay: 0, 400ms;
+}
+#hPreviewImageTitle {
+    display: none;
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+    font-family: var(--ff-body-bold);
+    color: var(--clr-secondary-400);
+    font-size: 5vw;
 }
 
-.h-header-wrapper.h-active .h-categories-container div #hPreviewImageTitle {
+#hPreviewImageTitle-top {
     font-family: var(--ff-body-bold);
     color: var(--clr-secondary-400);
     font-size: var(--fz--header-cat-title);
+    line-height: 1;
     text-shadow: none;
     opacity: 0;
     transform: scale(0.7);
@@ -335,5 +355,3 @@ main {
     background-size: cover;
     height: 200vh;
 }
-
-
