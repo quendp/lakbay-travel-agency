@@ -2,7 +2,7 @@
     /* Font family */
     --ff-heading-primary: "Oranienbaum", serif;
 
-    --ff-heading-secondary: "exmouth", "Brush Script MT", serif;
+    --ff-heading-secondary: "onelove", "Brush Script MT", serif;
 
     --ff-body-bold: "Poppins-Bold", sans-serif;
     --ff-body-regular: "Poppins-Regular", sans-serif;
@@ -170,14 +170,14 @@
     color: inherit;
 }
 
-.h-header-wrapper.h-active .h-nav-list li  {
+.h-header-wrapper.h-active .h-nav-list li {
     color: var(--clr-secondary-100);
     position: relative;
     text-align: center;
     transition: color 400ms ease-in-out, transform 400ms ease-in-out, letter-spacing 300ms ease-in-out;
 }
 
-.h-header-wrapper.h-active .h-nav-list a::before  {
+.h-header-wrapper.h-active .h-nav-list a::before {
     content: "";
     position: absolute;
     bottom: -10%;
@@ -187,15 +187,15 @@
     transition: width 300ms ease-in-out;
 }
 
-.h-header-wrapper.h-active .h-nav-list a:hover::before  {
+.h-header-wrapper.h-active .h-nav-list a:hover::before {
     width: 100%;
 }
 
-.h-header-wrapper.h-active .h-nav-list li:hover  {
+.h-header-wrapper.h-active .h-nav-list li:hover {
     transform: scale(1.05);
 }
 
-.h-header-wrapper.h-active .h-nav-list li:hover ~ li,
+.h-header-wrapper.h-active .h-nav-list li:hover~li,
 .h-header-wrapper.h-active .h-nav-list li:has(~ li:hover) {
     color: var(--clr-secondary-700);
 
