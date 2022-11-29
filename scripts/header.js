@@ -2,36 +2,36 @@ const hCategories = [
     {
         "category" : "lights",
         "title" : "THE LIVELY CITIES",
-        "color" : "var(--clr-accent-lights)",
-        "textShadow" : "0 0 1rem var(--clr-accent-lights)",
+        "color" : "var(--clr-accent-lights-100)",
+        "textShadow" : "0 0 1rem var(--clr-accent-lights-100)",
         "url" : "url(./images/cosmopolitan-lights/manila-city-skyline-david-milmont-3WX60TlLIdw-unsplash.jpg)"
     },
     {
         "category" : "water",
         "title" : "THE AQUATIC LIFE",
-        "color" : "var(--clr-accent-water)",
-        "textShadow" : "0 0 1rem var(--clr-accent-water)",
+        "color" : "var(--clr-accent-water-100)",
+        "textShadow" : "0 0 1rem var(--clr-accent-water-100)",
         "url" : "url(./images/dive-under-water/el-nido-eibner-saliba-3T9dDY0WqDI-unsplash.jpg)"
     },
     {
         "category" : "summit",
         "title" : "THE MOUNTAIN PEAKS",
-        "color" : "var(--clr-accent-summit)",
-        "textShadow" : "0 0 1rem var(--clr-accent-summit)",
+        "color" : "var(--clr-accent-summit-100)",
+        "textShadow" : "0 0 1rem var(--clr-accent-summit-100)",
         "url" : "url(./images/explore-the-summit/mount-pulag-joanne-caselyn-kCGhXLU32Bg-unsplash.jpg)"
     },
     {
         "category" : "history",
         "title" : "THE HERITAGE SITES",
-        "color" : "var(--clr-accent-history)",
-        "textShadow" : "0 0 1rem var(--clr-accent-history)",
+        "color" : "var(--clr-accent-history-100)",
+        "textShadow" : "0 0 1rem var(--clr-accent-history-100)",
         "url" : "url(./images/look-back-in-history/calle-crisologo-593843_1920.jpg)"
     },
     {
         "category" : "culture",
         "title" : "THE BEAUTY OF NATURE",
-        "color" : "var(--clr-accent-culture)",
-        "textShadow" : "0 0 1rem var(--clr-accent-culture)",
+        "color" : "var(--clr-accent-culture-100)",
+        "textShadow" : "0 0 1rem var(--clr-accent-culture-100)",
         "url" : "url(./images/nature-and-culture/ifugao-ar-2FsniOcLPj8-unsplash.jpg)"
     }
 ];
