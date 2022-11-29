@@ -56,17 +56,17 @@
                     </li>
                 </ul>
                 <div class="h-categories-container d-flex flex-column justify-content-center align-items-center">
-                    <div  class="d-flex justify-content-center align-items-center">
-                        <h2>
+                    <div  class="d-flex justify-content-center align-items-center" id="hPreviewImage">
+                        <h2 id="hPreviewImageTitle">
                             DISCOVER
                         </h2>
                     </div>
                     <ul class="h-categories-list container-fluid d-flex flex-column flex-lg-row justify-content-center justify-content-lg-evenly align-items-center">
-                        <li class="my-2"><a href="#">Cosmopolitan Lights</a></li>
-                        <li class="my-2"><a href="#">Dive Under Water</a></li>
-                        <li class="my-2"><a href="#">Explore the Summit</a></li>
-                        <li class="my-2"><a href="#">Look Back in History</a></li>
-                        <li class="my-2"><a href="#">Nature and Culture</a></li>
+                        <li class="my-2" onmouseover="hShowImage(hLights)" onmouseleave="hHideImage()"><a href="#" >Cosmopolitan Lights</a></li>
+                        <li class="my-2" onmouseover="hShowImage(hWater)" onmouseleave="hHideImage()"><a href="#">Dive Under Water</a></li>
+                        <li class="my-2" onmouseover="hShowImage(hSummit)" onmouseleave="hHideImage()"><a href="#">Explore the Summit</a></li>
+                        <li class="my-2" onmouseover="hShowImage(hHistory)" onmouseleave="hHideImage()"><a href="#">Look Back in History</a></li>
+                        <li class="my-2" onmouseover="hShowImage(hCulture)" onmouseleave="hHideImage()"><a href="#">Nature and Culture</a></li>
                     </ul>
                 </div>
             </nav>
@@ -87,7 +87,7 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
 <!-- Custom JS -->
-<script src="./scripts/index.js"></script>
+<script src="./scripts/header.js"></script>
 </body>
 
 </html>

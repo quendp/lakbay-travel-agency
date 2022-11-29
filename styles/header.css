@@ -30,6 +30,27 @@
     --fz--header-cat-list: clamp(1rem, 1.5vw, 2rem);
 }
 
+/* Animations */
+@keyframes fade-in {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes zoom-in {
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fade-up {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Header Before Click */
 .h-header-wrapper {
     background: var(--clr-primary-glass);
@@ -198,7 +219,6 @@
 .h-header-wrapper.h-active .h-nav-list li:hover~li,
 .h-header-wrapper.h-active .h-nav-list li:has(~ li:hover) {
     color: var(--clr-secondary-700);
-
 }
 
 .h-header-wrapper.h-active .h-categories-container {
@@ -207,16 +227,27 @@
     position: relative;
 }
 
-.h-header-wrapper.h-active .h-categories-container div {
+.h-header-wrapper.h-active .h-categories-container #hPreviewImage {
     height: 100%;
     width: 100%;
-    display: flex;
+    opacity: 0;
+    animation: fade-in 400ms ease-in-out 400ms forwards;
+    border-radius: 1rem;
+    background-image:url();
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* transition: background-position 3000ms ease-in-out; */
+    transition-property: background-position;
+    transition-duration: 3000ms;
+    transition-timing-function: ease-in-out;
 }
 
-.h-header-wrapper.h-active .h-categories-container div h2 {
+.h-header-wrapper.h-active .h-categories-container div #hPreviewImageTitle {
     font-family: var(--ff-body-bold);
     color: var(--clr-secondary-400);
     font-size: var(--fz--header-cat-title);
+    text-shadow: none;
     opacity: 0;
     transform: scale(0.7);
     animation: zoom-in 400ms ease-in-out 400ms forwards;
@@ -227,9 +258,6 @@
     padding: 0;
     margin: 2rem 0;
     color: var(--clr-secondary-400);
-    opacity: 0;
-    transform: translateY(5rem);
-    animation: fade-up 400ms ease-in-out 400ms forwards;
 }
 
 .h-header-wrapper.h-active .h-categories-list a {
@@ -239,33 +267,73 @@
     color: inherit;
 }
 
-
-/* Animations */
-@keyframes fade-in {
-    100% {
-        opacity: 1;
-    }
+.h-header-wrapper.h-active .h-categories-list li:nth-child(1) {
+    opacity: 0;
+    transform: translateY(5rem);
+    animation: fade-up 400ms ease-in-out 600ms forwards;
+    transition: color 300ms ease-in-out, text-shadow 300ms ease-in-out;
 }
 
-@keyframes zoom-in {
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+.h-header-wrapper.h-active .h-categories-list li:nth-child(1):hover {
+    color: var(--clr-accent-lights);
+    text-shadow: 0 0 1rem var(--clr-accent-lights);
 }
 
-@keyframes fade-up {
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.h-header-wrapper.h-active .h-categories-list li:nth-child(2) {
+    opacity: 0;
+    transform: translateY(5rem);
+    animation: fade-up 400ms ease-in-out 700ms forwards;
+    transition: color 300ms ease-in-out, text-shadow 300ms ease-in-out;
+}
+
+.h-header-wrapper.h-active .h-categories-list li:nth-child(2):hover {
+    color: var(--clr-accent-water);
+    text-shadow: 0 0 1rem var(--clr-accent-water);
+}
+
+.h-header-wrapper.h-active .h-categories-list li:nth-child(3) {
+    opacity: 0;
+    transform: translateY(5rem);
+    animation: fade-up 400ms ease-in-out 800ms forwards;
+    transition: color 300ms ease-in-out, text-shadow 300ms ease-in-out;
+}
+
+.h-header-wrapper.h-active .h-categories-list li:nth-child(3):hover {
+    color: var(--clr-accent-summit);
+    text-shadow: 0 0 1rem var(--clr-accent-summit);
+}
+
+.h-header-wrapper.h-active .h-categories-list li:nth-child(4) {
+    opacity: 0;
+    transform: translateY(5rem);
+    animation: fade-up 400ms ease-in-out 900ms forwards;
+    transition: color 300ms ease-in-out, text-shadow 300ms ease-in-out;
+}
+
+.h-header-wrapper.h-active .h-categories-list li:nth-child(4):hover {
+    color: var(--clr-accent-history);
+    text-shadow: 0 0 1rem var(--clr-accent-history);
+}
+
+.h-header-wrapper.h-active .h-categories-list li:nth-child(5) {
+    opacity: 0;
+    transform: translateY(5rem);
+    animation: fade-up 400ms ease-in-out 1000ms forwards;
+    transition: color 300ms ease-in-out, text-shadow 300ms ease-in-out;
+}
+
+.h-header-wrapper.h-active .h-categories-list li:nth-child(5):hover {
+    color: var(--clr-accent-culture);
+    text-shadow: 0 0 1rem var(--clr-accent-culture);
 }
 
 main {
-    background-image: url(../images/test.jpg);
+    background-image: url(../images/dive-under-water/el-nido-eibner-saliba-3T9dDY0WqDI-unsplash.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     height: 200vh;
 }
+
+
