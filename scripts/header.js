@@ -1,35 +1,35 @@
 const hCategories = [
     {
         "category" : "lights",
-        "title" : "THE LIVELY CITIES",
+        "title" : "THE LIVELY MODERN CITIES",
         "color" : "var(--clr-accent-lights-100)",
         "textShadow" : "0 0 1rem var(--clr-accent-lights-100)",
         "url" : "url(./images/cosmopolitan-lights/manila-city-skyline-david-milmont-3WX60TlLIdw-unsplash.jpg)"
     },
     {
         "category" : "water",
-        "title" : "THE AQUATIC LIFE",
+        "title" : "THE WONDERS OF THE SEA",
         "color" : "var(--clr-accent-water-100)",
         "textShadow" : "0 0 1rem var(--clr-accent-water-100)",
         "url" : "url(./images/dive-under-water/el-nido-eibner-saliba-3T9dDY0WqDI-unsplash.jpg)"
     },
     {
         "category" : "summit",
-        "title" : "THE MOUNTAIN PEAKS",
+        "title" : "THE SKY ON MOUNTAIN PEAKS",
         "color" : "var(--clr-accent-summit-100)",
         "textShadow" : "0 0 1rem var(--clr-accent-summit-100)",
         "url" : "url(./images/explore-the-summit/mount-pulag-joanne-caselyn-kCGhXLU32Bg-unsplash.jpg)"
     },
     {
         "category" : "history",
-        "title" : "THE HERITAGE SITES",
+        "title" : "THE REMNANTS OF THE PAST",
         "color" : "var(--clr-accent-history-100)",
         "textShadow" : "0 0 1rem var(--clr-accent-history-100)",
         "url" : "url(./images/look-back-in-history/calle-crisologo-593843_1920.jpg)"
     },
     {
         "category" : "culture",
-        "title" : "THE BEAUTY OF NATURE",
+        "title" : "THE BREATH OF FRESH AIR",
         "color" : "var(--clr-accent-culture-100)",
         "textShadow" : "0 0 1rem var(--clr-accent-culture-100)",
         "url" : "url(./images/nature-and-culture/ifugao-ar-2FsniOcLPj8-unsplash.jpg)"

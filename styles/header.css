@@ -20,24 +20,26 @@
     --clr-accent-lights-100: #dfe623;
 
     --clr-accent-water: #00009c;
-    --clr-accent-water-100: #13b7e0;
+    --clr-accent-water-100: #00a2ff;
 
     --clr-accent-summit: #555555;
     --clr-accent-summit-100: #bbbbbb;
 
     --clr-accent-history: #514026;
-    --clr-accent-history-100: #82735c;
-
+    --clr-accent-history-100: #b89231;
     --clr-accent-culture: #143827;
-    --clr-accent-culture-100: #408866;
+    --clr-accent-culture-100: #39970e;
 
 
     /* Font Size */
     --fz--header-title: clamp(0.5rem, 0.9vw, 0.7rem);
-    --fz--header-sub: clamp(2rem, 10vw, 5rem);
-    --fz--header-menu: clamp(1rem, 6vw, 3rem);
+    --fz--header-sub: clamp(2rem, 10vw, 5rem);  
+    --fz--header-menu: clamp(0.8rem, 6vw, 2.5rem);
     --fz--header-cat-title: 20vw;
     --fz--header-cat-list: clamp(1rem, 1.5vw, 2rem);
+
+    --fz-main-h3: clamp(1rem, 3vw, 1.3rem);
+    --fz-main-p: clamp(0.8rem, 3vw, 1rem)
 }
 
 /* Animations */
@@ -61,7 +63,8 @@
     }
 }
 
-/* Header Before Click */
+
+/* HEADER STARTS HERE */
 .h-header-wrapper {
     background: var(--clr-primary-glass);
     background-image: url(../images/grain.png);
@@ -122,6 +125,7 @@
     color: var(--clr-secondary-400);
 }
 
+/* Modal Button */
 .h-btn-signUp {
     position: relative;
     font-family: var(--ff-body-regular);
@@ -159,9 +163,7 @@
 
 }
 
-
-
-
+/* Hamburger Icon */
 .h-ham-container .h-btn-ham {
     width: 3rem;
     height: 50px;
@@ -219,6 +221,7 @@
     padding-top: 3rem;
 }
 
+/* Header menu (home, contact, about, sign up) */
 .h-header-wrapper.h-active .h-nav-list {
     width: 100%;
     list-style: none;
@@ -270,12 +273,14 @@
     color: var(--clr-secondary-700);
 }
 
+/* categories nav menu and image preview parent container */
 .h-header-wrapper.h-active .h-categories-container {
     width: 100%;
     height: 100%;
     position: relative;
 }
 
+/* image preview parent element */
 #hPreviewImage-sub {
     position: relative;
     height: 100%;
@@ -293,6 +298,7 @@
     border-top: 0.001rem solid var(--clr-secondary-700);
     border-radius: 1rem;
 
+    background-color: var(--clr-primary-dark);
     background-image:url();
     background-position: top;
     background-repeat: no-repeat;
@@ -303,6 +309,8 @@
     transition-timing-function: ease-out, ease-out;
     transition-delay: 0, 400ms;
 }
+
+/* image preview */
 #hPreviewImageTitle {
     display: none;
     opacity: 0;
@@ -310,8 +318,16 @@
     font-family: var(--ff-body-bold);
     color: var(--clr-secondary-400);
     font-size: 5vw;
+    animation: expand 400ms ease-in-out forwards 700ms;
 }
 
+@keyframes expand {
+    100% {
+        letter-spacing: 0.3vw;
+    }
+}
+
+/* "Explore" */
 .hPreviewImageTitle-top {
     font-family: var(--ff-body-bold);
     color: var(--clr-secondary-400);
@@ -323,6 +339,7 @@
     animation: zoom-in 400ms ease-in-out 400ms forwards;
 }
 
+/* "hover items below to preview */
 .hPreviewImageDesc {
     position: absolute;
     top: -5%;
@@ -336,6 +353,7 @@
     text-align: center;
 }
 
+/* categories nav menu */
 .h-header-wrapper.h-active .h-categories-list {
     list-style: none;
     padding: 0;
@@ -409,6 +427,13 @@
     color: var(--clr-accent-culture-100);
     text-shadow: 0 0 1rem var(--clr-accent-culture);
 }
+
+/* SIGN UP MODAL STARTS HERE*/
+.modal-title {
+    font-size: var(--fz-main-h3);
+    font-family: var(--ff-body-regular);
+}
+
 
 main {
     background-image: url(../images/dive-under-water/el-nido-eibner-saliba-3T9dDY0WqDI-unsplash.jpg);
