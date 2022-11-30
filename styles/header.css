@@ -122,6 +122,45 @@
     color: var(--clr-secondary-400);
 }
 
+.h-btn-signUp {
+    position: relative;
+    font-family: var(--ff-body-regular);
+    font-size: var(--fz--header-title);
+    letter-spacing: 0.1rem;
+    color: var(--clr-secondary-100);
+    border: 0.05rem solid var(--clr-secondary-100);
+    transition: background-color 300ms ease-in-out;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.h-btn-signUp::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--clr-secondary-100);
+    width: 0;
+    height: 100%;
+    border-radius: 1rem;
+    z-index: -1;
+    transition: width 300ms ease-in-out;
+}
+
+.h-btn-signUp:hover::before {
+    width: 100%;
+}
+
+.h-btn-signUp:hover {
+    font-family: var(--ff-body-regular);
+    font-size: var(--fz--header-title);
+    color: var(--clr-primary-dark);
+    border: 0.05rem solid var(--clr-secondary-100);
+
+}
+
+
+
 
 .h-ham-container .h-btn-ham {
     width: 3rem;

@@ -20,11 +20,29 @@
 <!-- Custom classes prefix: h- for header descendants, m-for main descendants, f-for footer descendants -->
 <body>
     <div class="body-wrapper">
+        <!-- Sign Up Modal -->
+        <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="signUpModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                ...
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div>
         <!-- Header  -->
         <header class="h-header-wrapper container-fluid" id="h-header-wrapper">
             <div class="row navbar">
-                <div class="col-3 ">
-                    <a class="navbar-brand" href="#">
+                <div class="col-3">
+                    <a class="navbar-brand h-logo" href="#">
                         <img src="./images/logo-white.png" alt="Lakbay Travel Agency Logo" width="50px">
                     </a>
                 </div>
@@ -36,7 +54,11 @@
                         Exploring The Philippines and Creating Stories
                     </h2>
                 </div>
-                <div class="h-ham-container col-3 d-flex justify-content-end align-items-center">
+                <div class="h-ham-container col-3 d-flex justify-content-end justify-md-content-between align-items-center">
+                    <!-- Sign Up button trigger modal -->
+                    <button type="button" class="h-btn-signUp btn me-4 px-4 py-2 d-none d-md-block" data-bs-toggle="modal" data-bs-target="#signUpModal">
+                        SIGN UP
+                    </button>
                     <div class="h-btn-ham" onclick="hShowNav()">
                         <span></span>
                         <span></span>
@@ -53,6 +75,9 @@
                     </li>
                     <li class="h-nav-item">
                         <a href="#">About</a>
+                    </li>
+                    <li class="h-nav-item">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#signUpModal">Sign Up</a>
                     </li>
                 </ul>
                 <div class="h-categories-container d-flex flex-column justify-content-center align-items-center">
