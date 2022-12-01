@@ -26,16 +26,65 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title" id="signUpModalLabel">Create an account</h1>
+                        <h1 class="modal-title" id="signUpModalLabel">Create an Account</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
-                    ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-primary">Sign Up</button>
-                    </div>
+                    <form action="#" class="needs-validation" novalidate>
+                        <div class="modal-body py-3">
+                            <div class="row g-0 g-sm-2">
+                                <div class="form-floating mb-3 col-12 col-sm-6">
+                                    <input type="text" id="formFirstName" class="form-control" placeholder="Firstname" aria-label="Firstname" required>
+                                    <label for="formFirstName" class="ps-3">First Name</label>
+                                    <div class="invalid-feedback">
+                                        First name cannot be empty.
+                                    </div>
+                                </div>
+                                <div class="form-floating mb-3 col-12 col-sm-6">
+                                    <input type="text" id="formLastName" class="form-control" placeholder="Lastname" aria-label="Lastname" required>
+                                    <label for="formLastName" class="ps-3">Last Name</label>
+                                    <div class="invalid-feedback">
+                                        Last name cannot be empty.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-0 g-sm-2">
+                                <div class="form-floating mb-3 col-12 col-sm-6">
+                                    <input type="email" class="form-control" id="formEmail" placeholder="name@example.com" required>
+                                    <label for="formEmail" class="ps-3">Email Address</label>
+                                    <div class="invalid-feedback">
+                                        Please choose a valid email.
+                                    </div>
+                                </div>
+                                <div class="form-floating mb-3 col-12 col-sm-6">
+                                    <input type="number" class="form-control" id="formNumber" placeholder="____ - ___ - ____" required>
+                                    <label for="formNumber" class="ps-3">Phone Number</label>
+                                    <div class="invalid-feedback">
+                                        Please choose a valid number.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control" id="formPassword" placeholder="Password" required>
+                                <label for="formPassword">Password</label>
+                                <div class="invalid-feedback">
+                                    Please choose a valid password.
+                                </div>
+                            </div>
+                            <div class="form-floating">
+                                <input type="password" class="form-control" id="formConfirmPass" placeholder="Confirm Password" required>
+                                <label for="formConfirmPass">Confirm Password</label>
+                                <div class="invalid-feedback">
+                                    Password doesn't match.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -117,6 +166,7 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
 <!-- Custom JS -->
+<script src="./scripts/signUp.js"></script>
 <script src="./scripts/header.js"></script>
 </body>
 

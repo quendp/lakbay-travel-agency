@@ -71,12 +71,10 @@
 
 /* HEADER STARTS HERE */
 .h-header-wrapper {
-    background: rgba(0, 0, 0, 0.062);
+    /* background: rgba(0, 0, 0, 0.062);
     backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-    background-image: url(../images/grain.png);
-    background-attachment: fixed;
-    background-repeat: repeat;
+    -webkit-backdrop-filter: blur(2px); */
+
     position: fixed;
     top: 0px;
     left: 0px;
@@ -212,6 +210,9 @@
 .h-header-wrapper.h-active {
     height: 100vh;
     background-color: var(--clr-primary-dark);
+    background-image: url(../images/grain.png);
+    background-attachment: fixed;
+    background-repeat: repeat;
 }
 
 .h-header-wrapper.h-active .h-btn-ham span:nth-child(1) {

@@ -18,3 +18,8 @@ main {
     background-size: cover;
     height: 200vh;
 }
+
+#signUpModal form {
+    font-family: var(--ff-body-regular);
+    font-size: var(--fz-main-p);
+}
