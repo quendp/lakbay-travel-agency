@@ -33,7 +33,7 @@
 
     /* Font Size */
     --fz--header-title: clamp(0.5rem, 0.9vw, 0.7rem);
-    --fz--header-sub: clamp(2rem, 10vw, 5rem);  
+    --fz--header-sub: clamp(2rem, 10vw, 3rem);  
     --fz--header-menu: clamp(0.8rem, 6vw, 2.5rem);
     --fz--header-cat-title: 20vw;
     --fz--header-cat-list: clamp(1rem, 1.5vw, 2rem);
@@ -69,17 +69,6 @@
     }
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-body::-webkit-scrollbar {
-    display: none;
-}
-  
-  /* Hide scrollbar for IE, Edge and Firefox */
-body {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-}
-
 /* HEADER STARTS HERE */
 .h-header-wrapper {
     background: rgba(0, 0, 0, 0.062);
@@ -109,7 +98,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: 0.3;
+    opacity: 1;
     color: transparent;
     font-family: var(--ff-heading-primary);
     -webkit-text-stroke: 1.5px var(--clr-accent-lights);
@@ -173,11 +162,12 @@ body {
     width: 100%;
 }
 
-.h-btn-signUp:hover {
+.h-btn-signUp:hover,
+.h-btn-signUp:active {
     font-family: var(--ff-body-regular);
     font-size: var(--fz--header-title);
     color: var(--clr-primary-dark);
-    border: 0.05rem solid var(--clr-secondary-100);
+    border: 0.05rem solid var(--clr-secondary-100) !important;
 }
 
 /* Hamburger Icon */
