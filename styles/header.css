@@ -439,13 +439,3 @@
     font-size: var(--fz-main-h3);
     font-family: var(--ff-body-regular);
 }
-
-/* for demo */
-main {
-    background-image: url(../images/dive-under-water/el-nido-eibner-saliba-3T9dDY0WqDI-unsplash.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    height: 200vh;
-}
