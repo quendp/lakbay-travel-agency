@@ -44,6 +44,7 @@ const hCulture = hCategories[4];
 
 const hShowNav = () => {
     document.getElementById("h-header-wrapper").classList.toggle("h-active");
+    document.body.classList.toggle("h-disable-scroll");
 };
 
 const hShowImage = (category) => {
