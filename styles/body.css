@@ -10,13 +10,18 @@ body {
 }
 
 /* for demo */
-main {
+.m-hero-section-wrapper {
     background-image: url(../images/explore-the-summit/mount-pulag-joanne-caselyn-kCGhXLU32Bg-unsplash.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     background-size: cover;
-    height: 200vh;
+    height: 100vh;
+}
+
+main > div:nth-child(2) {
+    background-color: bisque;
+    height: 500vh;
 }
 
 #signUpModal form {

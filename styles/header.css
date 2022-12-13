@@ -71,16 +71,17 @@
 
 /* HEADER STARTS HERE */
 .h-header-wrapper {
-    /* background: rgba(0, 0, 0, 0.062);
+    background-color: transparent;
     backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px); */
+    -webkit-backdrop-filter: blur(2px);
 
     position: fixed;
     top: 0px;
     left: 0px;
     z-index: 10;
     height: 10vh;
-    transition: background-color 500ms ease-in-out, height 500ms ease-in-out;
+    transform: translateY(0);
+    transition: background-color 500ms ease-in-out, height 500ms ease-in-out, transform 500ms ease-in-out;
 }
 
 .h-header-wrapper .navbar.row {
@@ -209,8 +210,6 @@
 
 .h-header-wrapper.h-active {
     height: 100vh;
-    background-color: var(--clr-primary-dark);
-    background-image: url(../images/grain.png);
     background-attachment: fixed;
     background-repeat: repeat;
 }

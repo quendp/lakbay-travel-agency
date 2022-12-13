@@ -89,8 +89,8 @@
             </div>
         </div>
         <!-- Header  -->
-        <header class="h-header-wrapper container-fluid" id="h-header-wrapper">
-            <div class="row navbar">
+        <header class="h-header-wrapper container-fluid" id="hHeaderWrapper">
+            <div class="row navbar px-0 px-sm-2 px-md-2 px-lg-5">
                 <div class="col-3">
                     <a class="navbar-brand h-logo" href="#">
                         <img src="./images/logo-white.png" alt="Lakbay Travel Agency Logo" width="50px">
@@ -109,7 +109,7 @@
                     <button type="button" class="h-btn-signUp btn me-4 px-4 py-2 d-none d-md-block" data-bs-toggle="modal" data-bs-target="#signUpModal">
                         SIGN UP
                     </button>
-                    <div class="h-btn-ham" onclick="hShowNav()">
+                    <div class="h-btn-ham" id="hButtonHam">
                         <span></span>
                         <span></span>
                     </div>
@@ -141,11 +141,11 @@
                         </div>
                     </div>
                     <ul class="h-categories-list container-fluid d-flex flex-column flex-md-row justify-content-center justify-content-md-evenly align-items-center">
-                        <li class="my-2" onmouseover="hShowImage(hLights)" onmouseleave="hHideImage()"><a href="#" >Cosmopolitan Lights</a></li>
-                        <li class="my-2" onmouseover="hShowImage(hWater)" onmouseleave="hHideImage()"><a href="#">Dive Under Water</a></li>
-                        <li class="my-2" onmouseover="hShowImage(hSummit)" onmouseleave="hHideImage()"><a href="#">Explore the Summit</a></li>
-                        <li class="my-2" onmouseover="hShowImage(hHistory)" onmouseleave="hHideImage()"><a href="#">Look Back in History</a></li>
-                        <li class="my-2" onmouseover="hShowImage(hCulture)" onmouseleave="hHideImage()"><a href="#">Nature and Culture</a></li>
+                        <li class="my-2" id="hImageLights"><a href="#" >Cosmopolitan Lights</a></li>
+                        <li class="my-2" id="hImageWater"><a href="#">Dive Under Water</a></li>
+                        <li class="my-2" id="hImageSummit"><a href="#">Explore the Summit</a></li>
+                        <li class="my-2" id="hImageHistory"><a href="#">Look Back in History</a></li>
+                        <li class="my-2" id="hImageCulture"><a href="#">Nature and Culture</a></li>
                     </ul>
                 </div>
             </nav>
@@ -153,6 +153,12 @@
 
         <!-- Main Content -->
         <main>
+            <section class="m-hero-section-wrapper" id="mHeroSection">
+
+            </section>
+            <div>
+
+            </div>
         </main>
 
         <!-- Footer -->

@@ -1,3 +1,14 @@
+const hHeaderWrapper = document.getElementById("hHeaderWrapper");
+const hPreviewImage = document.getElementById("hPreviewImage");
+const hTitle = document.getElementById("hPreviewImageTitle");
+
+const hButtonHam = document.getElementById("hButtonHam");
+const hImageLights = document.getElementById("hImageLights");
+const hImageWater = document.getElementById("hImageWater");
+const hImageSummit = document.getElementById("hImageSummit");
+const hImageHistory = document.getElementById("hImageHistory");
+const hImageCulture = document.getElementById("hImageCulture");
+
 const hCategories = [
     {
         "category" : "lights",
@@ -42,36 +53,83 @@ const hSummit = hCategories[2];
 const hHistory = hCategories[3];
 const hCulture = hCategories[4];
 
-const hShowNav = () => {
-    document.getElementById("h-header-wrapper").classList.toggle("h-active");
+const mHeroSection = document.getElementById("mHeroSection");
+let lastScrollY = window.scrollY;
+
+let hButtonHamMode = false;
+
+// events
+window.addEventListener("scroll", () => {
+    adjustHeader();
+    lastScrollY = window.scrollY;
+});
+
+hButtonHam.addEventListener("click", () => {
+    hHeaderWrapper.classList.toggle("h-active");
+    hHeaderWrapper.style.backgroundColor = "var(--clr-primary-dark)";
+    hHeaderWrapper.style.backgroundImage = "url(../images/grain.png)";
     document.body.classList.toggle("h-disable-scroll");
-};
+    if (hButtonHamMode) {
+        hButtonHamMode = false;
+        adjustHeader();
+    } else {
+        hButtonHamMode = true;
+    };
+})
+
+hImageLights.addEventListener("mouseover", () => {
+    hShowImage(hLights);
+});
+hImageWater.addEventListener("mouseover", () => {
+    hShowImage(hWater);
+});
+hImageSummit.addEventListener("mouseover", () => {
+    hShowImage(hSummit);
+});
+hImageHistory.addEventListener("mouseover", () => {
+    hShowImage(hHistory);
+});
+hImageCulture.addEventListener("mouseover", () => {
+    hShowImage(hCulture);
+});
+
+hImageLights.addEventListener("mouseout", hHideImage);
+hImageWater.addEventListener("mouseout", hHideImage);
+hImageSummit.addEventListener("mouseout", hHideImage);
+hImageHistory.addEventListener("mouseout", hHideImage);
+hImageCulture.addEventListener("mouseout", hHideImage);
 
 const hShowImage = (category) => {
-    const hPreviewImage = document.getElementById("hPreviewImage");
-    const hTitle = document.getElementById("hPreviewImageTitle");
-
     hTitle.innerText = category.title;
     hTitle.style.color = category.color;
     hTitle.style.textShadow = category.textShadow;
     hTitle.style.display = "block";
     setTimeout(() => (hTitle.style.opacity = "1"), 1);
-    
-
     hPreviewImage.style.height = "100%";
     hPreviewImage.style.backgroundImage = category.url;
     hPreviewImage.style.backgroundPosition = "bottom";
     hPreviewImage.style.transitionDuration = "500ms, 3000ms";
 };
 
-const hHideImage = () => {
-    const hPreviewImage = document.getElementById("hPreviewImage");
-    const hTitle = document.getElementById("hPreviewImageTitle");
-
+function hHideImage() {
     hTitle.style.display = "none";
     hTitle.style.opacity = "0";
-
     hPreviewImage.style.height = "0";
     hPreviewImage.style.transitionDuration = "500ms, 10ms";
     hPreviewImage.style.backgroundPosition = "top";
 };
+
+// change header on scroll
+const adjustHeader = () => {
+    if ( window.scrollY == 0){
+        hHeaderWrapper.style.backgroundColor = "transparent";
+        hHeaderWrapper.style.backgroundImage = "none";
+    } else if (lastScrollY < window.scrollY){
+        hHeaderWrapper.style.backgroundColor = "transparent";
+        hHeaderWrapper.style.transform = " translateY(-10vh)";
+    } else {
+        hHeaderWrapper.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+        hHeaderWrapper.style.backgroundImage = "url(../images/grain.png)";
+        hHeaderWrapper.style.transform = " translateY(0)";
+    };
+}
