@@ -13,6 +13,10 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+
+
     <link rel="stylesheet" href="./styles/fonts.css">
     <link rel="stylesheet" href="./styles/custom-variables.css">
     <link rel="stylesheet" href="./styles/header.css">
@@ -96,7 +100,7 @@
                         <img src="./images/logo-white.png" alt="Lakbay Travel Agency Logo" width="50px">
                     </a>
                 </div>
-                <div class="h-header-title col-6">
+                <div class="h-header-title col-6 ">
                     <span>
                         LAKBAY
                     </span>
@@ -104,7 +108,7 @@
                         Exploring The Philippines and Creating Stories
                     </h2>
                 </div>
-                <div class="h-ham-container col-3 d-flex justify-content-end justify-md-content-between align-items-center">
+                <div class="h-ham-container col-3 d-flex justify-content-end align-items-center">
                     <!-- Sign Up button trigger modal -->
                     <button type="button" class="h-btn-signUp btn me-4 px-4 py-2 d-none d-md-block" data-bs-toggle="modal" data-bs-target="#signUpModal">
                         SIGN UP
@@ -154,10 +158,67 @@
         <!-- Main Content -->
         <main>
             <section class="m-hero-section-wrapper" id="mHeroSection">
+                <div class="m-hero-section-main d-flex flex-column flex-md-row justify-content-between align-items-center">
+                    <div class="m-hero-left d-flex flex-column justify-content-center">
+                        <div>
+                            <h1 class="m-hero-left-title-top">
+                                Travel & Explore
+                            </h1>
+                        </div>
+                        <div>
+                            <h2 class="m-hero-left-title-bot" id="mHeroTitleBot">
+                                The Cosmopolitan Lights
+                            </h2>
+                        </div>
+                        <div class="m-hero-left-sub">
+                            <p class="m-hero-left-sub-desc ms-3 me-5">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum, suscipit! Doloremque assumenda illo cumque sed.
+                            </p>
+                            <a href="#">
+                                <button class="m-hero-left-sub-cta ms-3 btn me-4">
+                                    READ MORE
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="m-hero-right">
+                        <div class="m-hero-image-container" id="mHeroImage1"><img class="m-hero-image" id="mHeroImageSrc1" src="./images/cosmopolitan-lights/manila-city-skyline-david-milmont-3WX60TlLIdw-unsplash.jpg" alt="Manila City skyline at night"></div>
+                        <div class="m-hero-image-container" id="mHeroImage2"><img class="m-hero-image" id="mHeroImageSrc2" src="./images/dive-under-water/el-nido-eibner-saliba-3T9dDY0WqDI-unsplash.jpg" alt="El Nido Palawan drone shot"></div>
+                        <div class="m-hero-image-container" id="mHeroImage3"><img class="m-hero-image" id="mHeroImageSrc3" src="./images/explore-the-summit/mount-pulag-joanne-caselyn-kCGhXLU32Bg-unsplash.jpg" alt="Mount Pulag hiking mountain top"></div>
+                        <div class="m-hero-image-container" id="mHeroImage4"><img class="m-hero-image" id="mHeroImageSrc4" src="./images/look-back-in-history/calle-crisologo-593843_1920.jpg" alt="Calle Crisologo Vigan City at night"></div>
+                        <div class="m-hero-image-container" id="mHeroImage5"><img class="m-hero-image" id="mHeroImageSrc5" src="./images/nature-and-culture/ifugao-ar-2FsniOcLPj8-unsplash.jpg" alt="Ifugao Rice terraces field"></div>
+                    </div>
+                    <div class="m-hero-image-carousel-indicator d-flex justify-content-between align-items-center">
+                        <span class="material-symbols-outlined" id="mHeroCarouselPrev">
+                            arrow_back_ios
+                        </span>
+                        <div class="d-flex justify-content-between align-items-center gap-4">
+                            <div class="m-hero-indicator d-flex justify-content-center align-items-center">
+                                <div class="m-hero-indicator-sub" id="mIndicator1"></div>
+                            </div>
+                            <div class="m-hero-indicator d-flex justify-content-center align-items-center">
+                                <div class="m-hero-indicator-sub" id="mIndicator2"></div>
+                            </div>
+                            <div class="m-hero-indicator d-flex justify-content-center align-items-center">
+                                <div class="m-hero-indicator-sub" id="mIndicator3"></div>
+                            </div>
+                            <div class="m-hero-indicator d-flex justify-content-center align-items-center">
+                                <div class="m-hero-indicator-sub" id="mIndicator4"></div>
+                            </div>
+                            <div class="m-hero-indicator d-flex justify-content-center align-items-center">
+                                <div class="m-hero-indicator-sub" id="mIndicator5"></div>
+                            </div>
+                        </div>
+                        <span class="material-symbols-outlined" id="mHeroCarouselNext">
+                            arrow_forward_ios
+                        </span>
+                    </div>
+                </div>
 
             </section>
             <div>
-
+            </div>
+            <div>
             </div>
         </main>
 
@@ -174,6 +235,7 @@
 <!-- Custom JS -->
 <script src="./scripts/signUp.js"></script>
 <script src="./scripts/header.js"></script>
+<script src="./scripts/body.js"></script>
 </body>
 
 </html>

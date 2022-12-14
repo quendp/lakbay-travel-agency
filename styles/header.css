@@ -74,7 +74,6 @@
     background-color: transparent;
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
-
     position: fixed;
     top: 0px;
     left: 0px;
@@ -97,10 +96,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: 1;
-    color: transparent;
+    opacity: 0.4;
+    color: var(--clr-accent-lights);
     font-family: var(--ff-heading-primary);
-    -webkit-text-stroke: 1.5px var(--clr-accent-lights);
     font-size: var(--fz--header-sub);
     letter-spacing: calc(var(--fz--header-sub) / 3);
     transition: opacity 400ms ease-in-out;
