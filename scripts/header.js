@@ -67,7 +67,7 @@ window.addEventListener("scroll", () => {
 hButtonHam.addEventListener("click", () => {
     hHeaderWrapper.classList.toggle("h-active");
     hHeaderWrapper.style.backgroundColor = "var(--clr-primary-dark)";
-    hHeaderWrapper.style.backgroundImage = "url(../images/grain.png)";
+    hHeaderWrapper.style.backgroundImage = "url(./images/grain.png)";
     document.body.classList.toggle("h-disable-scroll");
     if (hButtonHamMode) {
         hButtonHamMode = false;
@@ -129,7 +129,7 @@ const adjustHeader = () => {
         hHeaderWrapper.style.transform = " translateY(-10vh)";
     } else {
         hHeaderWrapper.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-        hHeaderWrapper.style.backgroundImage = "url(../images/grain.png)";
+        hHeaderWrapper.style.backgroundImage = "url(./images/grain.png)";
         hHeaderWrapper.style.transform = " translateY(0)";
     };
 }

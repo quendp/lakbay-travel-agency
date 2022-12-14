@@ -39,7 +39,7 @@
     --fz--header-cat-list: clamp(1rem, 1.5vw, 2rem);
 
     --fz-main-h3: clamp(1rem, 3vw, 1.3rem);
-    --fz-main-p: clamp(0.8rem, 3vw, 1rem)
+    --fz-main-p: clamp(0.8rem, 1vw, 0.9rem);
 }
 
 /* Animations */
