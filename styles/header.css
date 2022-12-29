@@ -96,7 +96,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: 0.4;
+    opacity: 0.9;
     color: var(--clr-accent-lights);
     font-family: var(--ff-heading-primary);
     font-size: var(--fz--header-sub);
