@@ -34,7 +34,7 @@ body {
 
 #loaderLogo {
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
     left: 50%;
     transform: translate(-50%, 0);
     opacity: 0;

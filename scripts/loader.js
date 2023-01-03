@@ -103,14 +103,15 @@ async function exitLoader () {
         loaderText2Sub.style.overflow = "visible"
         loaderLogo.style.opacity = "1"
         loaderText3.style.textAlign = "center"
-        loaderText3.textContent = "Lakbay Travel Agency"
+        loaderText3.textContent = "L A K B A Y"
+        loaderText3.style.fontSize = "clamp(0.6rem, 1.2vw, 1.2rem)"
         loaderText3.style.transform = "translateY(0)"
 
         await animationDelay(800)
         loaderSub.style.transition = "opacity 500ms ease-in-out"
         loaderSub.style.opacity = "0"
         loaderTextSub.style.transition = "opacity 1000ms ease-in-out, transform 1000ms ease-in-out"
-        loaderTextSub.style.transform = "translateY(100px)"
+        loaderTextSub.style.transform = "translateY(70px)"
 
         await animationDelay(2000)
         loaderWrapper.style.clipPath = "circle(100%)"
@@ -118,7 +119,7 @@ async function exitLoader () {
         await animationDelay(800)
         loaderTextSub.style.opacity = "0"
         loaderWrapper.style.transition = "clip-path 1000ms cubic-bezier(0.14, 0.79, 0.18, 0.01)"
-        loaderWrapper.style.clipPath = "circle(0% at 0 0)"
+        loaderWrapper.style.clipPath = "circle(0%)"
 
         await animationDelay(1200)
         loaderWrapper.style.display = "none"
