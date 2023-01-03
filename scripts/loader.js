@@ -12,8 +12,9 @@ const loaderText2Sub = document.getElementById("loaderText2Sub");
 let percentValue = 1;
 let documentLoaded = false;
 
-window.addEventListener("DOMContentLoaded", (event) => {
+window.addEventListener("load", (event) => {
     documentLoaded = true;
+    console.log(documentLoaded)
 });
 
 const isLoaded = () => {
@@ -111,7 +112,7 @@ async function exitLoader () {
         loaderSub.style.transition = "opacity 500ms ease-in-out"
         loaderSub.style.opacity = "0"
         loaderTextSub.style.transition = "opacity 1000ms ease-in-out, transform 1000ms ease-in-out"
-        loaderTextSub.style.transform = "translateY(70px)"
+        loaderTextSub.style.transform = "translateY(60px)"
 
         await animationDelay(2000)
         loaderWrapper.style.clipPath = "circle(100%)"

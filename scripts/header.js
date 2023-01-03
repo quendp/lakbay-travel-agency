@@ -1,6 +1,7 @@
 const hHeaderWrapper = document.getElementById("hHeaderWrapper");
 const hPreviewImage = document.getElementById("hPreviewImage");
 const hTitle = document.getElementById("hPreviewImageTitle");
+const hNavContainer = document.getElementById("hNavContainer");
 
 const hButtonHam = document.getElementById("hButtonHam");
 const hImageLights = document.getElementById("hImageLights");
@@ -66,9 +67,11 @@ window.addEventListener("scroll", () => {
 
 hButtonHam.addEventListener("click", () => {
     hHeaderWrapper.classList.toggle("h-active");
+    hNavContainer.classList.toggle("d-none");
+    hTitle.classList.toggle("d-none");
+    document.body.classList.toggle("h-disable-scroll");
     hHeaderWrapper.style.backgroundColor = "var(--clr-primary-dark)";
     hHeaderWrapper.style.backgroundImage = "url(./images/grain.png)";
-    document.body.classList.toggle("h-disable-scroll");
     if (hButtonHamMode) {
         hButtonHamMode = false;
         adjustHeader();

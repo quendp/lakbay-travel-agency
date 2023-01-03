@@ -38,26 +38,18 @@ body {
     left: 50%;
     transform: translate(-50%, 0);
     opacity: 0;
+    stroke: var(--clr-secondary-100);
+    filter: drop-shadow(0px 0px 3px var(--clr-secondary-100));
+    stroke-width: 2px;
 }
 
 #loaderText2Sub {
     overflow: hidden;
 }
 
-
-
-
-
-
-
-
-
 main> div:nth-child(1) {
     height: 100vh;
-    background-image: url(../images/nature-and-culture/ifugao-ar-2FsniOcLPj8-unsplash.jpg);
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
+    background-color: var( --clr-primary-dark);
 }
 main > div:nth-child(2) {
     background-color: var(--clr-secondary-100);

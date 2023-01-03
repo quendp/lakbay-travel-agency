@@ -1,82 +1,8 @@
-:root {
-    /* Font family */
-    --ff-heading-primary: "Oranienbaum", serif;
-
-    --ff-heading-secondary: "onelove", "Brush Script MT", serif;
-
-    --ff-body-bold: "Poppins-Bold", sans-serif;
-    --ff-body-regular: "Poppins-Regular", sans-serif;
-    --ff-body-light: "Poppins-Light", sans-serif;
-
-    /* Colors */
-    --clr-primary-dark: #080808;
-    --clr-primary-glass: rgba(0, 0, 0, 0.8);
-
-    --clr-secondary-100: #f0f0f0;
-    --clr-secondary-400: #a1a1a1;
-    --clr-secondary-700: #303030;
-
-    --clr-accent-lights: #df8e0b;
-    --clr-accent-lights-100: #dfe623;
-
-    --clr-accent-water: #00009c;
-    --clr-accent-water-100: #00a2ff;
-
-    --clr-accent-summit: #555555;
-    --clr-accent-summit-100: #bbbbbb;
-
-    --clr-accent-history: #514026;
-    --clr-accent-history-100: #b89231;
-    --clr-accent-culture: #143827;
-    --clr-accent-culture-100: #39970e;
-
-
-    /* Font Size */
-    --fz--header-title: clamp(0.5rem, 0.9vw, 0.7rem);
-    --fz--header-sub: clamp(2rem, 10vw, 3rem);  
-    --fz--header-menu: clamp(0.8rem, 6vw, 2.5rem);
-    --fz--header-cat-title: 20vw;
-    --fz--header-cat-list: clamp(1rem, 1.5vw, 2rem);
-
-    --fz-main-h3: clamp(1rem, 3vw, 1.3rem);
-    --fz-main-p: clamp(0.8rem, 1.5vw, 1.5rem);
-}
-
-/* Animations */
-@keyframes fade-in {
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes zoom-in {
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes fade-up {
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes expand {
-    100% {
-        letter-spacing: 0.3vw;
-    }
-}
-
 /* HEADER STARTS HERE */
 .h-header-wrapper {
     background-color: transparent;
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
-    position: fixed;
-    top: 0px;
-    left: 0px;
     z-index: 10;
     height: 10vh;
     transform: translateY(0);
@@ -87,14 +13,7 @@
     height: 10vh;
 }
 
-.h-header-title {
-    position: relative;
-}
-
 .h-header-title span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0.9;
     color: var(--clr-accent-lights);
@@ -109,16 +28,10 @@
 }
 
 .h-header-title h2 {
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
     color: var(--clr-secondary-100);
     font-family: var(--ff-body-regular);
-    text-transform: uppercase;
     font-size: var(--fz--header-title);
-    text-align: center;
     letter-spacing: calc(var(--fz--header-title) / 2);
     word-spacing: calc(var(--fz--header-title) / 2);
     transition: transform 400ms ease-in-out, color 400ms ease-in-out;
@@ -131,15 +44,12 @@
 
 /* Modal Button */
 .h-btn-signUp {
-    position: relative;
     font-family: var(--ff-body-regular);
     font-size: var(--fz--header-title);
     letter-spacing: 0.1rem;
     color: var(--clr-secondary-100);
     border: 0.05rem solid var(--clr-secondary-100);
     transition: background-color 300ms ease-in-out;
-    border-radius: 1rem;
-    overflow: hidden;
 }
 
 .h-btn-signUp::before {
@@ -172,12 +82,9 @@
     width: 3rem;
     height: 50px;
     cursor: pointer;
-    position: relative;
 }
 
 .h-ham-container .h-btn-ham span {
-    position: absolute;
-    left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
     height: 0.1rem;
@@ -213,54 +120,37 @@
 }
 
 .h-header-wrapper.h-active .h-btn-ham span:nth-child(1) {
-    width: 100%;
+    width: 85%;
     top: 50%;
     transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .h-header-wrapper.h-active .h-btn-ham span:nth-child(2) {
+    width: 85%;
     top: 50%;
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-.h-header-wrapper.h-active .h-nav-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding-top: 3rem;
-}
-
 /* Header menu (home, contact, about, sign up) */
-.h-header-wrapper.h-active .h-nav-list {
-    width: 100%;
+.h-nav-list {
     list-style: none;
-    padding: 2rem 0;
-    margin: 0 0 2rem 0;
     border: 0.1rem solid var(--clr-secondary-700);
-    border-radius: 1rem;
-    display: flex;
-    justify-content: space-evenly;
     opacity: 0;
     animation: fade-in 400ms ease-in-out 400ms forwards;
 }
 
-.h-header-wrapper.h-active .h-nav-list a {
+.h-nav-list a {
     font-family: var(--ff-heading-primary);
-    text-decoration: none;
     font-size: var(--fz--header-menu);
-    text-transform: uppercase;
     color: inherit;
 }
 
-.h-header-wrapper.h-active .h-nav-list li {
+.h-nav-list li {
     color: var(--clr-secondary-100);
-    position: relative;
-    text-align: center;
     transition: color 400ms ease-in-out, transform 400ms ease-in-out, letter-spacing 300ms ease-in-out;
 }
 
-.h-header-wrapper.h-active .h-nav-list a::before {
+.h-nav-list a::before {
     content: "";
     position: absolute;
     bottom: -10%;
@@ -270,50 +160,33 @@
     transition: width 300ms ease-in-out;
 }
 
-.h-header-wrapper.h-active .h-nav-list a:hover::before {
+.h-nav-list a:hover::before {
     width: 100%;
 }
 
-.h-header-wrapper.h-active .h-nav-list li:hover {
+.h-nav-list li:hover {
     transform: scale(1.05);
 }
 
-.h-header-wrapper.h-active .h-nav-list li:hover~li,
-.h-header-wrapper.h-active .h-nav-list li:has(~ li:hover) {
+.h-nav-list li:hover~li,
+.h-nav-list li:has(~ li:hover) {
     color: var(--clr-secondary-700);
-}
-
-/* categories nav menu and image preview parent container */
-.h-header-wrapper.h-active .h-categories-container {
-    width: 100%;
-    height: 100%;
-    position: relative;
 }
 
 /* image preview parent element */
 #hPreviewImage-sub {
-    position: relative;
-    height: 100%;
-    width: 100%;
     opacity: 0;
     animation: fade-in 400ms ease-in-out 400ms forwards;
 }
 
 #hPreviewImage {
-    position: absolute;
-    bottom: 0;
-    left: 0;
     height: 0;
-    width: 100%;
     border-top: 0.001rem solid var(--clr-secondary-700);
-    border-radius: 1rem;
-
     background-color: var(--clr-primary-dark);
     background-image:url();
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
-
     transition-property: height, background-position;
     transition-duration: 500ms, 3000ms;
     transition-timing-function: ease-out, ease-out;
@@ -322,7 +195,6 @@
 
 /* image preview */
 #hPreviewImageTitle {
-    display: none;
     opacity: 0;
     transition: opacity 500ms ease-in-out;
     font-family: var(--ff-body-bold);
@@ -336,7 +208,6 @@
     font-family: var(--ff-body-bold);
     color: var(--clr-secondary-400);
     font-size: var(--fz--header-cat-title);
-    line-height: 1;
     text-shadow: none;
     opacity: 0;
     transform: scale(0.7);
@@ -345,89 +216,74 @@
 
 /* "hover items below to preview */
 .hPreviewImageDesc {
-    position: absolute;
     top: -5%;
-    left: 50%;
     transform: translate(-50%, -50%);
     font-family: var(--ff-body-light);
     color: var(--clr-secondary-400);
     font-size: var(--fz--header-title);
     text-shadow: 0 0 0.3rem var(--clr-primary-dark);
     letter-spacing: calc(var(--fz--header-title) / 2);
-    text-align: center;
 }
 
 /* categories nav menu */
-.h-header-wrapper.h-active .h-categories-list {
+.h-categories-list {
     list-style: none;
-    padding: 0;
-    margin: 2rem 0;
     color: var(--clr-secondary-400);
 }
 
-.h-header-wrapper.h-active .h-categories-list a {
+.h-categories-list a {
     font-family: var(--ff-heading-primary);
-    text-decoration: none;
     font-size: var(--fz--header-cat-list);
     color: inherit;
 }
 
-.h-header-wrapper.h-active .h-categories-list li:nth-child(1) {
+.h-categories-list li {
     opacity: 0;
     transform: translateY(5rem);
-    animation: fade-up 400ms ease-in-out 600ms forwards;
     transition: color 300ms ease-in-out, text-shadow 300ms ease-in-out;
 }
 
-.h-header-wrapper.h-active .h-categories-list li:nth-child(1):hover {
+.h-categories-list li:nth-child(1) {
+    animation: fade-up 400ms ease-in-out 600ms forwards;
+}
+
+.h-categories-list li:nth-child(1):hover {
     color: var(--clr-accent-lights-100);
     text-shadow: 0 0 1rem var(--clr-accent-lights);
 }
 
-.h-header-wrapper.h-active .h-categories-list li:nth-child(2) {
-    opacity: 0;
-    transform: translateY(5rem);
+.h-categories-list li:nth-child(2) {
     animation: fade-up 400ms ease-in-out 700ms forwards;
-    transition: color 300ms ease-in-out, text-shadow 300ms ease-in-out;
 }
 
-.h-header-wrapper.h-active .h-categories-list li:nth-child(2):hover {
+.h-categories-list li:nth-child(2):hover {
     color: var(--clr-accent-water-100);
     text-shadow: 0 0 1rem var(--clr-accent-water);
 }
 
-.h-header-wrapper.h-active .h-categories-list li:nth-child(3) {
-    opacity: 0;
-    transform: translateY(5rem);
+.h-categories-list li:nth-child(3) {
     animation: fade-up 400ms ease-in-out 800ms forwards;
-    transition: color 300ms ease-in-out, text-shadow 300ms ease-in-out;
 }
 
-.h-header-wrapper.h-active .h-categories-list li:nth-child(3):hover {
+.h-categories-list li:nth-child(3):hover {
     color: var(--clr-accent-summit-100);
     text-shadow: 0 0 1rem var(--clr-accent-summit);
 }
 
-.h-header-wrapper.h-active .h-categories-list li:nth-child(4) {
-    opacity: 0;
-    transform: translateY(5rem);
+.h-categories-list li:nth-child(4) {
     animation: fade-up 400ms ease-in-out 900ms forwards;
-    transition: color 300ms ease-in-out, text-shadow 300ms ease-in-out;
 }
 
-.h-header-wrapper.h-active .h-categories-list li:nth-child(4):hover {
+.h-categories-list li:nth-child(4):hover {
     color: var(--clr-accent-history-100);
     text-shadow: 0 0 1rem var(--clr-accent-history);
 }
 
-.h-header-wrapper.h-active .h-categories-list li:nth-child(5) {
-    opacity: 0;
-    transform: translateY(5rem);
+.h-categories-list li:nth-child(5) {
     animation: fade-up 400ms ease-in-out 1000ms forwards;
-    transition: color 300ms ease-in-out, text-shadow 300ms ease-in-out;
 }
 
-.h-header-wrapper.h-active .h-categories-list li:nth-child(5):hover {
+.h-categories-list li:nth-child(5):hover {
     color: var(--clr-accent-culture-100);
     text-shadow: 0 0 1rem var(--clr-accent-culture);
 }
