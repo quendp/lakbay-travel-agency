@@ -127,12 +127,15 @@ const adjustHeader = () => {
     if ( window.scrollY == 0){
         hHeaderWrapper.style.backgroundColor = "transparent";
         hHeaderWrapper.style.backgroundImage = "none";
+        hHeaderWrapper.style.backdropFilter = "blur(0px)";
     } else if (lastScrollY < window.scrollY){
         hHeaderWrapper.style.backgroundColor = "transparent";
+        hHeaderWrapper.style.backdropFilter = "blur(2px)";
         hHeaderWrapper.style.transform = " translateY(-10vh)";
     } else {
         hHeaderWrapper.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
         hHeaderWrapper.style.backgroundImage = "url(./sources/images/grain.png)";
+        hHeaderWrapper.style.backdropFilter = "blur(2px)";
         hHeaderWrapper.style.transform = " translateY(0)";
     };
 }

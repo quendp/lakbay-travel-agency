@@ -1,8 +1,7 @@
 /* HEADER STARTS HERE */
 .h-header-wrapper {
     background-color: transparent;
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(0px);
     z-index: 10;
     height: 10vh;
     transform: translateY(0);

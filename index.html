@@ -28,12 +28,12 @@
     <link rel="stylesheet" href="./sources/styles/fonts.css" />
     <link rel="stylesheet" href="./sources/styles/custom-variables.css" />
     <link rel="stylesheet" href="./sources/styles/header.css" />
-    <link rel="stylesheet" href="./sources/styles/body.css" />
+    <link rel="stylesheet" href="./sources/styles/index.css" />
   </head>
   <!-- Custom classes prefix: h- for header descendants, m-for main descendants, f-for footer descendants -->
   <body>
     <!-- loader screen -->
-    <!-- <div
+    <div
       class="l-loader-wrapper vh-100 w-100 position-fixed top-0 start-0 row p-0 m-0 align-items-center justify-content-center"
       id="loaderWrapper"
     >
@@ -66,7 +66,7 @@
           <p class="text-center"><span id="loaderPercent">0</span>%</p>
         </div>
       </div>
-    </div> -->
+    </div>
     <div class="body-wrapper">
       <!-- Sign Up Modal -->
       <div
@@ -306,11 +306,36 @@
 
       <!-- Main Content -->
       <main class="container-fluid p-0 m-0">
-        <div>
-          <video class="video-bg" autoplay muted loop>
-            <source src="./sources/videos/water.mp4">
+        <section class="m-hero-section row m-0 vh-100 justify-content-center" id="mHeroSection">
+          <video class="m-hero-bg m-0 p-0 position-fixed top-0 start-0 vh-100 w-100" id="mHeroBg" autoplay muted loop>
+            <source src="./sources/videos/city.mp4">
          </video>
-        </div>
+         <div class="row h-100 p-0 m-0">
+          <div class="row h-75 p-0 m-0"></div>
+          <div class="row h-25 p-0 m-0 d-flex justify-content-center">
+            <div class="col-md-6 col-12 p-0">
+              <div class="row p-0 m-0 h-100 d-flex justify-content-evenly">
+                <div class="col-2 d-flex align-items-center p-0">
+                  <div class="w-100 rounded overflow-hidden m-hero-thumb m-hero-thumb-1" id="mHeroThumb1"><img src="./sources/images/hero-section-thumbnails/city-thumb.jpg" alt="city lights thumbnail" width="100%" height="auto"></div>
+                </div>
+                <div class="col-2 d-flex align-items-center p-0">
+                  <div class="w-100 rounded overflow-hidden m-hero-thumb m-hero-thumb-2" id="mHeroThumb2"><img src="./sources/images/hero-section-thumbnails/water-thumb.jpg" alt="dive underwater thumbnail" width="100%" height="auto"></div>
+                </div>
+                <div class="col-2 d-flex align-items-center p-0">
+                  <div class="w-100 rounded overflow-hidden m-hero-thumb m-hero-thumb-3" id="mHeroThumb3"><img src="./sources/images/hero-section-thumbnails/mountain-thumb.jpg" alt="mountains thumbnail" width="100%" height="auto"></div>
+                </div>
+                <div class="col-2 d-flex align-items-center p-0">
+                  <div class="w-100 rounded overflow-hidden m-hero-thumb m-hero-thumb-4" id="mHeroThumb4"><img src="./sources/images/hero-section-thumbnails/history-thumb.jpg" alt="history thumbnail" width="100%" height="auto"></div>
+                </div>
+                <div class="col-2 d-flex align-items-center p-0">
+                  <div class="w-100 rounded overflow-hidden m-hero-thumb m-hero-thumb-5" id="mHeroThumb5"><img src="./sources/images/hero-section-thumbnails/nature-thumb.jpg" alt="nature thumbnail" width="100%" height="auto"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+         </div>
+        </section>
         <div></div>
         <div></div>
       </main>
@@ -325,10 +350,14 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <!-- scroll easing effect -->
+    <script src="https://codepen.io/osublake/pen/e72106811a34efcccff91a03568cc790.js?v=3"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <script src="./sources/scripts/scroll-ease.js"></script>
     <!-- Custom JS -->
     <script src="./sources/scripts/loader.js"></script>
     <script src="./sources/scripts/signUp.js"></script>
     <script src="./sources/scripts/header.js"></script>
-    <script src="./sources/scripts/body.js"></script>
+    <script src="./sources/scripts/index.js"></script>
   </body>
 </html>
