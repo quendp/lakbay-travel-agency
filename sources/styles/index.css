@@ -61,15 +61,155 @@ body {
     transition: opacity 400ms ease-in-out;
 }
 
+#mHeroRight{
+    transition: transform 1000ms ease-in-out;
+}
+
 .m-hero-thumb {
+    /* height: fit-content; */
     box-shadow: 0 0 10px var(--clr-primary-dark);
     transition: transform 400ms ease-in-out, box-shadow 400ms ease-in-out, border 400ms ease-in-out;
 }
+
 .m-hero-thumb:hover {
     box-shadow: 0 0 20px -5px var(--clr-secondary-100);
     transform: scale(1.1);
 }
 
+#mThumbDesc {
+    font-family: var(--ff-body-light);
+    color: var(--clr-secondary-100);
+    font-size: var(--fz-main-p);
+    letter-spacing: 2px;
+    transition: transform 400ms ease-in-out;
+    text-shadow: 0 0 15px var(--clr-secondary-100);
+}
+
+.mHeroCircle {
+    top: 100%;
+    left: 100%;
+    width: 65vw;
+    height: 65vw;
+    transform: translate(-50%,-50%) rotate(15deg);
+    transition: transform 3000ms ease-in-out;
+}
+
+.m-hero-circle-sub {
+    transform: translate(-50%, -50%);
+    width: 27vw;
+    height: 27vw;
+    box-shadow: 0 0 20px var(--clr-primary-dark);
+}
+
+.m-hero-circle-sub:active {
+    transform: translate(-50%, -50%) scale(0.98);
+    box-shadow: 0 0 10px var(--clr-primary-dark);
+}
+
+.m-hero-circle-image {
+    object-fit: cover;
+    height: 100%;
+    transform: rotate(-15deg);
+    transition: transform 3000ms ease-in-out;
+}
+
+#mCircleNext {
+    width: 7vw;
+}
+
+#mCirclePrev {
+    height: 7vw;
+}
+
+#circleImage2Sub {
+    top: 0;
+    left: 50%;
+}
+
+#circleImage1Sub {
+    top: 25%;
+    left: 6.6987%;
+}
+
+#circleImage3Sub {
+    top: 25%;
+    left: calc(100% - 6.6987%);
+}
+
+#circleImage6Sub {
+    top: 75%;
+    left: 6.6987%;
+}
+
+#circleImage4Sub {
+    top: 75%;
+    left: calc(100% - 6.6987%);
+}
+
+#circleImage5Sub {
+    top: 100%;
+    left: 50%;
+}
+
+.m-continue-rotation {
+    background-color: var(--clr-primary-glass);
+    color: var(--clr-secondary-100);
+    font-family: var(--ff-body-light);
+    z-index: 2;
+    backdrop-filter: blur(5px);
+    background-image: url(../images/grain.png);
+}
+
+#mContinueRotation {
+    transition: color 400ms ease-in-out, text-shadow 400ms ease-in-out;
+}
+
+.mContText1 {
+    transform: translate(-50%, 0%) rotate(-80deg);
+}
+.mContText2 {
+    transform: translate(-50%, 0%) rotate(-73deg);
+}
+.mContText3 {
+    transform: translate(-50%, 0%) rotate(-66deg);
+}
+.mContText4 {
+    transform: translate(-50%, 0%) rotate(-59deg);
+}
+.mContText5 {
+    transform: translate(-50%, 0%) rotate(-52deg);
+}
+.mContText6 {
+    transform: translate(-50%, 0%) rotate(-45deg);
+}
+.mContText7 {
+    transform: translate(-50%, 0%) rotate(-38deg);
+}
+.mContText8 {
+    transform: translate(-50%, 0%) rotate(-31deg);
+}
+.mContText9 {
+    transform: translate(-50%, 0%) rotate(-24deg);
+}
+.mContText10 {
+    transform: translate(-50%, 0%) rotate(-17deg);
+}
+.mContText11 {
+    transform: translate(-50%, 0%) rotate(-10deg);
+}
+
+.m-circle-text {
+    left: 5%;
+    bottom: 32.5vw;
+    color: var(--clr-accent-lights);
+    font-family: var(--ff-body-regular);
+    text-shadow: 0 0 5px var(--clr-primary-dark);
+}
+
+#mCircleText {
+    transition: opacity 400ms ease-in-out;
+    opacity: 0;
+}
 
 main {
     position: absolute;  

@@ -118,6 +118,7 @@ async function exitLoader () {
 
         await animationDelay(800)
         loaderTextSub.style.opacity = "0"
+        document.body.classList.remove("overflow-hidden")
         loaderWrapper.style.transition = "clip-path 1000ms cubic-bezier(0.14, 0.79, 0.18, 0.01)"
         loaderWrapper.style.clipPath = "circle(0%)"
 
