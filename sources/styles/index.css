@@ -58,7 +58,7 @@ body {
 .m-hero-bg {
     z-index: -1;
     object-fit: cover;
-    transition: opacity 400ms ease-in-out;
+    transition: opacity 800ms ease-in-out;
 }
 
 #mHeroRight{
