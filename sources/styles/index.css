@@ -79,7 +79,7 @@ body {
 #mThumbDesc {
     font-family: var(--ff-body-light);
     color: var(--clr-secondary-100);
-    font-size: var(--fz-main-p);
+    /* font-size: var(--fz-main-p); */
     letter-spacing: 2px;
     transition: transform 400ms ease-in-out;
     text-shadow: 0 0 15px var(--clr-secondary-100);
@@ -91,7 +91,7 @@ body {
     width: 65vw;
     height: 65vw;
     transform: translate(-50%,-50%) rotate(15deg);
-    transition: transform 3000ms ease-in-out;
+    /* transition: transform 1000ms linear; */
 }
 
 .m-hero-circle-sub {
@@ -110,15 +110,15 @@ body {
     object-fit: cover;
     height: 100%;
     transform: rotate(-15deg);
-    transition: transform 3000ms ease-in-out;
+    /* transition: transform 1000ms linear; */
 }
 
 #mCircleNext {
-    width: 7vw;
+    width: 10vw;
 }
 
 #mCirclePrev {
-    height: 7vw;
+    height: 10vw;
 }
 
 #circleImage2Sub {
@@ -199,16 +199,16 @@ body {
 }
 
 .m-circle-text {
-    left: 5%;
-    bottom: 32.5vw;
-    color: var(--clr-accent-lights);
+    left: 10%;
+    bottom: 31vw;
+    color: var(--clr-accent-lights-100);
     font-family: var(--ff-body-regular);
-    text-shadow: 0 0 5px var(--clr-primary-dark);
 }
 
 #mCircleText {
     transition: opacity 400ms ease-in-out;
     opacity: 0;
+    background-color: var(--clr-primary-glass);
 }
 
 main {

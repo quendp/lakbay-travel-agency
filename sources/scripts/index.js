@@ -196,6 +196,7 @@ mHeroThumbNature.addEventListener("mouseout", () => {
 
 
 const updateHero = (categoryIndex, thumb) => {
+    lastClickedThumb = categoryIndex;
     mCircleText.style.opacity = "0";
     mHeroBg.style.opacity = "0";
     setTimeout(() => {
@@ -213,6 +214,7 @@ const updateHero = (categoryIndex, thumb) => {
     setTimeout(() => {
         mThumbDesc.textContent = categoryIndex.category;
         mThumbDesc.style.transform = "translateY(0)";
+        mCircleText.style.color = lastClickedThumb.accentLight;
     }, 400);
     mHeroRight.style.transform = "translate(100%, 100%)";
     setTimeout(() => {
@@ -224,7 +226,6 @@ const updateHero = (categoryIndex, thumb) => {
         mCircleImage5.setAttribute("src", categoryIndex.circleImage[4]);
         mCircleImage6.setAttribute("src", categoryIndex.circleImage[5]);
     }, 1000);
-    lastClickedThumb = categoryIndex;
 };
 
 const hoverThumb = (categoryIndex) => {
@@ -249,7 +250,15 @@ let rotationContinue = true;
 const circleArray = [mCircleImage1, mCircleImage2, mCircleImage3, mCircleImage4, mCircleImage5, mCircleImage6]
 let currentCircle = 0;
 
-const mrotationAnimation = () => {
+const mrotationAnimation = (duration) => {
+    mHeroCircle.style.transition = `transform ${duration}ms linear`;
+    mCircleImage1.style.transition = `transform ${duration}ms linear`;
+    mCircleImage2.style.transition = `transform ${duration}ms linear`;
+    mCircleImage3.style.transition = `transform ${duration}ms linear`;
+    mCircleImage4.style.transition = `transform ${duration}ms linear`;
+    mCircleImage5.style.transition = `transform ${duration}ms linear`;
+    mCircleImage6.style.transition = `transform ${duration}ms linear`;
+
     mHeroCircle.style.transform = `translate(-50%,-50%) rotate(${currentRotation}deg)`;
     mCircleImage1.style.transform = `rotate(${-currentRotation}deg)`;
     mCircleImage2.style.transform = `rotate(${-currentRotation}deg)`;
@@ -261,8 +270,10 @@ const mrotationAnimation = () => {
 
 const mRotate = () => {
     mContinueRotation.style.display = "none";
+    mCircleNext.style.display = "none";
+    mCirclePrev.style.display = "none";
     currentRotation -= 60;
-    mrotationAnimation();
+    mrotationAnimation(3000);
     if(currentCircle == 5) {
         currentCircle = 0;
     } else {
@@ -281,77 +292,63 @@ const mRotate = () => {
                 currentCircle += 1;
             };
         };
-    }, 5000);
+    }, 3000);
 };
 
 const mRotateOnce = (direction) => {
     rotationContinue = false;
-    if (direction == "next"  && currentCircle == 5) {
+    if (direction == mCircleNext  && currentCircle == 5) {
         currentCircle = 0;
-    } else if (direction == "next") {
+        currentRotation -= 60;
+    } else if (direction == mCircleNext) {
         currentCircle += 1;
-    } else if (direction == "prev" && currentCircle == 0){
+        currentRotation -= 60;
+    } else if (direction == mCirclePrev && currentCircle == 0){
         currentCircle = 5;
+        currentRotation += 60;
     } else {
         currentCircle -= 1;
+        currentRotation += 60;
     };
+    mContinueRotation.style.display = "none";
     mCircleText.style.opacity = "0";
+    direction.style.display = "none";
+    setTimeout(() => {
+        direction.style.display = "block";
+    }, 1000);
     setTimeout(() => {
         mUpdateCircleText();
-    }, 2500);
-    if (direction == "next") {
-        currentRotation -= 60;
-        mCircleNext.style.display = "none";
-        setTimeout(() => {
-            mCircleNext.style.display = "block";
-        }, 2000);
-    } else {
-        currentRotation += 60;
-        mCirclePrev.style.display = "none";
-        setTimeout(() => {
-            mCirclePrev.style.display = "block";
-        }, 2000);
-    };
-    mrotationAnimation();
+    }, 1000);
+    mrotationAnimation(1000);
 };
 
 const mUpdateCircleText = () => {
+    if (rotationContinue) {
+        setTimeout(() => {
+            mContinueRotation.style.display = "block";
+        }, 3000);
+    } else {
+        mContinueRotation.style.display = "block";
+    };
+    rotationContinue = false;
     setTimeout(() => {
         if(!rotationContinue) {
-            mContinueRotation.style.display = "block";
+            mCircleNext.style.display = "block";
+            mCirclePrev.style.display = "block";
         }
-    }, 3000);
+    }, 1000);
     mCircleText.textContent = lastClickedThumb.circleText[currentCircle];
     mCircleText.style.opacity = "1";
 }
 
-mCircleImage1.addEventListener("click", () => {
-    rotationContinue = false;
-    mUpdateCircleText();
-});
-mCircleImage2.addEventListener("click", () => {
-    rotationContinue = false;
-    mUpdateCircleText();
-});
-mCircleImage3.addEventListener("click", () => {
-    rotationContinue = false;
-    mUpdateCircleText();
-});
-mCircleImage4.addEventListener("click", () => {
-    rotationContinue = false;
-    mUpdateCircleText();
-});
-mCircleImage5.addEventListener("click", () => {
-    rotationContinue = false;
-    mUpdateCircleText();
-});
-mCircleImage6.addEventListener("click", () => {
-    rotationContinue = false;
-    mUpdateCircleText();
-});
+mCircleImage1.addEventListener("click", () => {mUpdateCircleText()});
+mCircleImage2.addEventListener("click", () => {mUpdateCircleText()});
+mCircleImage3.addEventListener("click", () => {mUpdateCircleText()});
+mCircleImage4.addEventListener("click", () => {mUpdateCircleText()});
+mCircleImage5.addEventListener("click", () => {mUpdateCircleText()});
+mCircleImage6.addEventListener("click", () => {mUpdateCircleText()});
 
 mContinueRotation.addEventListener("click", () => {
-    mContinueRotation.style.display = "none";
     mCircleText.style.opacity = "0";
     if(!rotationContinue){
         rotationContinue = true;
@@ -362,19 +359,14 @@ mContinueRotation.addEventListener("click", () => {
 mContinueRotation.addEventListener("mouseover", () => {
     mContinueRotation.style.color = lastClickedThumb.accentLight;
     mContinueRotation.style.textShadow = `0 0 5px ${lastClickedThumb.accentLight}`;
-})
+});
 
 mContinueRotation.addEventListener("mouseout", () => {
     mContinueRotation.style.color = "var(--clr-secondary-100)";
     mContinueRotation.style.textShadow = "none";
-})
-
-mCircleNext.addEventListener("click", () => {
-    mRotateOnce("next");
 });
 
-mCirclePrev.addEventListener("click", () => {
-    mRotateOnce("prev");
-});
+mCircleNext.addEventListener("click", () => {mRotateOnce(mCircleNext)});
+mCirclePrev.addEventListener("click", () => {mRotateOnce(mCirclePrev)});
 
 mRotate();
