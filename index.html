@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="./sources/styles/index.css" />
   </head>
   <!-- Custom classes prefix: h- for header descendants, m-for main descendants, f-for footer descendants -->
-  <body class="">
+  <body class="overflow-hidden">
     <!-- loader screen -->
     <div
       class="l-loader-wrapper vh-100 w-100 position-fixed top-0 start-0 row p-0 m-0 align-items-center justify-content-center"
@@ -320,11 +320,30 @@
           </video>
           <div class="row h-100 p-0 m-0">
             <div class="row h-100 p-0 m-0">
-              <div class="col-6 pt-5 px-5">
-                <div class="row h-25"></div>
-                <div class="row h-50"></div>
-                <div class="row h-25 p-0 m-0">
-                  <div class="col-12 p-0 m-0">
+              <div class="col-md-6 col-12 py-0 pt-md-4 px-3 px-md-5 m-0" >
+                <div class="h-75 py-0 px-3 px-md-0 px-xl-5 m-0 d-flex flex-column justify-content-center align-items-center" id="mHeroLeft">
+                  <div class="w-100 d-flex flex-column justify-content-center align-items-center align-items-md-start p-0 mx-0 mt-0 mb-5">
+                    <h1 class="lh-1 my-0 text-center text-md-start text-nowrap" id="mHeroCategoryTitle">
+                      Visit the Lively <br> and Colorful Cities
+                    <h2 class="lh-1 mx-0 mb-0 text-center text-md-start text-nowrap" id="mHeroCategory">
+                      Cosmopolitan Lights
+                    </h2>
+                  </div>
+                  <div class="w-100 d-flex flex-column justify-content-start align-items-start align-items-md-start p-0 m-0">
+                    <div class="p-0 px-sm-5 px-md-0 pe-lg-5 m-0 d-flex flex-column align-items-center align-items-md-start justify-content-center">
+                      <p class="w-100 mx-0 mt-0 mb-4 p-0 px-sm-5 px-md-0 pe-lg-5 text-center text-md-start" id="mHeroDescription">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nesciunt vel non libero impedit sequi suscipit praesentium dicta exercitationem hic.
+                      </p>
+                      <button class="btn p-0 m-0">
+                        <a href="#" class="btn rounded-pill px-4 py-2 text-uppercase" id="mHeroButton">
+                          discover more
+                        </a>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="row h-25 p-0 m-0 justify-content-center">
+                  <div class="col-12 py-0 px-0 px-md-5 m-0 d-flex flex-column align-items-center">
                     <div class="row p-0 m-0 h-75 d-flex justify-content-between">
                       <div class="col-2 d-flex align-items-end px-0 py-3">
                         <div
@@ -402,21 +421,35 @@
                   </div>
                 </div>
               </div>
-              <div class="col-6 d-flex justify-content-center align-items-center position-relative" id="mHeroRight">
-                
+              <div class="d-none col-md-6 col-12 d-md-flex justify-content-center align-items-center position-relative" id="mHeroRight">  
                 <div class="m-hero-circle-sub m-continue-rotation rounded-circle position-absolute top-100 start-100 d-flex justify-content-center align-items-center">
-                  <div class="position-relative h-75 w-75 rounded-circle" id="mContinueRotation">
-                    <div class="mContText1 position-absolute h-100 top-0 start-50"><span>A</span></div>
-                    <div class="mContText2 position-absolute h-100 top-0 start-50"><span>U</span></div>
-                    <div class="mContText3 position-absolute h-100 top-0 start-50"><span>T</span></div>
-                    <div class="mContText4 position-absolute h-100 top-0 start-50"><span>O</span></div>
-                    <div class="mContText5 position-absolute h-100 top-0 start-50"><span>-</span></div>
-                    <div class="mContText6 position-absolute h-100 top-0 start-50"><span>R</span></div>
-                    <div class="mContText7 position-absolute h-100 top-0 start-50"><span>O</span></div>
-                    <div class="mContText8 position-absolute h-100 top-0 start-50"><span>T</span></div>
-                    <div class="mContText9 position-absolute h-100 top-0 start-50"><span>A</span></div>
-                    <div class="mContText10 position-absolute h-100 top-0 start-50"><span>T</span></div>
-                    <div class="mContText11 position-absolute h-100 top-0 start-50"><span>E</span></div>
+                  <div class="position-relative h-100 w-100 rounded-circle">
+                    <div class="class-position-absolute h-100 w-100" id="mContinueRotationTop">
+                      <div class="mContText1 position-absolute h-100 top-0 start-50 pt-4"><span>C</span></div>
+                      <div class="mContText2 position-absolute h-100 top-0 start-50 pt-4"><span>L</span></div>
+                      <div class="mContText3 position-absolute h-100 top-0 start-50 pt-4"><span>I</span></div>
+                      <div class="mContText4 position-absolute h-100 top-0 start-50 pt-4"><span>C</span></div>
+                      <div class="mContText5 position-absolute h-100 top-0 start-50 pt-4"><span>K </span></div>
+                      <div class="mContText6 position-absolute h-100 top-0 start-50 pt-4"><span> </span></div>
+                      <div class="mContText7 position-absolute h-100 top-0 start-50 pt-4"><span>I</span></div>
+                      <div class="mContText8 position-absolute h-100 top-0 start-50 pt-4"><span>M</span></div>
+                      <div class="mContText9 position-absolute h-100 top-0 start-50 pt-4"><span>A</span></div>
+                      <div class="mContText10 position-absolute h-100 top-0 start-50 pt-4"><span>G</span></div>
+                      <div class="mContText11 position-absolute h-100 top-0 start-50 pt-4"><span>E</span></div>
+                    </div>
+                    <div class="class-position-absolute h-100 w-100" id="mContinueRotation">
+                      <div class="mContText1 position-absolute h-100 top-0 start-50 pt-4"><span>A</span></div>
+                      <div class="mContText2 position-absolute h-100 top-0 start-50 pt-4"><span>U</span></div>
+                      <div class="mContText3 position-absolute h-100 top-0 start-50 pt-4"><span>T</span></div>
+                      <div class="mContText4 position-absolute h-100 top-0 start-50 pt-4"><span>O</span></div>
+                      <div class="mContText5 position-absolute h-100 top-0 start-50 pt-4"><span>-</span></div>
+                      <div class="mContText6 position-absolute h-100 top-0 start-50 pt-4"><span>R</span></div>
+                      <div class="mContText7 position-absolute h-100 top-0 start-50 pt-4"><span>O</span></div>
+                      <div class="mContText8 position-absolute h-100 top-0 start-50 pt-4"><span>T</span></div>
+                      <div class="mContText9 position-absolute h-100 top-0 start-50 pt-4"><span>A</span></div>
+                      <div class="mContText10 position-absolute h-100 top-0 start-50 pt-4"><span>T</span></div>
+                      <div class="mContText11 position-absolute h-100 top-0 start-50 pt-4"><span>E</span></div>
+                    </div>
                   </div>
                 </div>
                 <div class="row mHeroCircle rounded-circle position-absolute d-flex justify-content-center align-items-center" id="mHeroCircle">

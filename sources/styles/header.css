@@ -15,7 +15,7 @@
 .h-header-title span {
     transform: translate(-50%, -50%);
     opacity: 0.9;
-    color: var(--clr-accent-lights);
+    color: var(--clr-accent-lights-100);
     font-family: var(--ff-heading-primary);
     font-size: var(--fz--header-sub);
     letter-spacing: calc(var(--fz--header-sub) / 3);

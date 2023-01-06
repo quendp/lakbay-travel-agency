@@ -1,18 +1,24 @@
 const mHeroBg = document.getElementById("mHeroBg");
-const mHeroRight = document.getElementById("mHeroRight");
 const mHeroSec = document.getElementById("mHeroSection");
 const mThumbDesc = document.getElementById("mThumbDesc");
 
+const mHeroLeft = document.getElementById("mHeroLeft");
+const mHeroCategoryTitle = document.getElementById("mHeroCategoryTitle");
+const mHeroCategory = document.getElementById("mHeroCategory");
+const mHeroDescription = document.getElementById("mHeroDescription");
+const mHeroButton = document.getElementById("mHeroButton");
 const mHeroThumbCity = document.getElementById("mHeroThumb1");
 const mHeroThumbWater = document.getElementById("mHeroThumb2");
 const mHeroThumbMountain = document.getElementById("mHeroThumb3");
 const mHeroThumbHistory = document.getElementById("mHeroThumb4");
 const mHeroThumbNature = document.getElementById("mHeroThumb5");
 
+const mHeroRight = document.getElementById("mHeroRight");
 const mHeroCircle = document.getElementById("mHeroCircle");
 const mCircleNext = document.getElementById("mCircleNext");
 const mCirclePrev = document.getElementById("mCirclePrev");
 const mContinueRotation = document.getElementById("mContinueRotation");
+const mContinueRotationTop = document.getElementById("mContinueRotationTop");
 const mCircleText = document.getElementById("mCircleText");
 const mCircleImage1 = document.getElementById("mCircleImage1");
 const mCircleImage2 = document.getElementById("mCircleImage2");
@@ -23,7 +29,10 @@ const mCircleImage6 = document.getElementById("mCircleImage6");
 
 const mCategories = [
     {
-        category : "cosmopolitan lights",
+        category : "Cosmopolitan Lights",
+        categoryTitle : "Visit the Lively <br> and Colorful Cities" ,
+        description : "Cosmopolitan ligths Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nesciunt vel non libero impedit sequi suscipit praesentium dicta exercitationem hic.",
+        buttonUrl : "#",
         backgroundUrl : "./sources/videos/city.mp4",
         poster : "./sources/images/hero-section-thumbnails/city-poster.jpg",
         accent: "var(--clr-accent-lights)",
@@ -45,7 +54,10 @@ const mCategories = [
             "Cultural Center of the Philippines in Pasay City"
         ]
     }, {
-        category : "dive under water",
+        category : "Dive Under Water",
+        categoryTitle : "Discover the Wonders <br> of the Deep Sea" ,
+        description : "Dive under water Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nesciunt vel non libero impedit sequi suscipit praesentium dicta exercitationem hic.",
+        buttonUrl : "#",
         backgroundUrl : "./sources/videos/water.mp4",
         poster : "./sources/images/hero-section-thumbnails/water-poster.jpg",
         accent: "var(--clr-accent-water)",
@@ -67,7 +79,10 @@ const mCategories = [
             "dive under water"
         ]
     }, {
-        category : "explore the summit",
+        category : "Explore the Summit",
+        categoryTitle : "Look at the Sky on <br> Top of Mountain Peaks" ,
+        description : "Explore the summit Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nesciunt vel non libero impedit sequi suscipit praesentium dicta exercitationem hic.",
+        buttonUrl : "#",
         backgroundUrl : "./sources/videos/mountain.mp4",
         poster : "./sources/images/hero-section-thumbnails/mountain-poster.jpg",
         accent: "var(--clr-accent-summit)",
@@ -89,7 +104,10 @@ const mCategories = [
             "explore the summit"
         ]
     }, {
-        category : "look back in history",
+        category : "Look Back in History",
+        categoryTitle : "Embrace the Great <br> Remnants of the Past" ,
+        description : "Look back in history Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nesciunt vel non libero impedit sequi suscipit praesentium dicta exercitationem hic.",
+        buttonUrl : "#",
         backgroundUrl : "./sources/videos/history.mp4",
         poster : "./sources/images/hero-section-thumbnails/history-poster.jpg",
         accent: "var(--clr-accent-history)",
@@ -111,7 +129,10 @@ const mCategories = [
             "look back in history"
         ]
     }, {
-        category : "nature and culture",
+        category : "Nature and Culture",
+        categoryTitle : "Feel the Beauty of <br> the Untouched Lands" ,
+        description : "Nature and culture Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nesciunt vel non libero impedit sequi suscipit praesentium dicta exercitationem hic.",
+        buttonUrl : "#",
         backgroundUrl : "./sources/videos/nature.mp4",
         poster : "./sources/images/hero-section-thumbnails/nature-poster.jpg",
         accent: "var(--clr-accent-culture)",
@@ -146,80 +167,49 @@ window.addEventListener("scroll", () => {
     };
 });
 
-mHeroThumbCity.addEventListener("click", () => {
-    updateHero(mCategories[0], mHeroThumbCity);
-});
-mHeroThumbWater.addEventListener("click", () => {
-    updateHero(mCategories[1], mHeroThumbWater);
-});
-mHeroThumbMountain.addEventListener("click", () => {
-    updateHero(mCategories[2], mHeroThumbMountain);
-});
-mHeroThumbHistory.addEventListener("click", () => {
-    updateHero(mCategories[3], mHeroThumbHistory);
-});
-mHeroThumbNature.addEventListener("click", () => {
-    updateHero(mCategories[4], mHeroThumbNature);
-});
+mHeroThumbCity.addEventListener("click", () => {updateHero(mCategories[0], mHeroThumbCity)});
+mHeroThumbWater.addEventListener("click", () => {updateHero(mCategories[1], mHeroThumbWater)});
+mHeroThumbMountain.addEventListener("click", () => {updateHero(mCategories[2], mHeroThumbMountain)});
+mHeroThumbHistory.addEventListener("click", () => {updateHero(mCategories[3], mHeroThumbHistory)});
+mHeroThumbNature.addEventListener("click", () => {updateHero(mCategories[4], mHeroThumbNature)});
 
-mHeroThumbCity.addEventListener("mouseover", () => {
-    hoverThumb(mCategories[0]);
-});
-mHeroThumbWater.addEventListener("mouseover", () => {
-    hoverThumb(mCategories[1]);
-});
-mHeroThumbMountain.addEventListener("mouseover", () => {
-    hoverThumb(mCategories[2]);
-});
-mHeroThumbHistory.addEventListener("mouseover", () => {
-    hoverThumb(mCategories[3]);
-});
-mHeroThumbNature.addEventListener("mouseover", () => {
-    hoverThumb(mCategories[4]);
-});
+mHeroThumbCity.addEventListener("mouseover", () => {hoverThumb(mCategories[0])});
+mHeroThumbWater.addEventListener("mouseover", () => {hoverThumb(mCategories[1])});
+mHeroThumbMountain.addEventListener("mouseover", () => {hoverThumb(mCategories[2])});
+mHeroThumbHistory.addEventListener("mouseover", () => {hoverThumb(mCategories[3])});
+mHeroThumbNature.addEventListener("mouseover", () => {hoverThumb(mCategories[4])});
 
-mHeroThumbCity.addEventListener("mouseout", () => {
-    hoverOutThumb();
-});
-mHeroThumbWater.addEventListener("mouseout", () => {
-    hoverOutThumb();
-});
-mHeroThumbMountain.addEventListener("mouseout", () => {
-    hoverOutThumb();
-});
-mHeroThumbHistory.addEventListener("mouseout", () => {
-    hoverOutThumb();
-});
-mHeroThumbNature.addEventListener("mouseout", () => {
-    hoverOutThumb();
-});
+mHeroThumbCity.addEventListener("mouseout", () => {hoverOutThumb()});
+mHeroThumbWater.addEventListener("mouseout", () => {hoverOutThumb()});
+mHeroThumbMountain.addEventListener("mouseout", () => {hoverOutThumb()});
+mHeroThumbHistory.addEventListener("mouseout", () => {hoverOutThumb()});
+mHeroThumbNature.addEventListener("mouseout", () => {hoverOutThumb()});
 
 
 const updateHero = (categoryIndex, thumb) => {
     lastClickedThumb = categoryIndex;
+    mUpdateLeft();
     mCircleText.style.opacity = "0";
     mHeroBg.style.opacity = "0";
-    setTimeout(() => {
-        mHeroBg.setAttribute("src", categoryIndex.backgroundUrl);
-        mHeroBg.setAttribute("poster", categoryIndex.poster);
-    }, 500);
-    setTimeout(() => {
-        mHeroBg.style.opacity = "1";
-    }, 1000);
     mHeroThumbCity.style.border = "none";
     mHeroThumbWater.style.border = "none";
     mHeroThumbMountain.style.border = "none";
     mHeroThumbHistory.style.border = "none";
     mHeroThumbNature.style.border = "none";
-    thumb.style.border = "3px solid var(--clr-secondary-100)";
+    thumb.style.border = `3px solid ${lastClickedThumb.accentLight}`;
     mThumbDesc.style.transform = "translateY(3rem)";
+    mHeroRight.style.transform = "translate(100%, 100%)";
     setTimeout(() => {
+        mHeroBg.setAttribute("src", categoryIndex.backgroundUrl);
+        mHeroBg.setAttribute("poster", categoryIndex.poster);
         mThumbDesc.textContent = categoryIndex.category;
         mThumbDesc.style.transform = "translateY(0)";
         mCircleText.style.color = lastClickedThumb.accentLight;
-    }, 400);
-    mHeroRight.style.transform = "translate(100%, 100%)";
+    }, 500);
     setTimeout(() => {
+        mHeroBg.style.opacity = "1";
+        mHeroCircle.style.display = "none";
+        mHeroCircle.style.display = "block";
         mHeroRight.style.transform = "translate(0, 0)";
         mCircleImage1.setAttribute("src", categoryIndex.circleImage[0]);
         mCircleImage2.setAttribute("src", categoryIndex.circleImage[1]);
@@ -229,6 +219,36 @@ const updateHero = (categoryIndex, thumb) => {
         mCircleImage6.setAttribute("src", categoryIndex.circleImage[5]);
     }, 1000);
 };
+
+const mUpdateLeft = () => {
+    mHeroLeft.style.transform = "translateX(-100%)";
+    mHeroLeft.style.opacity = "0";
+    setTimeout(() => {
+        mHeroCategoryTitle.innerHTML = lastClickedThumb.categoryTitle;
+        mHeroCategory.innerHTML = lastClickedThumb.category;
+        mHeroCategory.style.color = lastClickedThumb.accentLight;
+        mHeroCategory.style.textShadow = `0 0 20px ${lastClickedThumb.accentLight}`;
+        mHeroButton.style.backgroundColor = lastClickedThumb.accentLight;
+        mHeroButton.style.boxShadow = `0 0 20px ${lastClickedThumb.accentLight}`;
+        mHeroButton.setAttribute("href", lastClickedThumb.buttonUrl);
+        mHeroDescription.innerHTML = lastClickedThumb.description;
+        mHeroCategory.innerHTML = lastClickedThumb.category;
+        mHeroLeft.style.transform = "translateX(0)";
+    }, 1000);
+    setTimeout(() => {
+        mHeroLeft.style.opacity = "1";
+    }, 1600);
+}
+
+mHeroButton.addEventListener("mouseover", () => {
+    mHeroButton.style.backgroundColor = lastClickedThumb.accent;
+    mHeroButton.style.boxShadow = `0 0 20px ${lastClickedThumb.accent}`;
+});
+
+mHeroButton.addEventListener("mouseout", () => {
+    mHeroButton.style.backgroundColor = lastClickedThumb.accentLight;
+    mHeroButton.style.boxShadow = `0 0 20px ${lastClickedThumb.accentLight}`;
+});
 
 const hoverThumb = (categoryIndex) => {
     mThumbDesc.style.transform = "translateY(3rem)";
@@ -272,6 +292,7 @@ const mrotationAnimation = (duration) => {
 
 const mRotate = () => {
     mContinueRotation.style.display = "none";
+    mContinueRotationTop.style.display = "block";
     mCircleNext.style.display = "none";
     mCirclePrev.style.display = "none";
     currentRotation -= 60;
@@ -287,7 +308,7 @@ const mRotate = () => {
             return;
         } else if (!document.hidden){
             currentRotation -= 60;
-            mrotationAnimation();
+            mrotationAnimation(3000);
             if(currentCircle == 5) {
                 currentCircle = 0;
             } else {
@@ -313,6 +334,7 @@ const mRotateOnce = (direction) => {
         currentRotation += 60;
     };
     mContinueRotation.style.display = "none";
+    mContinueRotationTop.style.display = "block";
     mCircleText.style.opacity = "0";
     direction.style.display = "none";
     setTimeout(() => {
@@ -320,7 +342,7 @@ const mRotateOnce = (direction) => {
     }, 1000);
     setTimeout(() => {
         mUpdateCircleText();
-    }, 1000);
+    }, 1200);
     mrotationAnimation(1000);
 };
 
@@ -328,9 +350,11 @@ const mUpdateCircleText = () => {
     if (rotationContinue) {
         setTimeout(() => {
             mContinueRotation.style.display = "block";
+            mContinueRotationTop.style.display = "none";
         }, 3000);
     } else {
         mContinueRotation.style.display = "block";
+        mContinueRotationTop.style.display = "none";
     };
     rotationContinue = false;
     setTimeout(() => {
