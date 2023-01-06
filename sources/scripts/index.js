@@ -202,8 +202,10 @@ const updateHero = (categoryIndex, thumb) => {
     setTimeout(() => {
         mHeroBg.setAttribute("src", categoryIndex.backgroundUrl);
         mHeroBg.setAttribute("poster", categoryIndex.poster);
-        mHeroBg.style.opacity = "1";
     }, 300);
+    setTimeout(() => {
+        mHeroBg.style.opacity = "1";
+    }, 1000);
     mHeroThumbCity.style.border = "none";
     mHeroThumbWater.style.border = "none";
     mHeroThumbMountain.style.border = "none";
