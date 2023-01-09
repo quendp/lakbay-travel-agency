@@ -102,9 +102,16 @@ body {
     box-shadow: 0 0 20px var(--clr-accent-lights-100);
 }
 
-#mHeroButton:hover {
+#mHeroButton:hover, #mHeroButton:active {
     background-color: var(--clr-accent-lights);
     box-shadow: 0 0 20px var(--clr-accent-lights);
+    border: none;
+    outline: none;
+}
+
+.btn, .btn:active {
+    border: none;
+    outline: none;
 }
 
 .m-hero-thumb {

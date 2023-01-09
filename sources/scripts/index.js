@@ -63,20 +63,20 @@ const mCategories = [
         accent: "var(--clr-accent-water)",
         accentLight: "var(--clr-accent-water-100",
         circleImage : [
-            "./sources/images/dive-under-water/el-nido-eibner-saliba-3T9dDY0WqDI-unsplash.jpg", 
+            "./sources/images/dive-under-water/bantayan.jpg", 
+            "./sources/images/dive-under-water/boracay.jpg",
             "./sources/images/dive-under-water/el-nido-eibner-saliba-3T9dDY0WqDI-unsplash.jpg",
-            "./sources/images/dive-under-water/el-nido-eibner-saliba-3T9dDY0WqDI-unsplash.jpg",
-            "./sources/images/dive-under-water/el-nido-eibner-saliba-3T9dDY0WqDI-unsplash.jpg",
-            "./sources/images/dive-under-water/el-nido-eibner-saliba-3T9dDY0WqDI-unsplash.jpg",
-            "./sources/images/dive-under-water/el-nido-eibner-saliba-3T9dDY0WqDI-unsplash.jpg"
+            "./sources/images/dive-under-water/palaui.jpg",
+            "./sources/images/dive-under-water/panglao.jpg",
+            "./sources/images/dive-under-water/siargao.jpg"
         ],
         circleText : [
-            "dive under water",
-            "dive under water",
-            "dive under water",
-            "dive under water",
-            "dive under water",
-            "dive under water"
+            "Bantayan Island in Cebu",
+            "Boracay Beach in Aklan",
+            "El Nido in Palawan",
+            "Palaui Island in Santa Ana",
+            "Panglao Island in Bohol",
+            "Siargao island"
         ]
     }, {
         category : "Explore the Summit",
@@ -88,20 +88,20 @@ const mCategories = [
         accent: "var(--clr-accent-summit)",
         accentLight: "var(--clr-accent-summit-100",
         circleImage : [
-            "./sources/images/explore-the-summit/mount-pulag-joanne-caselyn-kCGhXLU32Bg-unsplash.jpg", 
+            "./sources/images/explore-the-summit/apo.jpg", 
+            "./sources/images/explore-the-summit/guiting-guiting.jpg",
             "./sources/images/explore-the-summit/mount-pulag-joanne-caselyn-kCGhXLU32Bg-unsplash.jpg",
-            "./sources/images/explore-the-summit/mount-pulag-joanne-caselyn-kCGhXLU32Bg-unsplash.jpg",
-            "./sources/images/explore-the-summit/mount-pulag-joanne-caselyn-kCGhXLU32Bg-unsplash.jpg",
-            "./sources/images/explore-the-summit/mount-pulag-joanne-caselyn-kCGhXLU32Bg-unsplash.jpg",
-            "./sources/images/explore-the-summit/mount-pulag-joanne-caselyn-kCGhXLU32Bg-unsplash.jpg"
+            "./sources/images/explore-the-summit/pinatubo.jpg",
+            "./sources/images/explore-the-summit/ugo.jpg",
+            "./sources/images/explore-the-summit/ulap.jpg"
         ],
         circleText : [
-            "explore the summit",
-            "explore the summit",
-            "explore the summit",
-            "explore the summit",
-            "explore the summit",
-            "explore the summit"
+            "Mt. Apo in Davao City",
+            "Mt. Guiting-Guiting National Park in Sibuyan Island",
+            "Mt. Pulag in Benguet",
+            "Mt. Pinatubo in Zambales ",
+            "Mt. Ugo in Nueva Viscaya",
+            "Mt. Ulap in Itogon, Benguet"
         ]
     }, {
         category : "Look Back in History",
@@ -114,19 +114,19 @@ const mCategories = [
         accentLight: "var(--clr-accent-history-100",
         circleImage : [
             "./sources/images/look-back-in-history/calle-crisologo-593843_1920.jpg", 
-            "./sources/images/look-back-in-history/calle-crisologo-593843_1920.jpg",
-            "./sources/images/look-back-in-history/calle-crisologo-593843_1920.jpg",
-            "./sources/images/look-back-in-history/calle-crisologo-593843_1920.jpg",
-            "./sources/images/look-back-in-history/calle-crisologo-593843_1920.jpg",
-            "./sources/images/look-back-in-history/calle-crisologo-593843_1920.jpg"
+            "./sources/images/look-back-in-history/fort-santiago.jpg",
+            "./sources/images/look-back-in-history/mactan.jpg",
+            "./sources/images/look-back-in-history/museum.jpg",
+            "./sources/images/look-back-in-history/rizal.jpg",
+            "./sources/images/look-back-in-history/rizal-shrine.jpg"
         ],
         circleText : [
-            "look back in history",
-            "look back in history",
-            "look back in history",
-            "look back in history",
-            "look back in history",
-            "look back in history"
+            "Calle Crisologo in Vigan, Ilocos Sur",
+            "Fort Santiago, Intramuros, Manila",
+            "Magellan's Cross in Mactan, Cebu",
+            "National Museum of Natural History in Manila",
+            "Rizal park in Manila",
+            "Rizal Shrine in Dapitan, Zamboanga del Norte"
         ]
     }, {
         category : "Nature and Culture",
@@ -138,20 +138,20 @@ const mCategories = [
         accent: "var(--clr-accent-culture)",
         accentLight: "var(--clr-accent-culture-100",
         circleImage : [
-            "./sources/images/nature-and-culture/ifugao-ar-2FsniOcLPj8-unsplash.jpg", 
+            "./sources/images/nature-and-culture/bohol.jpg", 
+            "./sources/images/nature-and-culture/coron.jpg",
             "./sources/images/nature-and-culture/ifugao-ar-2FsniOcLPj8-unsplash.jpg",
-            "./sources/images/nature-and-culture/ifugao-ar-2FsniOcLPj8-unsplash.jpg",
-            "./sources/images/nature-and-culture/ifugao-ar-2FsniOcLPj8-unsplash.jpg",
-            "./sources/images/nature-and-culture/ifugao-ar-2FsniOcLPj8-unsplash.jpg",
-            "./sources/images/nature-and-culture/ifugao-ar-2FsniOcLPj8-unsplash.jpg"
+            "./sources/images/nature-and-culture/puerto-galera.jpg",
+            "./sources/images/nature-and-culture/tagaytay.jpg",
+            "./sources/images/nature-and-culture/tanay.jpg"
         ],
         circleText : [
-            "nature and culture",
-            "nature and culture",
-            "nature and culture",
-            "nature and culture",
-            "nature and culture",
-            "nature and culture"
+            "Chocolate Hills in Bohol",
+            "Barracuda Lake in Coron Island, Palawan Province",
+            "Banaue Rice Terraces in Ifugao",
+            "Puerto Galera in Mindoro oriental",
+            "Tagaytay in Cavite",
+            "Hanging Bridge in Masungi Georeserve in Tanay, Rizal"
         ]
     }
 ];
