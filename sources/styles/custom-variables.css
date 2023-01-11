@@ -9,9 +9,11 @@
     /* Colors */
     --clr-primary-dark: #080808;
     --clr-primary-glass: rgba(0, 0, 0, 0.8);
-    --clr-secondary-100: #f0f0f0;
+    --clr-secondary-100: #ecf1f7;
     --clr-secondary-200: #d4d3d3;
+    --clr-secondary-300: #f2f0ec;
     --clr-secondary-400: #a1a1a1;
+    --clr-secondary-500: #666565;
     --clr-secondary-700: #303030;
     --clr-accent-lights: #b97508;
     --clr-accent-lights-100: #ffae00;
@@ -32,9 +34,10 @@
     --fz--header-cat-list: clamp(1rem, 1.5vw, 2rem);
 
     --fz-main-h1: clamp(2rem, 7vw, 6rem);
-    --fz-main-h2: clamp(2.5rem, 7vw, 7rem);
-    --fz-main-h3: clamp(1rem, 3vw, 1.3rem);
-    --fz-main-p: clamp(0.8rem, 1.5vw, 1.5rem);
+    --fz-main-h2: clamp(1rem, 3vw, 3rem);
+    --fz-main-h3: clamp(0.8rem, 2vw, 2.5rem);
+    --fz-main-secondary: clamp(2.5rem, 7vw, 7rem);
+    --fz-main-p: clamp(0.8rem, 1.3vw, 1.5rem);
     --fz-main-text: clamp(0.7rem, 1vw, 1rem);
     --fz-main-small: clamp(0.6rem, 0.9vw, 1.3rem);
 }

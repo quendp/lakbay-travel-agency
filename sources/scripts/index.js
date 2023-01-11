@@ -396,3 +396,24 @@ mCircleNext.addEventListener("click", () => {mRotateOnce(mCircleNext)});
 mCirclePrev.addEventListener("click", () => {mRotateOnce(mCirclePrev)});
 
 mRotate();
+
+// stats section counter
+window.addEventListener("scroll", () => {
+    const statsCount = document.querySelectorAll(".m-stats-count");
+    const viewportHeight = document.getElementById("mHeroSection").clientHeight;
+    const activatePoint = document.getElementsByClassName("m-stats-section")[0].getBoundingClientRect().top;
+    if (activatePoint < viewportHeight) {
+        for (let i of statsCount){
+            const countLimit = i.dataset.limit;
+            let currentCount = 0;
+            let counterInterval = setInterval(() => {
+                i.textContent = currentCount;
+                currentCount = currentCount + Math.floor(countLimit/30);
+                if(currentCount >= countLimit) {
+                    i.textContent = countLimit;
+                    clearInterval(counterInterval);
+                }
+            }, 80);
+        };
+    };
+}, { once: true });

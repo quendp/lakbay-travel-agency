@@ -4,8 +4,8 @@ window.addEventListener("scroll", () => {
     for (let i of parallaxElement) {
         const elementHeight = i.clientHeight;
         const elementTop = i.getBoundingClientRect().top;
-        const elementCentered = (viewportHeight - elementHeight)/2;
-        const scrolled = elementTop - elementCentered;
+        const elementCentered = ((viewportHeight - elementHeight)/2)+100;
+        const scrolled = (elementTop - elementCentered)*i.dataset.rate;
         if(elementTop <= viewportHeight && elementTop >= elementCentered && i.dataset.direction == "left") {
             i.style.transform = `translate(${-scrolled}px, 0)`;
         } else if (elementTop <= viewportHeight && elementTop >= elementCentered) {
