@@ -30,7 +30,10 @@
 
 .f-footer-wrapper a {
     text-decoration: none;
-    
+}
+
+.f-footer-wrapper .m-paragraph-text-dark {
+    font-size: var(--fz-main-text);
 }
 
 .f-footer-wrapper form label {
@@ -45,6 +48,10 @@
     color: var(--clr-secondary-700);
     border-radius: 1rem;
     border: 1px solid var(--clr-secondary-700);
+}
+
+.f-footer-wrapper form textarea {
+    height: 150px;
 }
 
 .f-footer-submit {
