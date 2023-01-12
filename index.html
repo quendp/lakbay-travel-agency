@@ -1,827 +1,812 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lakbay | Exploring The Philippines and Creating Stories</title>
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="./sources/images/logo-svg/logo-outline-white.svg"
-    />
 
-    <!-- Bootstrap 5 CDN CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
-    <!-- Animate on scroll -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./sources/styles/fonts.css" />
-    <link rel="stylesheet" href="./sources/styles/custom-variables.css" />
-    <link rel="stylesheet" href="./sources/styles/loader.css" />
-    <link rel="stylesheet" href="./sources/styles/header.css" />
-    <link rel="stylesheet" href="./sources/styles/footer.css" />
-    <link rel="stylesheet" href="./sources/styles/index.css" />
-  </head>
-  <!-- Custom classes prefix: h- for header descendants, m-for main descendants, f-for footer descendants -->
-  <body class="overflow-hidden">
-    <!-- loader screen -->
-    <div
-      class="l-loader-wrapper vh-100 w-100 position-fixed top-0 start-0 row p-0 m-0 align-items-center justify-content-center"
-      id="loaderWrapper"
-    >
-      <div
-        class="overflow-hidden row h-75 p-0 col-xl-3 col-lg-4 col-md-5 col-sm-6 col-9 justify-content-center"
-      >
-        <div class="row p-0 w-100 align-self-end" id="loaderTextSub">
-          <div class="overflow-hidden col-12">
-            <p class="mb-2 text-center" id="loaderText1">
-              "A journey of a thousand miles
-            </p>
-          </div>
-          <div class="position-relative col-12 mb-2" id="loaderText2Sub">
-            <p class="mb-2 text-center" id="loaderText2">
-              must begin with a single step."
-            </p>
-            <svg id="loaderLogo" class="w-25 h-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 296.82 306.69"><defs><style>.cls-1{fill:#fff;}</style></defs><title>logo-outline-white</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M105.1,162.29l-.4-.29L89.63,151.24c-5.34,3.9-10.71,5.16-14.8,3.43A7,7,0,0,1,70.41,149c-.35-2.95,1.13-6,4.1-8.57-7.44-5.3-14.08-10.05-16.9-12.07-28.78,18.4-45.15,21.19-50.42,18A4.54,4.54,0,0,1,5,141.83c.7-7.21,14.63-19.87,43.57-30.71,0-2.27,0-8-.07-15.06l0-6.17c-3.91,1-7.14.54-9.17-1.42s-2.5-4.8-1.58-7.89c1.06-3.58,4.41-7.84,10.68-9.34,0-10.4-.06-18.7-.06-18.7V52L66.13,40.67,77.62,97l.36-.17,3.44-1.68c4.47-2.19,11.23-5.5,11.51-5.65l3-1.45c2.3-1.13,5.26-2.58,6.33-3.09,2.44-6.1,6.55-16.43,6.65-16.69l.12-.31.29-.16,14.54-8.07L121.66,78.3c40.66-9.61,82.93-8.92,165.86,23.18l.29.11.16.27A50,50,0,0,1,293.44,119l.26,1.89-1.63-1c-.7-.43-71.45-43.12-156.49-33.41h0c-3.47.39-6.93.93-10.33,1.61l16.4,8.84-15.31,7.36-.31-.08S117,102,109.22,100.16L85.85,112.93l38.83,41.38ZM89.6,149l.54.38c7.42,5.31,13.6,9.71,15.2,10.85l16.23-6.6L82.94,112.46l26-14.21.33.08c7,1.66,15.16,3.65,16.84,4.06l11.54-5.54-17.57-9.48,2.36-.52a123.06,123.06,0,0,1,12.9-2.15c78.43-9,144.8,26.35,156,32.71A49.64,49.64,0,0,0,286.57,103C203.42,70.9,161.5,70.53,120.83,80.35l-1.26.3L121.64,63l-11.2,6.22c-.86,2.19-5.21,13.08-6.67,16.73l-.13.33-.32.15c-.58.27-4,2-6.63,3.23l-3,1.45L82.21,96.71,78,98.78l1.39,6.76-3.22-6.88a1,1,0,0,1-.14-.55L64.89,43.6,50.13,53c0,2,0,9.7,0,18.93v.74l-.73.15c-6,1.17-9.09,5-10,8.24-.72,2.43-.3,4.71,1.12,6.08,1.72,1.67,4.75,1.9,8.52.66l1.18-.39,0,8.62c0,7.83.06,14,.07,15.68v.63l-.59.22c-30.34,11.26-42.48,24-43,29.42a2.71,2.71,0,0,0,1.36,2.81c3.91,2.39,18.64,1.23,49-18.27l.51-.33.5.35c2.56,1.84,10,7.19,18.36,13.11l1,.72-1,.74c-3.07,2.28-4.65,5.08-4.34,7.67a5.21,5.21,0,0,0,3.33,4.2c3.57,1.51,8.63.16,13.54-3.6Z"/><path class="cls-1" d="M261.68,251.57l-.64-.34c-6.36-3.32-12.68-6.66-19-10-29.7-15.7-60.42-31.93-93.53-45.46l-.56-.28c-53.86-25.77-109.84-3.77-141.48,23l-.93.79-.48-1.12c-1.8-4.15-3.41-8.19-4.81-12L0,205.46l.57-.4c37-25.6,69.08-36.38,100.92-33.92,29.22,2.26,56.56,15.13,89.17,31.78,18.39-28.51,60.2-55.9,105.15-53.5l.79,0,.06.78a101.62,101.62,0,0,1-.19,14.3l-.06.86-.86,0c-23.39-.61-62.39-1.65-96.94,40.35,10.46,5.16,67,33.17,69.44,36.59l.38.53-.38.52c-1.93,2.67-3.91,5.24-5.9,7.65ZM149.34,194.16c33.13,13.55,63.84,29.78,93.54,45.47q9.15,4.85,18.34,9.67c1.66-2,3.3-4.16,4.91-6.36-4.93-3.84-43.48-23.36-69.33-36.11l-1-.5.71-.87c34.86-43.06,74.27-42.54,98.24-41.91a114.17,114.17,0,0,0,.18-12.38c-44.32-2-85.41,25.25-103.19,53.41l-.43.69-.74-.37c-66.38-33.93-111-52-188.39,1.25,1.2,3.25,2.56,6.66,4.05,10.16a153.47,153.47,0,0,1,61-30.61c28.72-6.88,56.33-4,82.06,8.41Z"/><path class="cls-1" d="M216.88,288.44l-.47-.38C148.25,233.14,53.13,243.56,21.87,247l-.47.05-.31-.36C15.42,240,8,225.54,5,218.11l-.26-.65.56-.41C45,187.83,75.11,177.89,109.21,182.72c33.27,4.73,70.26,24,121.47,50.73,9.92,5.18,20.17,10.52,31.19,16.18l1,.51-.7.86c-11.46,14-27.76,27.58-44.73,37.14ZM71.55,242.21a323.75,323.75,0,0,1,41.83,2.61c41.17,5.41,76.05,19.35,103.68,41.45,16.25-9.24,31.83-22.13,43-35.55-10.65-5.47-20.58-10.65-30.2-15.67-51-26.62-87.93-45.86-120.9-50.54-33.42-4.75-63,5-102,33.58,3,7.33,9.84,20.55,15.19,27A453.23,453.23,0,0,1,71.55,242.21Z"/><path class="cls-1" d="M146.84,306.69c-45.84,0-88.46-21.21-114.6-47.36L31,258.08l1.74-.27c40.55-6.45,116.55-10.32,170,36.16l1.09.94-1.33.56A142.08,142.08,0,0,1,146.84,306.69ZM34.78,259.31c36.23,35.3,102.8,60.89,165.7,35.07C148.38,250,75.14,253.13,34.78,259.31Z"/><path class="cls-1" d="M202,295.69l-.43-.37c-52.93-46-128.33-42.13-168.56-35.74l-.46.08-.32-.33a129.51,129.51,0,0,1-11.18-12.7l-1-1.27,1.59-.17c22.11-2.42,55.67-5.09,91.7-.37,41.41,5.44,76.45,19.51,104.16,41.83l1,.83-1.15.66a143.82,143.82,0,0,1-14.9,7.33ZM80.19,254c38.91,0,85.7,8.19,122.15,39.62a142.67,142.67,0,0,0,13-6.38c-67-53.08-159.27-44-191.9-40.41a130.5,130.5,0,0,0,9.72,10.92A305.6,305.6,0,0,1,80.19,254Z"/><path class="cls-1" d="M267.32,244.37l-.73-1c-1.9-2.49-42.78-23.21-69.79-36.53l-1-.5.71-.87c35.28-43.58,75.23-42.53,99.1-41.88l.94,0-.07.94c-1.17,16.38-6.42,48.4-28.42,78.82Zm-68.71-38.65c9.87,4.88,60.84,30.13,68.55,35.8,20.85-29.25,26.17-59.87,27.45-76.17C271.13,164.74,232.7,164.28,198.61,205.72Z"/><path class="cls-1" d="M271.72,70.87l-3.23-2.43C196.15,14,102.27,19.7,38.52,43.14l-4.4,1.62,3.49-3.14C75.31,7.83,122.4-6.08,170.22,2.45c43.12,7.69,83.15,33.76,99.61,64.85ZM134.47,24.33c44.44,0,91.24,11,131.73,40.19-17.32-29-55.38-53-96.3-60.3C124.14-3.94,79,8.7,42.38,39.85A284.66,284.66,0,0,1,134.47,24.33Z"/><polygon class="cls-1" points="268.43 68.39 268.42 68.38 269.66 67.07 268.43 68.39"/><polygon class="cls-1" points="38.2 43.2 38.2 42.3 37.6 41.64 38.2 42.27 38.2 41.41 38.2 42.27 38.84 42.95 38.2 43.2"/><path class="cls-1" d="M191.31,205.28l-.75-.39c-15.13-7.87-31.39-16-47.82-22l-.49-.18-.08-.52c-3-17.73,2.05-32.56,14.17-41.76S186,129.46,200,136.05c13.79,6.49,21.78,19.4,22.5,36.37v.82l-.37.27c-20.24,14.46-30.31,30.89-30.41,31.05Zm-47.45-23.94c16.09,6,32,13.87,46.8,21.58a123.46,123.46,0,0,1,30.06-30.6c-.74-16.18-8.36-28.48-21.47-34.64-13.41-6.31-30.22-4.65-41.82,4.15S141.17,164.53,143.86,181.34Z"/></g></g></svg>
-          </div>
-          <div class="overflow-hidden col-12">
-            <p class="mb-2" id="loaderText3">- Lao Tzu</p>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lakbay | Exploring The Philippines and Creating Stories</title>
+  <link rel="icon" type="image/x-icon" href="./sources/images/logo-svg/logo-outline-white.svg" />
+
+  <!-- Bootstrap 5 CDN CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <!-- Animate on scroll -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./sources/styles/fonts.css" />
+  <link rel="stylesheet" href="./sources/styles/custom-variables.css" />
+  <link rel="stylesheet" href="./sources/styles/loader.css" />
+  <link rel="stylesheet" href="./sources/styles/header.css" />
+  <link rel="stylesheet" href="./sources/styles/footer.css" />
+  <link rel="stylesheet" href="./sources/styles/index.css" />
+</head>
+<!-- Custom classes prefix: h- for header descendants, m-for main descendants, f-for footer descendants -->
+
+<body class="overflow-hidden">
+  <!-- loader screen -->
+  <div
+    class="l-loader-wrapper vh-100 w-100 position-fixed top-0 start-0 row p-0 m-0 align-items-center justify-content-center"
+    id="loaderWrapper">
+    <div class="overflow-hidden row h-75 p-0 col-xl-3 col-lg-4 col-md-5 col-sm-6 col-9 justify-content-center">
+      <div class="row p-0 w-100 align-self-end" id="loaderTextSub">
+        <div class="overflow-hidden col-12">
+          <p class="mb-2 text-center" id="loaderText1">
+            "A journey of a thousand miles
+          </p>
         </div>
-        <div
-          class="row m-0 opacity-1 align-self-end justify-content-center"
-          id="loaderSub"
-        >
-          <div class="w-100 mb-2 d-flex justify-content-center px-5">
-            <div class="rounded-pill m-0" id="loaderBar"></div>
+        <div class="position-relative col-12 mb-2" id="loaderText2Sub">
+          <p class="mb-2 text-center" id="loaderText2">
+            must begin with a single step."
+          </p>
+          <svg id="loaderLogo" class="w-25 h-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 296.82 306.69">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: #fff;
+                }
+              </style>
+            </defs>
+            <title>logo-outline-white</title>
+            <g id="Layer_2" data-name="Layer 2">
+              <g id="Layer_1-2" data-name="Layer 1">
+                <path class="cls-1"
+                  d="M105.1,162.29l-.4-.29L89.63,151.24c-5.34,3.9-10.71,5.16-14.8,3.43A7,7,0,0,1,70.41,149c-.35-2.95,1.13-6,4.1-8.57-7.44-5.3-14.08-10.05-16.9-12.07-28.78,18.4-45.15,21.19-50.42,18A4.54,4.54,0,0,1,5,141.83c.7-7.21,14.63-19.87,43.57-30.71,0-2.27,0-8-.07-15.06l0-6.17c-3.91,1-7.14.54-9.17-1.42s-2.5-4.8-1.58-7.89c1.06-3.58,4.41-7.84,10.68-9.34,0-10.4-.06-18.7-.06-18.7V52L66.13,40.67,77.62,97l.36-.17,3.44-1.68c4.47-2.19,11.23-5.5,11.51-5.65l3-1.45c2.3-1.13,5.26-2.58,6.33-3.09,2.44-6.1,6.55-16.43,6.65-16.69l.12-.31.29-.16,14.54-8.07L121.66,78.3c40.66-9.61,82.93-8.92,165.86,23.18l.29.11.16.27A50,50,0,0,1,293.44,119l.26,1.89-1.63-1c-.7-.43-71.45-43.12-156.49-33.41h0c-3.47.39-6.93.93-10.33,1.61l16.4,8.84-15.31,7.36-.31-.08S117,102,109.22,100.16L85.85,112.93l38.83,41.38ZM89.6,149l.54.38c7.42,5.31,13.6,9.71,15.2,10.85l16.23-6.6L82.94,112.46l26-14.21.33.08c7,1.66,15.16,3.65,16.84,4.06l11.54-5.54-17.57-9.48,2.36-.52a123.06,123.06,0,0,1,12.9-2.15c78.43-9,144.8,26.35,156,32.71A49.64,49.64,0,0,0,286.57,103C203.42,70.9,161.5,70.53,120.83,80.35l-1.26.3L121.64,63l-11.2,6.22c-.86,2.19-5.21,13.08-6.67,16.73l-.13.33-.32.15c-.58.27-4,2-6.63,3.23l-3,1.45L82.21,96.71,78,98.78l1.39,6.76-3.22-6.88a1,1,0,0,1-.14-.55L64.89,43.6,50.13,53c0,2,0,9.7,0,18.93v.74l-.73.15c-6,1.17-9.09,5-10,8.24-.72,2.43-.3,4.71,1.12,6.08,1.72,1.67,4.75,1.9,8.52.66l1.18-.39,0,8.62c0,7.83.06,14,.07,15.68v.63l-.59.22c-30.34,11.26-42.48,24-43,29.42a2.71,2.71,0,0,0,1.36,2.81c3.91,2.39,18.64,1.23,49-18.27l.51-.33.5.35c2.56,1.84,10,7.19,18.36,13.11l1,.72-1,.74c-3.07,2.28-4.65,5.08-4.34,7.67a5.21,5.21,0,0,0,3.33,4.2c3.57,1.51,8.63.16,13.54-3.6Z" />
+                <path class="cls-1"
+                  d="M261.68,251.57l-.64-.34c-6.36-3.32-12.68-6.66-19-10-29.7-15.7-60.42-31.93-93.53-45.46l-.56-.28c-53.86-25.77-109.84-3.77-141.48,23l-.93.79-.48-1.12c-1.8-4.15-3.41-8.19-4.81-12L0,205.46l.57-.4c37-25.6,69.08-36.38,100.92-33.92,29.22,2.26,56.56,15.13,89.17,31.78,18.39-28.51,60.2-55.9,105.15-53.5l.79,0,.06.78a101.62,101.62,0,0,1-.19,14.3l-.06.86-.86,0c-23.39-.61-62.39-1.65-96.94,40.35,10.46,5.16,67,33.17,69.44,36.59l.38.53-.38.52c-1.93,2.67-3.91,5.24-5.9,7.65ZM149.34,194.16c33.13,13.55,63.84,29.78,93.54,45.47q9.15,4.85,18.34,9.67c1.66-2,3.3-4.16,4.91-6.36-4.93-3.84-43.48-23.36-69.33-36.11l-1-.5.71-.87c34.86-43.06,74.27-42.54,98.24-41.91a114.17,114.17,0,0,0,.18-12.38c-44.32-2-85.41,25.25-103.19,53.41l-.43.69-.74-.37c-66.38-33.93-111-52-188.39,1.25,1.2,3.25,2.56,6.66,4.05,10.16a153.47,153.47,0,0,1,61-30.61c28.72-6.88,56.33-4,82.06,8.41Z" />
+                <path class="cls-1"
+                  d="M216.88,288.44l-.47-.38C148.25,233.14,53.13,243.56,21.87,247l-.47.05-.31-.36C15.42,240,8,225.54,5,218.11l-.26-.65.56-.41C45,187.83,75.11,177.89,109.21,182.72c33.27,4.73,70.26,24,121.47,50.73,9.92,5.18,20.17,10.52,31.19,16.18l1,.51-.7.86c-11.46,14-27.76,27.58-44.73,37.14ZM71.55,242.21a323.75,323.75,0,0,1,41.83,2.61c41.17,5.41,76.05,19.35,103.68,41.45,16.25-9.24,31.83-22.13,43-35.55-10.65-5.47-20.58-10.65-30.2-15.67-51-26.62-87.93-45.86-120.9-50.54-33.42-4.75-63,5-102,33.58,3,7.33,9.84,20.55,15.19,27A453.23,453.23,0,0,1,71.55,242.21Z" />
+                <path class="cls-1"
+                  d="M146.84,306.69c-45.84,0-88.46-21.21-114.6-47.36L31,258.08l1.74-.27c40.55-6.45,116.55-10.32,170,36.16l1.09.94-1.33.56A142.08,142.08,0,0,1,146.84,306.69ZM34.78,259.31c36.23,35.3,102.8,60.89,165.7,35.07C148.38,250,75.14,253.13,34.78,259.31Z" />
+                <path class="cls-1"
+                  d="M202,295.69l-.43-.37c-52.93-46-128.33-42.13-168.56-35.74l-.46.08-.32-.33a129.51,129.51,0,0,1-11.18-12.7l-1-1.27,1.59-.17c22.11-2.42,55.67-5.09,91.7-.37,41.41,5.44,76.45,19.51,104.16,41.83l1,.83-1.15.66a143.82,143.82,0,0,1-14.9,7.33ZM80.19,254c38.91,0,85.7,8.19,122.15,39.62a142.67,142.67,0,0,0,13-6.38c-67-53.08-159.27-44-191.9-40.41a130.5,130.5,0,0,0,9.72,10.92A305.6,305.6,0,0,1,80.19,254Z" />
+                <path class="cls-1"
+                  d="M267.32,244.37l-.73-1c-1.9-2.49-42.78-23.21-69.79-36.53l-1-.5.71-.87c35.28-43.58,75.23-42.53,99.1-41.88l.94,0-.07.94c-1.17,16.38-6.42,48.4-28.42,78.82Zm-68.71-38.65c9.87,4.88,60.84,30.13,68.55,35.8,20.85-29.25,26.17-59.87,27.45-76.17C271.13,164.74,232.7,164.28,198.61,205.72Z" />
+                <path class="cls-1"
+                  d="M271.72,70.87l-3.23-2.43C196.15,14,102.27,19.7,38.52,43.14l-4.4,1.62,3.49-3.14C75.31,7.83,122.4-6.08,170.22,2.45c43.12,7.69,83.15,33.76,99.61,64.85ZM134.47,24.33c44.44,0,91.24,11,131.73,40.19-17.32-29-55.38-53-96.3-60.3C124.14-3.94,79,8.7,42.38,39.85A284.66,284.66,0,0,1,134.47,24.33Z" />
+                <polygon class="cls-1" points="268.43 68.39 268.42 68.38 269.66 67.07 268.43 68.39" />
+                <polygon class="cls-1"
+                  points="38.2 43.2 38.2 42.3 37.6 41.64 38.2 42.27 38.2 41.41 38.2 42.27 38.84 42.95 38.2 43.2" />
+                <path class="cls-1"
+                  d="M191.31,205.28l-.75-.39c-15.13-7.87-31.39-16-47.82-22l-.49-.18-.08-.52c-3-17.73,2.05-32.56,14.17-41.76S186,129.46,200,136.05c13.79,6.49,21.78,19.4,22.5,36.37v.82l-.37.27c-20.24,14.46-30.31,30.89-30.41,31.05Zm-47.45-23.94c16.09,6,32,13.87,46.8,21.58a123.46,123.46,0,0,1,30.06-30.6c-.74-16.18-8.36-28.48-21.47-34.64-13.41-6.31-30.22-4.65-41.82,4.15S141.17,164.53,143.86,181.34Z" />
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div class="overflow-hidden col-12">
+          <p class="mb-2" id="loaderText3">- Lao Tzu</p>
+        </div>
+      </div>
+      <div class="row m-0 opacity-1 align-self-end justify-content-center" id="loaderSub">
+        <div class="w-100 mb-2 d-flex justify-content-center px-5">
+          <div class="rounded-pill m-0" id="loaderBar"></div>
+        </div>
+        <p class="text-center"><span id="loaderPercent">0</span>%</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sign Up Modal -->
+  <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content p-3 p-md-4">
+        <div class="modal-header pt-4">
+          <h1 class="modal-title" id="signUpModalLabel">Create a Lakbay Account</h1>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="#" class="needs-validation" novalidate>
+          <div class="modal-body py-3">
+            <div class="row g-0 g-sm-4">
+              <div class="form-floating mb-3 mb-sm-4 col-12 col-sm-6">
+                <input type="text" id="formFirstName" class="form-control" placeholder="Firstname"
+                  aria-label="Firstname" required />
+                <label for="formFirstName" class="ps-3 ps-sm-4">First Name</label>
+                <div class="invalid-feedback">
+                  First name cannot be empty.
+                </div>
+              </div>
+              <div class="form-floating mb-3 mb-sm-4 col-12 col-sm-6">
+                <input type="text" id="formLastName" class="form-control" placeholder="Lastname" aria-label="Lastname"
+                  required />
+                <label for="formLastName" class="ps-3 ps-sm-4">Last Name</label>
+                <div class="invalid-feedback">Last name cannot be empty.</div>
+              </div>
+            </div>
+
+            <div class="row g-0 g-sm-4">
+              <div class="form-floating mb-3 mb-sm-4 col-12 col-sm-6">
+                <input type="email" class="form-control" id="formEmail" placeholder="name@example.com" required />
+                <label for="formEmail" class="ps-3 ps-sm-4">Email Address</label>
+                <div class="invalid-feedback">
+                  Please choose a valid email.
+                </div>
+              </div>
+              <div class="form-floating mb-3 mb-sm-4 col-12 col-sm-6">
+                <input type="number" class="form-control" id="formNumber" placeholder="____ - ___ - ____" required />
+                <label for="formNumber" class="ps-3 ps-sm-4">Phone Number</label>
+                <div class="invalid-feedback">
+                  Please choose a valid number.
+                </div>
+              </div>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="formPassword" placeholder="Password" required />
+              <label for="formPassword">Password</label>
+              <div class="invalid-feedback">
+                Please choose a valid password.
+              </div>
+            </div>
+            <div class="form-floating">
+              <input type="password" class="form-control" id="formConfirmPass" placeholder="Confirm Password"
+                required />
+              <label for="formConfirmPass">Confirm Password</label>
+              <div class="invalid-feedback">Password doesn't match.</div>
+            </div>
           </div>
-          <p class="text-center"><span id="loaderPercent">0</span>%</p>
+          <div class="modal-footer">
+            <button type="button" class="btn modal-cancel-btn" data-bs-dismiss="modal">
+              Cancel
+            </button>
+            <button type="submit" class="btn modal-signup-btn">Sign Up</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header  -->
+  <header class="h-header-wrapper container-fluid position-fixed top-0 start-0" id="hHeaderWrapper">
+    <div class="row navbar px-0 px-sm-2 px-md-2 px-lg-5">
+      <div class="col-3">
+        <a class="navbar-brand h-logo" href="./index.html">
+          <img src="./sources/images/logo-svg/logo-outline-white.svg" alt="Lakbay Travel Agency Logo" width="40px" />
+        </a>
+      </div>
+      <div class="h-header-title position-relative col-6">
+        <span class="position-absolute top-50 start-50"> LAKBAY </span>
+        <h2 class="position-absolute top-50 start-50 w-100 text-center text-uppercase">
+          Exploring The Philippines and Creating Stories
+        </h2>
+      </div>
+      <div class="h-ham-container col-3 d-flex justify-content-end align-items-center">
+        <!-- Sign Up button trigger modal -->
+        <button type="button"
+          class="h-btn-signUp btn me-4 px-4 py-2 d-none d-md-block position-relative overflow-hidden rounded-pill"
+          data-bs-toggle="modal" data-bs-target="#signUpModal">
+          SIGN UP
+        </button>
+        <div class="h-btn-ham position-relative" id="hButtonHam">
+          <span class="position-absolute start-50"></span>
+          <span class="position-absolute start-50"></span>
         </div>
       </div>
     </div>
-    
-    <!-- Sign Up Modal -->
-    <div
-      class="modal fade"
-      id="signUpModal"
-      tabindex="-1"
-      aria-labelledby="signUpModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content p-3 p-md-4">
-          <div class="modal-header pt-4">
-            <h1 class="modal-title" id="signUpModalLabel">Create a Lakbay Account</h1>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+    <nav class="h-nav-container d-flex flex-column justify-content-start align-items-center d-none pt-5"
+      id="hNavContainer">
+      <ul class="h-nav-list w-100 py-4 mb-4 rounded d-flex justify-content-evenly p-0">
+        <li class="h-nav-item position-relative text-center">
+          <a class="text-uppercase text-decoration-none" href="./index.html">Home</a>
+        </li>
+        <li class="h-nav-item position-relative text-center">
+          <a class="text-uppercase text-decoration-none" href="./pages/contact.html">Contact</a>
+        </li>
+        <li class="h-nav-item position-relative text-center">
+          <a class="text-uppercase text-decoration-none" href="./pages/about.html">About</a>
+        </li>
+        <li class="h-nav-item position-relative text-center">
+          <a class="text-uppercase text-decoration-none" href="#" data-bs-toggle="modal"
+            data-bs-target="#signUpModal">Sign Up</a>
+        </li>
+      </ul>
+      <div
+        class="h-categories-container d-flex flex-column justify-content-center align-items-center w-100 h-100 position-relative">
+        <div class="d-flex justify-content-center align-items-center position-relative w-100 h-100"
+          id="hPreviewImage-sub">
+          <h2 class="hPreviewImageTitle-top lh-1">EXPLORE</h2>
+          <div
+            class="d-flex justify-content-center align-items-start align-items-md-center position-absolute bottom-0 start-0 w-100 rounded"
+            id="hPreviewImage">
+            <h2 id="hPreviewImageTitle" class="py-5 d-none"></h2>
+            <p class="hPreviewImageDesc position-absolute start-50 text-center">
+              HOVER ITEMS BELOW TO PREVIEW
+            </p>
           </div>
-          <form action="#" class="needs-validation" novalidate>
-            <div class="modal-body py-3">
-              <div class="row g-0 g-sm-3">
-                <div class="form-floating mb-3 col-12 col-sm-6">
-                  <input
-                    type="text"
-                    id="formFirstName"
-                    class="form-control"
-                    placeholder="Firstname"
-                    aria-label="Firstname"
-                    required
-                  />
-                  <label for="formFirstName" class="ps-3">First Name</label>
-                  <div class="invalid-feedback">
-                    First name cannot be empty.
-                  </div>
-                </div>
-                <div class="form-floating mb-3 col-12 col-sm-6">
-                  <input
-                    type="text"
-                    id="formLastName"
-                    class="form-control"
-                    placeholder="Lastname"
-                    aria-label="Lastname"
-                    required
-                  />
-                  <label for="formLastName" class="ps-3">Last Name</label>
-                  <div class="invalid-feedback">Last name cannot be empty.</div>
-                </div>
-              </div>
+        </div>
+        <ul
+          class="h-categories-list container-fluid d-flex flex-column flex-md-row justify-content-center justify-content-md-evenly align-items-center p-0 my-3">
+          <li class="my-2" id="hImageLights">
+            <a class="text-decoration-none"
+              href="./pages/categories/cosmopolitan-lights/cosmopolitan-lights.html">Cosmopolitan Lights</a>
+          </li>
+          <li class="my-2" id="hImageWater">
+            <a class="text-decoration-none" href="./pages/categories/dive-under-water/dive-under-water.html">Dive Under
+              Water</a>
+          </li>
+          <li class="my-2" id="hImageSummit">
+            <a class="text-decoration-none" href="./pages/categories/explore-the-summit/explore-the-summit.html">Explore
+              the Summit</a>
+          </li>
+          <li class="my-2" id="hImageHistory">
+            <a class="text-decoration-none"
+              href="./pages/categories/look-back-in-history/look-back-in-history.html">Look Back in History</a>
+          </li>
+          <li class="my-2" id="hImageCulture">
+            <a class="text-decoration-none" href="./pages/categories/nature-and-culture/nature-and-culture.html">Nature
+              and Culture</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-              <div class="row g-0 g-sm-3">
-                <div class="form-floating mb-3 col-12 col-sm-6">
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="formEmail"
-                    placeholder="name@example.com"
-                    required
-                  />
-                  <label for="formEmail" class="ps-3">Email Address</label>
-                  <div class="invalid-feedback">
-                    Please choose a valid email.
-                  </div>
+  <!-- body-wrapper -->
+  <div class="body-wrapper m-0 p-0">
+    <!-- Main Content -->
+    <main class="container-fluid p-0 m-0 position-relative">
+      <!-- hero section -->
+      <section class="m-hero-section m-0 vh-100 justify-content-center" id="mHeroSection">
+        <video class="m-hero-bg m-0 p-0 position-fixed top-0 start-0 vh-100 w-100" id="mHeroBg"
+          poster="./sources/images/hero-section-thumbnails/city-poster.jpg" muted loop autoplay>
+          <source src="./sources/videos/city.mp4" />
+        </video>
+        <div class="row h-100 p-0 m-0">
+          <div class="row h-100 p-0 m-0">
+            <div class="col-md-6 col-12 py-0 pt-md-4 px-3 px-md-5 m-0">
+              <div
+                class="h-75 py-0 px-3 px-md-0 px-xl-5 m-0 d-flex flex-column justify-content-center align-items-center"
+                id="mHeroLeft">
+                <div
+                  class="w-100 d-flex flex-column justify-content-center align-items-center align-items-md-start p-0 mx-0 mt-0 mb-5">
+                  <h1 class="lh-1 my-0 text-center text-md-start text-nowrap" id="mHeroCategoryTitle">
+                    Visit the Lively <br> and Colorful Cities
+                    <h2 class="lh-1 mx-0 mb-0 text-center text-md-start text-nowrap" id="mHeroCategory">
+                      Cosmopolitan Lights
+                    </h2>
                 </div>
-                <div class="form-floating mb-3 col-12 col-sm-6">
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="formNumber"
-                    placeholder="____ - ___ - ____"
-                    required
-                  />
-                  <label for="formNumber" class="ps-3">Phone Number</label>
-                  <div class="invalid-feedback">
-                    Please choose a valid number.
+                <div
+                  class="w-100 d-flex flex-column justify-content-start align-items-start align-items-md-start p-0 m-0">
+                  <div
+                    class="p-0 px-sm-5 px-md-0 pe-lg-5 m-0 d-flex flex-column align-items-center align-items-md-start justify-content-center">
+                    <p class="w-100 mx-0 mt-0 mb-4 p-0 px-sm-5 px-md-0 pe-lg-5 text-center text-md-start"
+                      id="mHeroDescription">
+                      A trip to Star City Amusement Park, Manila Ocean Park, Chinatown, and Solaire Resort and Casino in
+                      Manila, and Mall of Asia and Cultural Center of the Philippines in Pasay. </p>
+                    <button class="btn p-0 m-0">
+                      <a href="./pages/categories/cosmopolitan-lights/cosmopolitan-lights.html"
+                        class="btn rounded-pill px-4 py-2 text-uppercase" id="mHeroButton">
+                        discover more
+                      </a>
+                    </button>
                   </div>
                 </div>
               </div>
-
-              <div class="form-floating mb-3">
-                <input
-                  type="password"
-                  class="form-control"
-                  id="formPassword"
-                  placeholder="Password"
-                  required
-                />
-                <label for="formPassword">Password</label>
-                <div class="invalid-feedback">
-                  Please choose a valid password.
+              <div class="row h-25 p-0 m-0 justify-content-center">
+                <div class="col-12 py-0 px-0 px-md-5 m-0 d-flex flex-column align-items-center">
+                  <div class="row p-0 m-0 h-75 d-flex justify-content-between">
+                    <div class="col-2 d-flex align-items-end px-0 py-3">
+                      <div class="w-100 rounded overflow-hidden m-hero-thumb m-hero-thumb-1" id="mHeroThumb1">
+                        <img src="./sources/images/hero-section-thumbnails/city-thumb.jpg" alt="city lights thumbnail"
+                          width="100%" height="auto" />
+                      </div>
+                    </div>
+                    <div class="col-2 d-flex align-items-end px-0 py-3">
+                      <div class="w-100 rounded overflow-hidden m-hero-thumb m-hero-thumb-2" id="mHeroThumb2">
+                        <img src="./sources/images/hero-section-thumbnails/water-thumb.jpg"
+                          alt="dive underwater thumbnail" width="100%" height="auto" />
+                      </div>
+                    </div>
+                    <div class="col-2 d-flex align-items-end px-0 py-3">
+                      <div class="w-100 rounded overflow-hidden m-hero-thumb m-hero-thumb-3" id="mHeroThumb3">
+                        <img src="./sources/images/hero-section-thumbnails/mountain-thumb.jpg" alt="mountains thumbnail"
+                          width="100%" height="auto" />
+                      </div>
+                    </div>
+                    <div class="col-2 d-flex align-items-end px-0 py-3">
+                      <div class="w-100 rounded overflow-hidden m-hero-thumb m-hero-thumb-4" id="mHeroThumb4">
+                        <img src="./sources/images/hero-section-thumbnails/history-thumb.jpg" alt="history thumbnail"
+                          width="100%" height="auto" />
+                      </div>
+                    </div>
+                    <div class="col-2 d-flex align-items-end px-0 py-3">
+                      <div class="w-100 rounded overflow-hidden m-hero-thumb m-hero-thumb-5" id="mHeroThumb5">
+                        <img src="./sources/images/hero-section-thumbnails/nature-thumb.jpg" alt="nature thumbnail"
+                          width="100%" height="auto" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row h-25 p-0 m-0 text-uppercase lh-1 d-flex justify-content-center align-items-start">
+                    <div class="overflow-hidden h-75 d-flex justify-content-center align-items-center">
+                      <span id="mThumbDesc">
+                        Cosmopolitan Lights
+                      </span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="form-floating">
-                <input
-                  type="password"
-                  class="form-control"
-                  id="formConfirmPass"
-                  placeholder="Confirm Password"
-                  required
-                />
-                <label for="formConfirmPass">Confirm Password</label>
-                <div class="invalid-feedback">Password doesn't match.</div>
               </div>
             </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn modal-cancel-btn"
-                data-bs-dismiss="modal"
-              >
-                Cancel
-              </button>
-              <button type="submit" class="btn modal-signup-btn">Sign Up</button>
+            <div class="d-none col-md-6 col-12 d-md-flex justify-content-center align-items-center position-relative"
+              id="mHeroRight">
+              <div
+                class="m-hero-circle-sub m-continue-rotation rounded-circle position-absolute top-100 start-100 d-flex justify-content-center align-items-center">
+                <div class="position-relative h-100 w-100 rounded-circle">
+                  <div class="class-position-absolute h-100 w-100" id="mContinueRotationTop">
+                    <div class="mContText1 position-absolute h-100 top-0 start-50 pt-4"><span>C</span></div>
+                    <div class="mContText2 position-absolute h-100 top-0 start-50 pt-4"><span>L</span></div>
+                    <div class="mContText3 position-absolute h-100 top-0 start-50 pt-4"><span>I</span></div>
+                    <div class="mContText4 position-absolute h-100 top-0 start-50 pt-4"><span>C</span></div>
+                    <div class="mContText5 position-absolute h-100 top-0 start-50 pt-4"><span>K </span></div>
+                    <div class="mContText6 position-absolute h-100 top-0 start-50 pt-4"><span> </span></div>
+                    <div class="mContText7 position-absolute h-100 top-0 start-50 pt-4"><span>I</span></div>
+                    <div class="mContText8 position-absolute h-100 top-0 start-50 pt-4"><span>M</span></div>
+                    <div class="mContText9 position-absolute h-100 top-0 start-50 pt-4"><span>A</span></div>
+                    <div class="mContText10 position-absolute h-100 top-0 start-50 pt-4"><span>G</span></div>
+                    <div class="mContText11 position-absolute h-100 top-0 start-50 pt-4"><span>E</span></div>
+                  </div>
+                  <div class="class-position-absolute h-100 w-100" id="mContinueRotation">
+                    <div class="mContText1 position-absolute h-100 top-0 start-50 pt-4"><span>A</span></div>
+                    <div class="mContText2 position-absolute h-100 top-0 start-50 pt-4"><span>U</span></div>
+                    <div class="mContText3 position-absolute h-100 top-0 start-50 pt-4"><span>T</span></div>
+                    <div class="mContText4 position-absolute h-100 top-0 start-50 pt-4"><span>O</span></div>
+                    <div class="mContText5 position-absolute h-100 top-0 start-50 pt-4"><span>-</span></div>
+                    <div class="mContText6 position-absolute h-100 top-0 start-50 pt-4"><span>R</span></div>
+                    <div class="mContText7 position-absolute h-100 top-0 start-50 pt-4"><span>O</span></div>
+                    <div class="mContText8 position-absolute h-100 top-0 start-50 pt-4"><span>T</span></div>
+                    <div class="mContText9 position-absolute h-100 top-0 start-50 pt-4"><span>A</span></div>
+                    <div class="mContText10 position-absolute h-100 top-0 start-50 pt-4"><span>T</span></div>
+                    <div class="mContText11 position-absolute h-100 top-0 start-50 pt-4"><span>E</span></div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="row mHeroCircle rounded-circle position-absolute d-flex justify-content-center align-items-center"
+                id="mHeroCircle">
+                <div
+                  class="position-relative rounded-circle d-flex justify-content-center align-items-center w-100 h-100">
+                  <div
+                    class="m-hero-circle-sub position-absolute rounded-circle overflow-hidden d-flex justify-content-center align-items-center"
+                    id="circleImage1Sub">
+                    <img class="m-hero-circle-image" id="mCircleImage1"
+                      src="./sources/images/cosmopolitan-lights/star-city.webp" alt="Star City Amusement Park in Pasay">
+                  </div>
+                  <div
+                    class="m-hero-circle-sub position-absolute rounded-circle overflow-hidden d-flex justify-content-center align-items-center"
+                    id="circleImage2Sub">
+                    <img class="m-hero-circle-image" id="mCircleImage2"
+                      src="./sources/images/cosmopolitan-lights/chinatown.jpg" alt="Chinatown in Binondo Manila">
+                  </div>
+                  <div
+                    class="m-hero-circle-sub position-absolute rounded-circle overflow-hidden d-flex justify-content-center align-items-center"
+                    id="circleImage3Sub">
+                    <img class="m-hero-circle-image" id="mCircleImage3"
+                      src="./sources/images/cosmopolitan-lights/mall-of-asia.jpg" alt="Mall of Asia in Pasay City">
+                  </div>
+                  <div
+                    class="m-hero-circle-sub position-absolute rounded-circle overflow-hidden d-flex justify-content-center align-items-center"
+                    id="circleImage4Sub">
+                    <img class="m-hero-circle-image" id="mCircleImage4"
+                      src="./sources/images/cosmopolitan-lights/manila-ocean-park.jpg" alt="Manila Ocean Park">
+                  </div>
+                  <div
+                    class="m-hero-circle-sub position-absolute rounded-circle overflow-hidden d-flex justify-content-center align-items-center"
+                    id="circleImage5Sub">
+                    <img class="m-hero-circle-image" id="mCircleImage5"
+                      src="./sources/images/cosmopolitan-lights/solaire.jpg" alt="Solaire Resort & Casino Manila">
+                  </div>
+                  <div
+                    class="m-hero-circle-sub position-absolute rounded-circle overflow-hidden d-flex justify-content-center align-items-center"
+                    id="circleImage6Sub">
+                    <img class="m-hero-circle-image" id="mCircleImage6"
+                      src="./sources/images/cosmopolitan-lights/ccp.webp"
+                      alt="Cultural Center of the Philippines in Pasay City">
+                  </div>
+                </div>
+              </div>
+              <div class="position-absolute top-0 end-0 h-100" id="mCircleNext"></div>
+              <div class="position-absolute bottom-0 end-0 w-100" id="mCirclePrev"></div>
+              <div class="m-circle-text position-absolute text-center ">
+                <p class="py-3 px-3 rounded-pill" id="mCircleText"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- stats section -->
+      <section
+        class="m-stats-section row m-0 py-0 py-md-5 flex-column flex-md-row justify-content-center align-items-center align-items-md-start">
+        <div
+          class="order-2 order-md-1 col-12 col-md-7 p-0 p-md-5 d-flex flex-column flex-md-row justify-content-between align-items-center align-items-md-start parallax-scroll align-self-center"
+          data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">
+          <div class="w-100 d-flex flex-column justify-content-center align-items-center mb-4 mb-md-0">
+            <h3 class="m-stats-count m-0 lh-1" data-limit=1532>
+              0
+            </h3>
+            <span class="text-center">
+              Trips in the last 5 years
+            </span>
+          </div>
+          <div class="w-100 d-flex flex-column justify-content-center align-items-center mb-4 mb-md-0">
+            <h3 class="m-stats-count m-0 lh-1" data-limit=30>
+              0
+            </h3>
+            <span class="text-center">
+              Major Destinations
+            </span>
+          </div>
+          <div class="w-100 d-flex flex-column justify-content-center align-items-center mb-4 mb-md-0">
+            <h3 class="m-stats-count m-0 lh-1" data-limit=10257>
+              0
+            </h3>
+            <span class="text-center">
+              Members around the world
+            </span>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 p-4 p-md-5 text-center text-md-start order-1 order-md-2 parallax-scroll"
+          data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">
+          <h2 class="m-heading-2-dark mb-3 mb-sm-4 fw-bold">
+            Why choose Lakbay Travel Agency?
+          </h2>
+          <p class="m-paragraph-text-dark">
+            The fastest growing travel agency in the Philippines. Providing hassle-free travel services at an affordable
+            price but premium quality. Guiding you in your journey since 2018 and still counting.
+          </p>
+        </div>
+      </section>
+
+      <!-- services section -->
+      <section
+        class="m-services-section position-relative p-0 m-0 d-flex flex-column justify-content-start align-items-center">
+        <img class="m-services-image-1 position-absolute start-0 w-100" src="./sources/images/clouds.png" alt="clouds">
+        <img class="m-services-image-2 position-absolute parallax-scroll" src="./sources/images/birds.png"
+          alt="Flock of birds" data-direction="left" data-rate="0.5">
+        <img class="m-services-image-3 position-absolute parallax-scroll" src="./sources/images/plane.png"
+          alt="Air Plane" data-direction="right" data-rate="0.8">
+        <div class="m-services-image-4 position-absolute parallax-scroll w-100 bottom-0">
+          <svg class="w-100" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+            <mask id="m">
+              <g class="cloud1">
+                <rect fill="#fff" width="100%" height="801" y="799" />
+                <image xlink:href="https://assets.codepen.io/721952/cloud1Mask.jpg" width="1200" height="800" />
+              </g>
+            </mask>
+            <image class="mountBg" xlink:href="https://assets.codepen.io/721952/mountBg.png" width="1200"
+              height="800" />
+            <image class="mountMg" xlink:href="https://assets.codepen.io/721952/mountMg.png" width="1200"
+              height="800" />
+            <image class="cloud2" xlink:href="https://assets.codepen.io/721952/cloud2.png" width="1200" height="800" />
+            <image class="mountFg" xlink:href="https://assets.codepen.io/721952/mountFg.png" width="1200"
+              height="800" />
+            <image class="cloud1" xlink:href="https://assets.codepen.io/721952/cloud1.png" width="1200" height="800" />
+            <image class="cloud3" xlink:href="https://assets.codepen.io/721952/cloud3.png" width="1200" height="800" />
+
+          </svg>
+        </div>
+        <div class="m-services-quote d-flex flex-column justify-content-start align-items-center w-75">
+          <div class="m-services-quote-1 align-self-start parallax-scroll" data-direction="left" data-rate="1">
+            <img src="./sources/images/quote.svg" alt="quotation marks">
+          </div>
+          <p class="w-75 text-center m-0 p-0 position-relative" data-aos="fade" data-aos-delay="300"
+            data-aos-duration="500">
+            Memories are created in memorable places. And here in Lakbay Travel Agency, we will help you create those
+            picture-perfect moments. <br>
+            <span class="position-absolute start-50">
+              - John Doe, CEO
+            </span>
+          </p>
+          <div class="m-services-quote-2 align-self-end parallax-scroll" data-direction="right" data-rate="1">
+            <img src="./sources/images/quote.svg" alt="quotation marks">
+          </div>
+        </div>
+        <div class="container-fluid m-0 px-0 px-md-5">
+          <div class="m-services-content row m-0 px-0 px-md-5 py-5 justify-content-center align-items-center">
+            <div
+              class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center align-self-center align-self-md-start">
+              <div class="position-relative px-5 py-4 w-75 mb-5 m-services-content-sub text-center parallax-scroll"
+                data-direction="left" data-rate="1">
+                <span class="position-absolute top-0 start-0">
+                  01
+                </span>
+                <h3 class="m-heading-3-dark-2 mb-3">
+                  Visa Consultation
+                </h3>
+                <p class="m-paragraph-text-dark">
+                  We will assist you with the visa application, documentation, and other necessary processes.
+                </p>
+              </div>
+              <div class="position-relative px-5 py-4 w-75 mb-5 m-services-content-sub text-center parallax-scroll"
+                data-direction="left" data-rate="1">
+                <span class="position-absolute top-0 start-0">
+                  02
+                </span>
+                <h3 class="m-heading-3-dark-2 mb-3">
+                  Transportation Assistance
+                </h3>
+                <p class="m-paragraph-text-dark">
+                  We can also help you with the booking of your flights, and other transportation vehicles.
+                </p>
+              </div>
+            </div>
+            <div
+              class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center align-self-center align-self-md-end">
+              <div class="position-relative px-5 py-4 w-75 mb-5 m-services-content-sub text-center parallax-scroll"
+                data-direction="right" data-rate="1">
+                <span class="position-absolute top-0 start-0">
+                  03
+                </span>
+                <h3 class="m-heading-3-dark-2 mb-3">
+                  Fun Events and Activities
+                </h3>
+                <p class="m-paragraph-text-dark">
+                  We can also set additional events and programs that could make your experience more memorable.
+                </p>
+              </div>
+              <div class="position-relative px-5 py-4 w-75 mb-5 m-services-content-sub text-center parallax-scroll"
+                data-direction="right" data-rate="1">
+                <span class="position-absolute top-0 start-0">
+                  04
+                </span>
+                <h3 class="m-heading-3-dark-2 mb-3">
+                  Accomodation Assistance
+                </h3>
+                <p class="m-paragraph-text-dark">
+                  We will handle your accomodation during the trip including hotel booking and restaurant reservations.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- stories section -->
+      <section class="m-stories-section row m-0 justify-content-start py-5">
+        <div
+          class="col-12 col-md-6 parallax-scroll p-0 p-md-5 d-flex flex-column justify-content-center align-items-center"
+          data-aos="fade-up" data-aos-duration="500">
+          <div
+            class="px-5 ps-md-5 pe-md-0 d-flex flex-column justify-content-center align-items-center align-items-md-start text-center text-md-start mb-3 mb-md-0">
+            <h2 class="m-heading-2-dark mb-3 fw-bold">
+              Read the stories of fellow travelers who accompanied us these past few years
+            </h2>
+            <p class="m-paragraph-text-dark pe-0 pe-md-5 mb-3 mb-md-4">
+              Join our community and read the stories of fellow travel lovers in our "Share your Story" page. You can
+              also share your own story if you already took part in our trips before.
+            </p>
+            <button class="btn p-0 m-0">
+              <a class="btn m-primary-btn-dark rounded-pill" href="./pages/404.html">
+                Learn more >
+              </a>
+            </button>
+          </div>
+        </div>
+        <div
+          class="col-12 col-md-6 p-0 p-md-5 d-flex flex-column justify-content-center align-items-center parallax-scroll"
+          data-aos="fade-up" data-aos-duration="500">
+          <div class="row px-3 ps-md-0 pe-md-5 align-items-center">
+            <div class="col-4 p-0 m-0">
+              <div class="m-stories-image-holder p-2 w-100">
+                <img class="w-100 h-100"
+                  src="./sources/images/cosmopolitan-lights/manila-city-skyline-david-milmont-3WX60TlLIdw-unsplash.jpg"
+                  alt="Manila City Skyline">
+              </div>
+            </div>
+            <div class="col-4 p-0 m-0">
+              <div class="row m-0 p-0">
+                <div class="col-12 m-stories-image-holder p-2 w-100">
+                  <img class="w-100 h-100"
+                    src="./sources/images/explore-the-summit/mount-pulag-joanne-caselyn-kCGhXLU32Bg-unsplash.jpg"
+                    alt="Mount Pulag">
+                </div>
+              </div>
+              <div class="row m-0 p-0">
+                <div class="col-12 m-stories-image-holder p-2 w-100">
+                  <img class="w-100 h-100"
+                    src="./sources/images/dive-under-water/el-nido-eibner-saliba-3T9dDY0WqDI-unsplash.jpg"
+                    alt="El Nido">
+                </div>
+              </div>
+            </div>
+            <div class="col-4 p-0 m-0">
+              <div class="m-stories-image-holder p-2 w-100">
+                <img class="w-100 h-100" src="./sources/images/nature-and-culture/ifugao-ar-2FsniOcLPj8-unsplash.jpg"
+                  alt="Banaue Rice Terraces">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- testimonials -->
+      <section class="m-testimonials-section row m-0 p-0 p-md-5">
+        <h2 class="m-testimonials-title fw-bold text-center m-0 p-0 pe-md-5 lh-1" data-aos="fade-up"
+          data-aos-duration="500">
+          Take a look at some insights <br> from our previous clients
+        </h2>
+        <div class="row m-0 p-4 p-sm-5 justify-content-center">
+          <div class="col-12 col-sm-6 col-lg-3 p-3 parallax-scroll" data-direction="left" data-rate="1">
+            <div
+              class="m-testimonial-content position-relative h-100 w-100 d-flex flex-column justify-content-start align-items-start p-3 m-0">
+              <div class="m-testimonial-avatar rounded-circle position-absolute overflow-hidden top-0 start-0">
+                <img class="w-100 h-auto" src="./sources/images/user-avatar/user1.jpg" alt="User avatar">
+              </div>
+              <span>
+                Juan Dela Cruz
+              </span>
+              <p class="p-2 m-0">
+                Great service and really nice and sweet workers! thanks Lakbay travel for changing my airport drop off
+                reservation when i switched rooms to a different part of the resort!
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3 p-3 parallax-scroll" data-direction="left" data-rate="1">
+            <div
+              class="m-testimonial-content position-relative h-100 w-100 d-flex flex-column justify-content-start align-items-start p-3 m-0">
+              <div class="m-testimonial-avatar rounded-circle position-absolute overflow-hidden top-0 start-0">
+                <img class="w-100 h-auto" src="./sources/images/user-avatar/user2.jpg" alt="User avatar">
+              </div>
+              <span>
+                Kuya Jobert
+              </span>
+              <p class="p-2 m-0">
+                Everyone was very helpful with our scheduling our excursions. They remembered our names and took great
+                care of us. All of the guides were great!
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3 p-3 parallax-scroll" data-direction="right" data-rate="1">
+            <div
+              class="m-testimonial-content position-relative h-100 w-100 d-flex flex-column justify-content-start align-items-start p-3 m-0">
+              <div class="m-testimonial-avatar rounded-circle position-absolute overflow-hidden top-0 start-0">
+                <img class="w-100 h-auto" src="./sources/images/user-avatar/user3.jpg" alt="User avatar">
+              </div>
+              <span>
+                Marie Curie
+              </span>
+              <p class="p-2 m-0">
+                My husband and I are extremely happy to use Lakbay Travel's services. Hands down! Best travel agency in
+                the Philippines! </p>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3 p-3 parallax-scroll" data-direction="right" data-rate="1">
+            <div
+              class="m-testimonial-content position-relative h-100 w-100 d-flex flex-column justify-content-start align-items-start p-3 m-0">
+              <div class="m-testimonial-avatar rounded-circle position-absolute overflow-hidden top-0 start-0">
+                <img class="w-100 h-auto" src="./sources/images/user-avatar/user4.jpg" alt="User avatar">
+              </div>
+              <span>
+                Francisco Balagtas
+              </span>
+              <p class="p-2 m-0">
+                Lakbay was very excellent. Had transportation set up in seconds. Very pleasant experience and would
+                definitely recommend using Lakbay. </p>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center mb-5" data-aos="fade" data-aos-duration="500">
+          <button class="btn p-0 m-0">
+            <a class="btn m-primary-btn-dark rounded-pill" href="./pages/404.html">
+              View more >
+            </a>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="f-footer-wrapper container-fluid px-3 px-md-5 pt-5 pb-0 m-0 d-flex flex-column justify-content-between">
+      <div class="row mb-5" data-aos="fade" data-aos-duration="800">
+        <div class="col-12 col-md-6">
+          <div class="p-0 p-md-5">
+            <h2 class="text-uppercase text-center text-md-start mb-4 mb-md-5">
+              Do you have a question? Let's talk.
+            </h2>
+            <p class="m-paragraph-text-dark p-0 ps-md-5">
+              We are glad that you are here! Now that you have an idea on how we can help you to travel safely without
+              worrying about other stuffs, feel free to book on one of our packages anytime!
+            </p>
+            <p class="m-paragraph-text-dark p-0 ps-md-5">
+              If you have any questions, kindly answer the form below and we'll get back to you as soon as possible.
+            </p>
+          </div>
+          <div class="w-100 p-0 ps-md-5 mb-3 d-flex justify-content-center justify-content-md-start">
+            <a href="https://facebook.com">
+              <div class="f-icon-wrap d-flex justify-content-center align-items-center p-2 m-2 rounded-circle">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 320 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" />
+                </svg>
+              </div>
+            </a>
+            <a href="https://twitter.com">
+              <div class="f-icon-wrap d-flex justify-content-center align-items-center p-2 m-2 rounded-circle">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
+                </svg>
+              </div>
+            </a>
+            <a href="https://instagram.com">
+              <div class="f-icon-wrap d-flex justify-content-center align-items-center p-2 m-2 rounded-circle">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                </svg>
+              </div>
+            </a>
+            <a href="https://tiktok.com">
+              <div class="f-icon-wrap d-flex justify-content-center align-items-center p-2 m-2 rounded-circle">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                  <path
+                    d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z" />
+                </svg>
+              </div>
+            </a>
+          </div>
+          <div class="w-100 p-0 ps-md-5">
+            <p class="m-paragraph-text-dark text-center text-md-start">
+              Email us : <a class="m-paragraph-text-dark fw-bold" href="#">LakbaytravelagencyPH@lakbay.agency</a>
+            </p>
+            <p class="m-paragraph-text-dark text-center text-md-start">
+              Or visit us at : <span class="fw-bold">18th Floor, W Fifth, 5th Avenue, Taguig</span>
+            </p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <form class="p-0 p-md-5" action="#">
+            <div class="d-flex flex-column mb-3">
+              <label class="mb-1" for="footerName">Full name</label>
+              <input class="f-form-input p-3" type="text" id="footerName">
+            </div>
+            <div class="d-flex flex-column mb-3">
+              <label class="mb-1" for="footerContact">Contact Number</label>
+              <input class="f-form-input p-3" type="number" id="footerContact">
+            </div>
+            <div class="d-flex flex-column mb-3">
+              <label class="mb-1" for="footerEmail">Email Address</label>
+              <input class="f-form-input p-3" type="email" id="footerEmail">
+            </div>
+            <div class="d-flex flex-column mb-4">
+              <label class="mb-1" for="footerMessage">Message</label>
+              <textarea class="p-3" name="footerMessage" id="footerMessage"></textarea>
+            </div>
+            <div class="d-flex flex-column mb-3">
+              <input class="m-primary-btn-dark rounded-pill f-footer-submit" type="submit" value="Submit">
             </div>
           </form>
         </div>
       </div>
-    </div>
+      <div class="f-footer-bottom w-100 justify-self-end row text-center py-3 m-0">
+        <p class="p-0 m-0">
+          &copy; Copyright Lakbay 2023 | All Rights Reserved | Privacy Policy
+        </p>
+      </div>
+    </footer>
+  </div>
+  <!-- Bootstrap 5 CDN JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+  <!-- Animate on scroll -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <!-- parallax effect -->
+  <script src="./sources/scripts/parallax-scroll.js"></script>
+  <!-- Custom JS -->
+  <script src="./sources/scripts/loader.js"></script>
+  <script src="./sources/scripts/signUp.js"></script>
+  <script src="./sources/scripts/header.js"></script>
+  <script src="./sources/scripts/index.js"></script>
+</body>
 
-    <!-- Header  -->
-    <header
-          class="h-header-wrapper container-fluid position-fixed top-0 start-0"
-          id="hHeaderWrapper"
-        >
-          <div class="row navbar px-0 px-sm-2 px-md-2 px-lg-5">
-            <div class="col-3">
-              <a class="navbar-brand h-logo" href="#">
-                <img
-                  src="./sources/images/logo-svg/logo-outline-white.svg"
-                  alt="Lakbay Travel Agency Logo"
-                  width="40px"
-                />
-              </a>
-            </div>
-            <div class="h-header-title position-relative col-6">
-              <span class="position-absolute top-50 start-50"> LAKBAY </span>
-              <h2
-                class="position-absolute top-50 start-50 w-100 text-center text-uppercase"
-              >
-                Exploring The Philippines and Creating Stories
-              </h2>
-            </div>
-            <div
-              class="h-ham-container col-3 d-flex justify-content-end align-items-center"
-            >
-              <!-- Sign Up button trigger modal -->
-              <button
-                type="button"
-                class="h-btn-signUp btn me-4 px-4 py-2 d-none d-md-block position-relative overflow-hidden rounded-pill"
-                data-bs-toggle="modal"
-                data-bs-target="#signUpModal"
-              >
-                SIGN UP
-              </button>
-              <div class="h-btn-ham position-relative" id="hButtonHam">
-                <span class="position-absolute start-50"></span>
-                <span class="position-absolute start-50"></span>
-              </div>
-            </div>
-          </div>
-          <nav
-            class="h-nav-container d-flex flex-column justify-content-start align-items-center d-none pt-5"
-            id="hNavContainer"
-          >
-            <ul
-              class="h-nav-list w-100 py-4 mb-4 rounded d-flex justify-content-evenly"
-            >
-              <li class="h-nav-item position-relative text-center">
-                <a class="text-uppercase text-decoration-none" href="#">Home</a>
-              </li>
-              <li class="h-nav-item position-relative text-center">
-                <a class="text-uppercase text-decoration-none" href="#"
-                  >Contact</a
-                >
-              </li>
-              <li class="h-nav-item position-relative text-center">
-                <a class="text-uppercase text-decoration-none" href="#">About</a>
-              </li>
-              <li class="h-nav-item position-relative text-center">
-                <a
-                  class="text-uppercase text-decoration-none"
-                  href="#"
-                  data-bs-toggle="modal"
-                  data-bs-target="#signUpModal"
-                  >Sign Up</a
-                >
-              </li>
-            </ul>
-            <div
-              class="h-categories-container d-flex flex-column justify-content-center align-items-center w-100 h-100 position-relative"
-            >
-              <div
-                class="d-flex justify-content-center align-items-center position-relative w-100 h-100"
-                id="hPreviewImage-sub"
-              >
-                <h2 class="hPreviewImageTitle-top lh-1">EXPLORE</h2>
-                <div
-                  class="d-flex justify-content-center align-items-start align-items-md-center position-absolute bottom-0 start-0 w-100 rounded"
-                  id="hPreviewImage"
-                >
-                  <h2 id="hPreviewImageTitle" class="py-5 d-none"></h2>
-                  <p
-                    class="hPreviewImageDesc position-absolute start-50 text-center"
-                  >
-                    HOVER ITEMS BELOW TO PREVIEW
-                  </p>
-                </div>
-              </div>
-              <ul
-                class="h-categories-list container-fluid d-flex flex-column flex-md-row justify-content-center justify-content-md-evenly align-items-center p-0 my-3"
-              >
-                <li class="my-2" id="hImageLights">
-                  <a class="text-decoration-none" href="#">Cosmopolitan Lights</a>
-                </li>
-                <li class="my-2" id="hImageWater">
-                  <a class="text-decoration-none" href="#">Dive Under Water</a>
-                </li>
-                <li class="my-2" id="hImageSummit">
-                  <a class="text-decoration-none" href="#">Explore the Summit</a>
-                </li>
-                <li class="my-2" id="hImageHistory">
-                  <a class="text-decoration-none" href="#"
-                    >Look Back in History</a
-                  >
-                </li>
-                <li class="my-2" id="hImageCulture">
-                  <a class="text-decoration-none" href="#">Nature and Culture</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-    </header>
-    
-    <!-- body-wrapper -->
-    <div class="body-wrapper m-0 p-0">
-      <!-- Main Content -->
-      <main class="container-fluid p-0 m-0 position-relative">
-        <!-- hero section -->
-        <section
-          class="m-hero-section m-0 vh-100 justify-content-center"
-          id="mHeroSection"
-        >
-          <video
-            class="m-hero-bg m-0 p-0 position-fixed top-0 start-0 vh-100 w-100"
-            id="mHeroBg"
-            poster="./sources/images/hero-section-thumbnails/city-poster.jpg"
-            muted
-            loop
-            autoplay
-          >
-            <source src="./sources/videos/city.mp4" />
-          </video>
-          <div class="row h-100 p-0 m-0">
-            <div class="row h-100 p-0 m-0">
-              <div class="col-md-6 col-12 py-0 pt-md-4 px-3 px-md-5 m-0" >
-                <div class="h-75 py-0 px-3 px-md-0 px-xl-5 m-0 d-flex flex-column justify-content-center align-items-center" id="mHeroLeft">
-                  <div class="w-100 d-flex flex-column justify-content-center align-items-center align-items-md-start p-0 mx-0 mt-0 mb-5">
-                    <h1 class="lh-1 my-0 text-center text-md-start text-nowrap" id="mHeroCategoryTitle">
-                      Visit the Lively <br> and Colorful Cities
-                    <h2 class="lh-1 mx-0 mb-0 text-center text-md-start text-nowrap" id="mHeroCategory">
-                      Cosmopolitan Lights
-                    </h2>
-                  </div>
-                  <div class="w-100 d-flex flex-column justify-content-start align-items-start align-items-md-start p-0 m-0">
-                    <div class="p-0 px-sm-5 px-md-0 pe-lg-5 m-0 d-flex flex-column align-items-center align-items-md-start justify-content-center">
-                      <p class="w-100 mx-0 mt-0 mb-4 p-0 px-sm-5 px-md-0 pe-lg-5 text-center text-md-start" id="mHeroDescription">
-                        A trip to Star City Amusement Park, Manila Ocean Park, Chinatown, and Solaire Resort and Casino in Manila, and Mall of Asia and Cultural Center of the Philippines in Pasay.                      </p>
-                      <button class="btn p-0 m-0">
-                        <a href="#" class="btn rounded-pill px-4 py-2 text-uppercase" id="mHeroButton">
-                          discover more
-                        </a>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="row h-25 p-0 m-0 justify-content-center">
-                  <div class="col-12 py-0 px-0 px-md-5 m-0 d-flex flex-column align-items-center">
-                    <div class="row p-0 m-0 h-75 d-flex justify-content-between">
-                      <div class="col-2 d-flex align-items-end px-0 py-3">
-                        <div
-                          class="w-100 rounded overflow-hidden m-hero-thumb m-hero-thumb-1"
-                          id="mHeroThumb1"
-                        >
-                          <img
-                            src="./sources/images/hero-section-thumbnails/city-thumb.jpg"
-                            alt="city lights thumbnail"
-                            width="100%"
-                            height="auto"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-2 d-flex align-items-end px-0 py-3">
-                        <div
-                          class="w-100 rounded overflow-hidden m-hero-thumb m-hero-thumb-2"
-                          id="mHeroThumb2"
-                        >
-                          <img
-                            src="./sources/images/hero-section-thumbnails/water-thumb.jpg"
-                            alt="dive underwater thumbnail"
-                            width="100%"
-                            height="auto"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-2 d-flex align-items-end px-0 py-3">
-                        <div
-                          class="w-100 rounded overflow-hidden m-hero-thumb m-hero-thumb-3"
-                          id="mHeroThumb3"
-                        >
-                          <img
-                            src="./sources/images/hero-section-thumbnails/mountain-thumb.jpg"
-                            alt="mountains thumbnail"
-                            width="100%"
-                            height="auto"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-2 d-flex align-items-end px-0 py-3">
-                        <div
-                          class="w-100 rounded overflow-hidden m-hero-thumb m-hero-thumb-4"
-                          id="mHeroThumb4"
-                        >
-                          <img
-                            src="./sources/images/hero-section-thumbnails/history-thumb.jpg"
-                            alt="history thumbnail"
-                            width="100%"
-                            height="auto"
-                          />
-                        </div>
-                      </div>
-                      <div class="col-2 d-flex align-items-end px-0 py-3">
-                        <div
-                          class="w-100 rounded overflow-hidden m-hero-thumb m-hero-thumb-5"
-                          id="mHeroThumb5"
-                        >
-                          <img
-                            src="./sources/images/hero-section-thumbnails/nature-thumb.jpg"
-                            alt="nature thumbnail"
-                            width="100%"
-                            height="auto"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row h-25 p-0 m-0 text-uppercase lh-1 d-flex justify-content-center align-items-start">
-                      <div class="overflow-hidden h-75 d-flex justify-content-center align-items-center">
-                        <span id="mThumbDesc">
-                          Cosmopolitan Lights
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="d-none col-md-6 col-12 d-md-flex justify-content-center align-items-center position-relative" id="mHeroRight">  
-                <div class="m-hero-circle-sub m-continue-rotation rounded-circle position-absolute top-100 start-100 d-flex justify-content-center align-items-center">
-                  <div class="position-relative h-100 w-100 rounded-circle">
-                    <div class="class-position-absolute h-100 w-100" id="mContinueRotationTop">
-                      <div class="mContText1 position-absolute h-100 top-0 start-50 pt-4"><span>C</span></div>
-                      <div class="mContText2 position-absolute h-100 top-0 start-50 pt-4"><span>L</span></div>
-                      <div class="mContText3 position-absolute h-100 top-0 start-50 pt-4"><span>I</span></div>
-                      <div class="mContText4 position-absolute h-100 top-0 start-50 pt-4"><span>C</span></div>
-                      <div class="mContText5 position-absolute h-100 top-0 start-50 pt-4"><span>K </span></div>
-                      <div class="mContText6 position-absolute h-100 top-0 start-50 pt-4"><span> </span></div>
-                      <div class="mContText7 position-absolute h-100 top-0 start-50 pt-4"><span>I</span></div>
-                      <div class="mContText8 position-absolute h-100 top-0 start-50 pt-4"><span>M</span></div>
-                      <div class="mContText9 position-absolute h-100 top-0 start-50 pt-4"><span>A</span></div>
-                      <div class="mContText10 position-absolute h-100 top-0 start-50 pt-4"><span>G</span></div>
-                      <div class="mContText11 position-absolute h-100 top-0 start-50 pt-4"><span>E</span></div>
-                    </div>
-                    <div class="class-position-absolute h-100 w-100" id="mContinueRotation">
-                      <div class="mContText1 position-absolute h-100 top-0 start-50 pt-4"><span>A</span></div>
-                      <div class="mContText2 position-absolute h-100 top-0 start-50 pt-4"><span>U</span></div>
-                      <div class="mContText3 position-absolute h-100 top-0 start-50 pt-4"><span>T</span></div>
-                      <div class="mContText4 position-absolute h-100 top-0 start-50 pt-4"><span>O</span></div>
-                      <div class="mContText5 position-absolute h-100 top-0 start-50 pt-4"><span>-</span></div>
-                      <div class="mContText6 position-absolute h-100 top-0 start-50 pt-4"><span>R</span></div>
-                      <div class="mContText7 position-absolute h-100 top-0 start-50 pt-4"><span>O</span></div>
-                      <div class="mContText8 position-absolute h-100 top-0 start-50 pt-4"><span>T</span></div>
-                      <div class="mContText9 position-absolute h-100 top-0 start-50 pt-4"><span>A</span></div>
-                      <div class="mContText10 position-absolute h-100 top-0 start-50 pt-4"><span>T</span></div>
-                      <div class="mContText11 position-absolute h-100 top-0 start-50 pt-4"><span>E</span></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row mHeroCircle rounded-circle position-absolute d-flex justify-content-center align-items-center" id="mHeroCircle">
-                    <div class="position-relative rounded-circle d-flex justify-content-center align-items-center w-100 h-100">
-                      <div class="m-hero-circle-sub position-absolute rounded-circle overflow-hidden d-flex justify-content-center align-items-center" id="circleImage1Sub">
-                        <img class="m-hero-circle-image" id="mCircleImage1" src="./sources/images/cosmopolitan-lights/star-city.webp" alt="Star City Amusement Park in Pasay">
-                      </div>
-                      <div class="m-hero-circle-sub position-absolute rounded-circle overflow-hidden d-flex justify-content-center align-items-center" id="circleImage2Sub">
-                        <img class="m-hero-circle-image" id="mCircleImage2" src="./sources/images/cosmopolitan-lights/chinatown.jpg" alt="Chinatown in Binondo Manila">
-                      </div>
-                      <div class="m-hero-circle-sub position-absolute rounded-circle overflow-hidden d-flex justify-content-center align-items-center" id="circleImage3Sub">
-                        <img class="m-hero-circle-image" id="mCircleImage3" src="./sources/images/cosmopolitan-lights/mall-of-asia.jpg" alt="Mall of Asia in Pasay City">
-                      </div>
-                      <div class="m-hero-circle-sub position-absolute rounded-circle overflow-hidden d-flex justify-content-center align-items-center" id="circleImage4Sub">
-                        <img class="m-hero-circle-image" id="mCircleImage4" src="./sources/images/cosmopolitan-lights/manila-ocean-park.jpg" alt="Manila Ocean Park">
-                      </div>
-                      <div class="m-hero-circle-sub position-absolute rounded-circle overflow-hidden d-flex justify-content-center align-items-center" id="circleImage5Sub">
-                        <img class="m-hero-circle-image" id="mCircleImage5" src="./sources/images/cosmopolitan-lights/solaire.jpg" alt="Solaire Resort & Casino Manila">
-                      </div>
-                      <div class="m-hero-circle-sub position-absolute rounded-circle overflow-hidden d-flex justify-content-center align-items-center" id="circleImage6Sub">
-                        <img class="m-hero-circle-image" id="mCircleImage6" src="./sources/images/cosmopolitan-lights/ccp.webp" alt="Cultural Center of the Philippines in Pasay City">
-                      </div>
-                  </div>
-                </div>
-                <div class="position-absolute top-0 end-0 h-100" id="mCircleNext"></div>
-                <div class="position-absolute bottom-0 end-0 w-100" id="mCirclePrev"></div>
-                <div class="m-circle-text position-absolute text-center ">
-                  <p class="py-3 px-3 rounded-pill" id="mCircleText"></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- stats section -->
-        <section class="m-stats-section row m-0 py-0 py-md-5 flex-column flex-md-row justify-content-center align-items-center align-items-md-start">
-          <div class="order-2 order-md-1 col-12 col-md-7 p-0 p-md-5 d-flex flex-column flex-md-row justify-content-between align-items-center align-items-md-start parallax-scroll align-self-center" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">
-            <div class="w-100 d-flex flex-column justify-content-center align-items-center mb-4 mb-md-0">
-              <h3 class="m-stats-count m-0 lh-1" data-limit = 1532>
-                0
-              </h3>
-              <span class="text-center">
-                Trips in the last 5 years
-              </span>
-            </div>
-            <div class="w-100 d-flex flex-column justify-content-center align-items-center mb-4 mb-md-0">
-              <h3 class="m-stats-count m-0 lh-1" data-limit = 30>
-                0
-              </h3>
-              <span class="text-center">
-                Major Destinations
-              </span>
-            </div>
-            <div class="w-100 d-flex flex-column justify-content-center align-items-center mb-4 mb-md-0">
-              <h3 class="m-stats-count m-0 lh-1" data-limit = 10257>
-                0
-              </h3>
-              <span class="text-center">
-                Members around the world
-              </span>
-            </div>
-          </div>
-          <div class="col-12 col-md-4 p-4 p-md-5 text-center text-md-start order-1 order-md-2 parallax-scroll" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">
-            <h2 class="m-heading-2-dark mb-3 fw-bold">
-              Why choose Lakbay Travel Agency?
-            </h2>
-            <p class="m-paragraph-text-dark">
-              The fastest growing travel agency in the Philippines. Providing hassle-free travel services at an affordable price but premium quality. Guiding you in your journey since 2018 and still counting.
-            </p>
-          </div>
-        </section>
-
-        <!-- services section -->
-        <section class="m-services-section position-relative p-0 m-0 d-flex flex-column justify-content-start align-items-center"> 
-          <img class="m-services-image-1 position-absolute start-0 w-100" src="./sources/images/clouds.png" alt="clouds">
-          <img class="m-services-image-2 position-absolute parallax-scroll" src="./sources/images/birds.png" alt="Flock of birds" data-direction = "left" data-rate = "0.5">
-          <img class="m-services-image-3 position-absolute parallax-scroll" src="./sources/images/plane.png" alt="Air Plane" data-direction = "right" data-rate = "0.8">
-          <div class="m-services-image-4 position-absolute parallax-scroll w-100 bottom-0">
-            <svg class="w-100" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
-              <mask id="m">
-                <g class="cloud1">
-                  <rect fill="#fff" width="100%" height="801" y="799" />
-                  <image xlink:href="https://assets.codepen.io/721952/cloud1Mask.jpg" width="1200" height="800"/>
-                </g>
-              </mask>
-              <image class="mountBg" xlink:href="https://assets.codepen.io/721952/mountBg.png" width="1200" height="800"/>    
-              <image class="mountMg" xlink:href="https://assets.codepen.io/721952/mountMg.png" width="1200" height="800"/>    
-              <image class="cloud2" xlink:href="https://assets.codepen.io/721952/cloud2.png" width="1200" height="800"/>    
-              <image class="mountFg" xlink:href="https://assets.codepen.io/721952/mountFg.png" width="1200" height="800"/>
-              <image class="cloud1" xlink:href="https://assets.codepen.io/721952/cloud1.png" width="1200" height="800"/>
-              <image class="cloud3" xlink:href="https://assets.codepen.io/721952/cloud3.png" width="1200" height="800"/>
-  
-            </svg>
-          </div>
-          <div class="m-services-quote d-flex flex-column justify-content-start align-items-center w-75">
-            <div class="m-services-quote-1 align-self-start parallax-scroll" data-direction = "left" data-rate = "1">
-              <img src="./sources/images/quote.svg" alt="quotation marks">
-            </div>
-            <p class="w-75 text-center m-0 p-0 position-relative" data-aos="fade" data-aos-delay="300" data-aos-duration="500">            
-              Memories are created in memorable places. And here in Lakbay Travel Agency, we will help you create those picture-perfect moments. <br>
-              <span class="position-absolute start-50">
-                - John Doe, CEO
-              </span>             
-            </p>
-            <div class="m-services-quote-2 align-self-end parallax-scroll" data-direction = "right" data-rate = "1">
-              <img src="./sources/images/quote.svg" alt="quotation marks">
-            </div>
-          </div>
-          <div class="container-fluid m-0 px-0 px-md-5">
-            <div class="m-services-content row m-0 px-0 px-md-5 py-5 justify-content-center align-items-center">
-              <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center align-self-center align-self-md-start">
-                <div class="position-relative px-5 py-4 w-75 mb-5 m-services-content-sub text-center parallax-scroll" data-direction = "left" data-rate = "1">
-                  <span class="position-absolute top-0 start-0">
-                    01
-                  </span>
-                  <h3 class="m-heading-3-dark-2 mb-3">
-                    Visa Consultation
-                  </h3>
-                  <p class="m-paragraph-text-dark">
-                    We will assist you with the visa application, documentation, and other necessary processes.
-                  </p>
-                </div>
-                <div class="position-relative px-5 py-4 w-75 mb-5 m-services-content-sub text-center parallax-scroll" data-direction = "left" data-rate = "1">
-                  <span class="position-absolute top-0 start-0">
-                    02
-                  </span>
-                  <h3 class="m-heading-3-dark-2 mb-3">
-                    Transportation Assistance
-                  </h3>
-                  <p class="m-paragraph-text-dark">
-                    We can also help you with the booking of your flights, and other transportation vehicles.
-                  </p>
-                </div>
-              </div>
-              <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center align-self-center align-self-md-end">
-                <div class="position-relative px-5 py-4 w-75 mb-5 m-services-content-sub text-center parallax-scroll" data-direction = "right" data-rate = "1">
-                  <span class="position-absolute top-0 start-0">
-                    03
-                  </span>
-                  <h3 class="m-heading-3-dark-2 mb-3">
-                    Fun Events and Activities
-                  </h3>
-                  <p class="m-paragraph-text-dark">
-                    We can also set additional events and programs that could make your experience more memorable.
-                  </p>
-                </div>
-                <div class="position-relative px-5 py-4 w-75 mb-5 m-services-content-sub text-center parallax-scroll" data-direction = "right" data-rate = "1">
-                  <span class="position-absolute top-0 start-0">
-                    04
-                  </span>
-                  <h3 class="m-heading-3-dark-2 mb-3">
-                    Accomodation Assistance
-                  </h3>
-                  <p class="m-paragraph-text-dark">
-                    We will handle your accomodation during the trip including hotel booking and restaurant reservations.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>  
-        </section>
-        
-        <!-- stories section -->
-        <section class="m-stories-section row m-0 justify-content-start py-5">
-          <div class="col-12 col-md-6 parallax-scroll p-0 p-md-5 d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-duration="500">
-            <div class="px-5 ps-md-5 pe-md-0 d-flex flex-column justify-content-center align-items-center align-items-md-start text-center text-md-start mb-3 mb-md-0">
-              <h2 class="m-heading-2-dark mb-3 fw-bold">
-                Read the stories of fellow travelers who accompanied us these past few years
-              </h2>
-              <p class="m-paragraph-text-dark pe-0 pe-md-5 mb-3 mb-md-4">
-                Join our community and read the stories of fellow travel lovers in our "Share your Story" page. You can also share your own story if you already took part in our trips before. 
-              </p>
-              <button class="btn p-0 m-0">
-                <a class="btn m-primary-btn-dark rounded-pill" href="#">
-                  Learn more >
-                </a>
-              </button>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 p-0 p-md-5 d-flex flex-column justify-content-center align-items-center parallax-scroll" data-aos="fade-up" data-aos-duration="500">
-            <div class="row px-3 ps-md-0 pe-md-5 align-items-center">
-              <div class="col-4 p-0 m-0">
-                <div class="m-stories-image-holder p-2 w-100">
-                  <img class="w-100 h-100" src="./sources/images/cosmopolitan-lights/manila-city-skyline-david-milmont-3WX60TlLIdw-unsplash.jpg" alt="Manila City Skyline">
-                </div>
-              </div>
-              <div class="col-4 p-0 m-0">
-                <div class="row m-0 p-0">
-                  <div class="col-12 m-stories-image-holder p-2 w-100">
-                    <img class="w-100 h-100" src="./sources/images/explore-the-summit/mount-pulag-joanne-caselyn-kCGhXLU32Bg-unsplash.jpg" alt="Mount Pulag">
-                  </div>
-                </div>
-                <div class="row m-0 p-0">
-                  <div class="col-12 m-stories-image-holder p-2 w-100">
-                    <img class="w-100 h-100" src="./sources/images/dive-under-water/el-nido-eibner-saliba-3T9dDY0WqDI-unsplash.jpg" alt="El Nido">
-                  </div>
-                </div>
-              </div>
-              <div class="col-4 p-0 m-0">
-                <div class="m-stories-image-holder p-2 w-100">
-                  <img class="w-100 h-100" src="./sources/images/nature-and-culture/ifugao-ar-2FsniOcLPj8-unsplash.jpg" alt="Banaue Rice Terraces">
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- testimonials -->
-        <section class="m-testimonials-section row m-0 p-0 p-md-5">
-          <h2 class="m-testimonials-title fw-bold text-center m-0 p-0 pe-md-5 lh-1" data-aos="fade-up" data-aos-duration="500">
-            Take a look at some insights <br> from our previous clients
-          </h2>
-          <div class="row m-0 p-4 p-sm-5 justify-content-center">
-            <div class="col-12 col-sm-6 col-lg-3 p-3 parallax-scroll" data-direction = "left" data-rate = "1">
-              <div class="m-testimonial-content position-relative h-100 w-100 d-flex flex-column justify-content-start align-items-start p-3 m-0">
-                <div class="m-testimonial-avatar rounded-circle position-absolute overflow-hidden top-0 start-0">
-                   <img class="w-100 h-auto" src="./sources/images/user-avatar/user1.jpg" alt="User avatar">
-                </div>
-                <span>
-                  Juan Dela Cruz
-                </span>
-                <p class="p-2 m-0">
-                  Great service and really nice and sweet workers! thanks Lakbay travel for changing my airport drop off reservation when i switched rooms to a different part of the resort!
-                </p>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-3 p-3 parallax-scroll" data-direction = "left" data-rate = "1">
-              <div class="m-testimonial-content position-relative h-100 w-100 d-flex flex-column justify-content-start align-items-start p-3 m-0">
-                <div class="m-testimonial-avatar rounded-circle position-absolute overflow-hidden top-0 start-0">
-                   <img class="w-100 h-auto" src="./sources/images/user-avatar/user2.jpg" alt="User avatar">
-                </div>
-                <span>
-                  Kuya Jobert
-                </span>
-                <p class="p-2 m-0">
-                  Everyone was very helpful with our scheduling our excursions. They remembered our names and took great care of us. All of the guides were great!
-                </p>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-3 p-3 parallax-scroll" data-direction = "right" data-rate = "1">
-              <div class="m-testimonial-content position-relative h-100 w-100 d-flex flex-column justify-content-start align-items-start p-3 m-0">
-                <div class="m-testimonial-avatar rounded-circle position-absolute overflow-hidden top-0 start-0">
-                   <img class="w-100 h-auto" src="./sources/images/user-avatar/user3.jpg" alt="User avatar">
-                </div>
-                <span>
-                  Marie Curie
-                </span>
-                <p class="p-2 m-0">
-                  My husband and I are extremely happy to use Lakbay Travel's services. Hands down! Best travel agency in the Philippines!                </p>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-3 p-3 parallax-scroll" data-direction = "right" data-rate = "1">
-              <div class="m-testimonial-content position-relative h-100 w-100 d-flex flex-column justify-content-start align-items-start p-3 m-0">
-                <div class="m-testimonial-avatar rounded-circle position-absolute overflow-hidden top-0 start-0">
-                   <img class="w-100 h-auto" src="./sources/images/user-avatar/user4.jpg" alt="User avatar">
-                </div>
-                <span>
-                  Francisco Balagtas
-                </span>
-                <p class="p-2 m-0">
-                  Lakbay was very excellent. Had transportation set up in seconds. Very pleasant experience and would definitely recommend using Lakbay.                </p>
-              </div>
-            </div>
-          </div>
-          <div class="row justify-content-center mb-5" data-aos="fade" data-aos-duration="500">
-            <button class="btn p-0 m-0">
-              <a class="btn m-primary-btn-dark rounded-pill" href="#">
-                View more >
-              </a>
-            </button>
-          </div>
-        </section>
-      </main>
-
-      <!-- Footer -->
-      <footer class="f-footer-wrapper container-fluid px-3 px-md-5 pt-5 pb-0 m-0 d-flex flex-column justify-content-between">
-        <div class="row mb-5" data-aos="fade" data-aos-duration="800">
-          <div class="col-12 col-md-6">
-            <div class="p-0 p-md-5">
-              <h2 class="text-uppercase text-center text-md-start mb-4 mb-md-5">
-                Do you have a question? Let's talk.
-              </h2>
-              <p class="m-paragraph-text-dark p-0 ps-md-5">
-                We are glad that you are here! Now that you have an idea on how we can help you to travel safely without worrying about other stuffs, feel free to book on one of our packages anytime!
-              </p>
-              <p class="m-paragraph-text-dark p-0 ps-md-5">
-                If you have any questions, kindly answer the form below and we'll get back to you as soon as possible.
-              </p>
-            </div>
-            <div class="w-100 p-0 ps-md-5 mb-3 d-flex justify-content-center justify-content-md-start">
-              <a href="https://facebook.com">
-                <div class="f-icon-wrap d-flex justify-content-center align-items-center p-2 m-2 rounded-circle">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
-                </div>
-              </a>
-              <a href="https://twitter.com">
-                <div class="f-icon-wrap d-flex justify-content-center align-items-center p-2 m-2 rounded-circle">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
-                </div>
-              </a>
-              <a href="https://instagram.com">
-                <div class="f-icon-wrap d-flex justify-content-center align-items-center p-2 m-2 rounded-circle">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
-                </div>
-              </a>
-              <a href="https://tiktok.com">
-                <div class="f-icon-wrap d-flex justify-content-center align-items-center p-2 m-2 rounded-circle">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg>
-                </div>
-              </a>
-            </div>
-            <div class="w-100 p-0 ps-md-5">
-              <p class="m-paragraph-text-dark text-center text-md-start">
-                Email us : <a class="m-paragraph-text-dark fw-bold" href="#">LakbaytravelagencyPH@lakbay.agency</a>
-              </p>
-              <p class="m-paragraph-text-dark text-center text-md-start">
-                Or visit us at : <span class="fw-bold">18th Floor, W Fifth, 5th Avenue, Taguig</span>
-              </p>
-            </div>
-          </div>
-          <div class="col-12 col-md-6">
-            <form class="p-0 p-md-5" action="#">
-              <div class="d-flex flex-column mb-3">
-                <label class="mb-1" for="footerName">Full name</label>
-                <input class="f-form-input p-3" type="text" id="footerName">
-              </div>
-              <div class="d-flex flex-column mb-3">
-                <label class="mb-1" for="footerContact">Contact Number</label>
-                <input class="f-form-input p-3" type="number" id="footerContact">
-              </div>
-              <div class="d-flex flex-column mb-3">
-                <label class="mb-1" for="footerEmail">Email Address</label>
-                <input class="f-form-input p-3" type="email" id="footerEmail">
-              </div>
-              <div class="d-flex flex-column mb-4">
-                <label class="mb-1" for="footerMessage">Message</label>
-                <textarea class="p-3" name="footerMessage" id="footerMessage"></textarea>
-              </div>
-              <div class="d-flex flex-column mb-3">
-                <input class="m-primary-btn-dark rounded-pill f-footer-submit" type="submit" value="Submit">
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="f-footer-bottom w-100 justify-self-end row text-center py-3 m-0">
-          <p class="p-0 m-0"> 
-            &copy; Copyright Lakbay 2023 | All Rights Reserved | Privacy Policy
-          </p>
-        </div>
-      </footer>
-    </div>
-    <!-- Bootstrap 5 CDN JS -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Animate on scroll -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-    <!-- parallax effect -->
-    <script src="./sources/scripts/parallax-scroll.js"></script>
-    <!-- Custom JS -->
-    <script src="./sources/scripts/loader.js"></script>
-    <script src="./sources/scripts/signUp.js"></script>
-    <script src="./sources/scripts/header.js"></script>
-    <script src="./sources/scripts/index.js"></script>
-  </body>
 </html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cosmopolitan Lights</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/sources/images/logo-svg/logo-outline-white.svg"
+    />
+
+    <!-- Bootstrap 5 CDN CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <!-- Animate on scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/sources/styles/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="/sources/styles/custom-variables.css"
+    />
+    <link rel="stylesheet" href="/sources/styles/header.css" />
+    <link rel="stylesheet" href="/sources/styles/footer.css" />
+    <link rel="stylesheet" href="/sources/styles/category-page.css" />
+  </head>
+  <body>
+    <!-- Sign Up Modal -->
+    <div
+      class="modal fade"
+      id="signUpModal"
+      tabindex="-1"
+      aria-labelledby="signUpModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content p-3 p-md-4">
+          <div class="modal-header pt-4">
+            <h1 class="modal-title" id="signUpModalLabel">
+              Create a Lakbay Account
+            </h1>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <form action="#" class="needs-validation" novalidate>
+            <div class="modal-body py-3">
+              <div class="row g-0 g-sm-4">
+                <div class="form-floating mb-3 mb-sm-4 col-12 col-sm-6">
+                  <input
+                    type="text"
+                    id="formFirstName"
+                    class="form-control"
+                    placeholder="Firstname"
+                    aria-label="Firstname"
+                    required
+                  />
+                  <label for="formFirstName" class="ps-3 ps-sm-4"
+                    >First Name</label
+                  >
+                  <div class="invalid-feedback">
+                    First name cannot be empty.
+                  </div>
+                </div>
+                <div class="form-floating mb-3 mb-sm-4 col-12 col-sm-6">
+                  <input
+                    type="text"
+                    id="formLastName"
+                    class="form-control"
+                    placeholder="Lastname"
+                    aria-label="Lastname"
+                    required
+                  />
+                  <label for="formLastName" class="ps-3 ps-sm-4"
+                    >Last Name</label
+                  >
+                  <div class="invalid-feedback">Last name cannot be empty.</div>
+                </div>
+              </div>
+
+              <div class="row g-0 g-sm-4">
+                <div class="form-floating mb-3 mb-sm-4 col-12 col-sm-6">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="formEmail"
+                    placeholder="name@example.com"
+                    required
+                  />
+                  <label for="formEmail" class="ps-3 ps-sm-4"
+                    >Email Address</label
+                  >
+                  <div class="invalid-feedback">
+                    Please choose a valid email.
+                  </div>
+                </div>
+                <div class="form-floating mb-3 mb-sm-4 col-12 col-sm-6">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="formNumber"
+                    placeholder="____ - ___ - ____"
+                    required
+                  />
+                  <label for="formNumber" class="ps-3 ps-sm-4"
+                    >Phone Number</label
+                  >
+                  <div class="invalid-feedback">
+                    Please choose a valid number.
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="formPassword"
+                  placeholder="Password"
+                  required
+                />
+                <label for="formPassword">Password</label>
+                <div class="invalid-feedback">
+                  Please choose a valid password.
+                </div>
+              </div>
+              <div class="form-floating">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="formConfirmPass"
+                  placeholder="Confirm Password"
+                  required
+                />
+                <label for="formConfirmPass">Confirm Password</label>
+                <div class="invalid-feedback">Password doesn't match.</div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn modal-cancel-btn"
+                data-bs-dismiss="modal"
+              >
+                Cancel
+              </button>
+              <button type="submit" class="btn modal-signup-btn">
+                Sign Up
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header  -->
+    <header
+      class="h-header-wrapper container-fluid position-fixed top-0 start-0"
+      id="hHeaderWrapper"
+      data-depth="3"
+    >
+      <div class="row navbar px-0 px-sm-2 px-md-2 px-lg-5">
+        <div class="col-3">
+          <a class="navbar-brand h-logo" href="/index.html">
+            <img
+              src="/sources/images/logo-svg/logo-outline-white.svg"
+              alt="Lakbay Travel Agency Logo"
+              width="40px"
+            />
+          </a>
+        </div>
+        <div class="h-header-title position-relative col-6">
+          <span class="position-absolute top-50 start-50"> LAKBAY </span>
+          <h2
+            class="position-absolute top-50 start-50 w-100 text-center text-uppercase"
+          >
+            Exploring The Philippines and Creating Stories
+          </h2>
+        </div>
+        <div
+          class="h-ham-container col-3 d-flex justify-content-end align-items-center"
+        >
+          <!-- Sign Up button trigger modal -->
+          <button
+            type="button"
+            class="h-btn-signUp btn me-4 px-4 py-2 d-none d-md-block position-relative overflow-hidden rounded-pill"
+            data-bs-toggle="modal"
+            data-bs-target="#signUpModal"
+          >
+            SIGN UP
+          </button>
+          <div class="h-btn-ham position-relative" id="hButtonHam">
+            <span class="position-absolute start-50"></span>
+            <span class="position-absolute start-50"></span>
+          </div>
+        </div>
+      </div>
+      <nav
+        class="h-nav-container d-flex flex-column justify-content-start align-items-center d-none pt-5"
+        id="hNavContainer"
+      >
+        <ul
+          class="h-nav-list w-100 py-4 mb-4 rounded d-flex justify-content-evenly p-0"
+        >
+          <li class="h-nav-item position-relative text-center">
+            <a
+              class="text-uppercase text-decoration-none"
+              href="/index.html"
+              >Home</a
+            >
+          </li>
+          <li class="h-nav-item position-relative text-center">
+            <a
+              class="text-uppercase text-decoration-none"
+              href="/pages/contact.html"
+              >Contact</a
+            >
+          </li>
+          <li class="h-nav-item position-relative text-center">
+            <a
+              class="text-uppercase text-decoration-none"
+              href="/pages/about.html"
+              >About</a
+            >
+          </li>
+          <li class="h-nav-item position-relative text-center">
+            <a
+              class="text-uppercase text-decoration-none"
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#signUpModal"
+              >Sign Up</a
+            >
+          </li>
+        </ul>
+        <div
+          class="h-categories-container d-flex flex-column justify-content-center align-items-center w-100 h-100 position-relative"
+        >
+          <div
+            class="d-flex justify-content-center align-items-center position-relative w-100 h-100"
+            id="hPreviewImage-sub"
+          >
+            <h2 class="hPreviewImageTitle-top lh-1">EXPLORE</h2>
+            <div
+              class="d-flex justify-content-center align-items-start align-items-md-center position-absolute bottom-0 start-0 w-100 rounded"
+              id="hPreviewImage"
+            >
+              <h2 id="hPreviewImageTitle" class="py-5 d-none"></h2>
+              <p
+                class="hPreviewImageDesc position-absolute start-50 text-center"
+              >
+                HOVER ITEMS BELOW TO PREVIEW
+              </p>
+            </div>
+          </div>
+          <ul
+            class="h-categories-list container-fluid d-flex flex-column flex-md-row justify-content-center justify-content-md-evenly align-items-center p-0 my-3"
+          >
+            <li class="my-2" id="hImageLights">
+              <a
+                class="text-decoration-none"
+                href="/pages/categories/cosmopolitan-lights/cosmopolitan-lights.html"
+                >Cosmopolitan Lights</a
+              >
+            </li>
+            <li class="my-2" id="hImageWater">
+              <a
+                class="text-decoration-none"
+                href="/pages/categories/dive-under-water/dive-under-water.html"
+                >Dive Under Water</a
+              >
+            </li>
+            <li class="my-2" id="hImageSummit">
+              <a
+                class="text-decoration-none"
+                href="/pages/categories/explore-the-summit/explore-the-summit.html"
+                >Explore the Summit</a
+              >
+            </li>
+            <li class="my-2" id="hImageHistory">
+              <a
+                class="text-decoration-none"
+                href="/pages/categories/look-back-in-history/look-back-in-history.html"
+                >Look Back in History</a
+              >
+            </li>
+            <li class="my-2" id="hImageCulture">
+              <a
+                class="text-decoration-none"
+                href="/pages/categories/nature-and-culture/nature-and-culture.html"
+                >Nature and Culture</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- body-wrapper -->
+    <div class="body-wrapper m-0 p-0">
+      <!-- Main Content -->
+      <main class="container-fluid vh-100 m-0 p-0">
+        <section class="cat-hero-section m-0 vh-100">
+            <video class="cat-hero-bg m-0 p-0 position-fixed top-0 start-0 vh-100 w-100" id="mHeroBg"
+                poster="/sources/images/hero-section-thumbnails/city-poster.jpg" muted loop autoplay>
+                <source src="/sources/videos/city.mp4" />
+            </video>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer
+        class="f-footer-wrapper container-fluid px-3 px-md-5 pt-5 pb-0 m-0 d-flex flex-column justify-content-between"
+      >
+        <div class="row mb-5" data-aos="fade" data-aos-duration="800">
+          <div class="col-12 col-md-6">
+            <div class="p-0 p-md-5">
+              <h2 class="text-uppercase text-center text-md-start mb-4 mb-md-5">
+                Do you have a question? Let's talk.
+              </h2>
+              <p class="m-paragraph-text-dark p-0 ps-md-5">
+                We are glad that you are here! Now that you have an idea on how
+                we can help you to travel safely without worrying about other
+                stuffs, feel free to book on one of our packages anytime!
+              </p>
+              <p class="m-paragraph-text-dark p-0 ps-md-5">
+                If you have any questions, kindly answer the form below and
+                we'll get back to you as soon as possible.
+              </p>
+            </div>
+            <div
+              class="w-100 p-0 ps-md-5 mb-3 d-flex justify-content-center justify-content-md-start"
+            >
+              <a href="https://facebook.com">
+                <div
+                  class="f-icon-wrap d-flex justify-content-center align-items-center p-2 m-2 rounded-circle"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                    <path
+                      d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                    />
+                  </svg>
+                </div>
+              </a>
+              <a href="https://twitter.com">
+                <div
+                  class="f-icon-wrap d-flex justify-content-center align-items-center p-2 m-2 rounded-circle"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                    <path
+                      d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+                    />
+                  </svg>
+                </div>
+              </a>
+              <a href="https://instagram.com">
+                <div
+                  class="f-icon-wrap d-flex justify-content-center align-items-center p-2 m-2 rounded-circle"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                    <path
+                      d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                    />
+                  </svg>
+                </div>
+              </a>
+              <a href="https://tiktok.com">
+                <div
+                  class="f-icon-wrap d-flex justify-content-center align-items-center p-2 m-2 rounded-circle"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                    <path
+                      d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"
+                    />
+                  </svg>
+                </div>
+              </a>
+            </div>
+            <div class="w-100 p-0 ps-md-5">
+              <p class="m-paragraph-text-dark text-center text-md-start">
+                Email us :
+                <a class="m-paragraph-text-dark fw-bold" href="#"
+                  >LakbaytravelagencyPH@lakbay.agency</a
+                >
+              </p>
+              <p class="m-paragraph-text-dark text-center text-md-start">
+                Or visit us at :
+                <span class="fw-bold"
+                  >18th Floor, W Fifth, 5th Avenue, Taguig</span
+                >
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <form class="p-0 p-md-5" action="#">
+              <div class="d-flex flex-column mb-3">
+                <label class="mb-1" for="footerName">Full name</label>
+                <input class="f-form-input p-3" type="text" id="footerName" />
+              </div>
+              <div class="d-flex flex-column mb-3">
+                <label class="mb-1" for="footerContact">Contact Number</label>
+                <input
+                  class="f-form-input p-3"
+                  type="number"
+                  id="footerContact"
+                />
+              </div>
+              <div class="d-flex flex-column mb-3">
+                <label class="mb-1" for="footerEmail">Email Address</label>
+                <input class="f-form-input p-3" type="email" id="footerEmail" />
+              </div>
+              <div class="d-flex flex-column mb-4">
+                <label class="mb-1" for="footerMessage">Message</label>
+                <textarea
+                  class="p-3"
+                  name="footerMessage"
+                  id="footerMessage"
+                ></textarea>
+              </div>
+              <div class="d-flex flex-column mb-3">
+                <input
+                  class="m-primary-btn-dark rounded-pill f-footer-submit"
+                  type="submit"
+                  value="Submit"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+        <div
+          class="f-footer-bottom w-100 justify-self-end row text-center py-3 m-0"
+        >
+          <p class="p-0 m-0">
+            &copy; Copyright Lakbay 2023 | All Rights Reserved | Privacy Policy
+          </p>
+        </div>
+      </footer>
+    </div>
+    <!-- Bootstrap 5 CDN JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Animate on scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <!-- parallax effect -->
+    <script src="/sources/scripts/parallax-scroll.js"></script>
+    <!-- Custom JS -->
+    <script src="/sources/scripts/signUp.js"></script>
+    <script src="/sources/scripts/header.js"></script>
+  </body>
+</html>
