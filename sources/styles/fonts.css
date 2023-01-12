@@ -24,3 +24,39 @@
     src: url("../fonts/Poppins/Poppins-Light.ttf");
     src: url("../fonts/Poppins/Poppins-Light.ttf") format("truetype");
 }
+@font-face {
+    font-family: "AddingtonCF-Bold";
+    src: url("../fonts/Addington-CF/AddingtonCF-Bold.ttf");
+    src: url("../fonts/Addington-CF/AddingtonCF-Bold.ttf") format("truetype"),
+        url("../fonts/Addington-CF/AddingtonCF-Bold.otf") format("opentype");
+}
+@font-face {
+    font-family: "AddingtonCF-Extrabold";
+    src: url("../fonts/Addington-CF/AddingtonCF-ExtraBold.ttf");
+    src: url("../fonts/Addington-CF/AddingtonCF-ExtraBold.ttf") format("truetype"),
+        url("../fonts/Addington-CF/AddingtonCF-ExtraBold.otf") format("opentype");
+}
+@font-face {
+    font-family: "AddingtonCF-Light";
+    src: url("../fonts/Addington-CF/AddingtonCF-Light.ttf");
+    src: url("../fonts/Addington-CF/AddingtonCF-Light.ttf") format("truetype"),
+        url("../fonts/Addington-CF/AddingtonCF-Light.otf") format("opentype");
+}
+@font-face {
+    font-family: "AddingtonCF-Lightitalic";
+    src: url("../fonts/Addington-CF/AddingtonCF-LightItalic.ttf");
+    src: url("../fonts/Addington-CF/AddingtonCF-LightItalic.ttf") format("truetype"),
+        url("../fonts/Addington-CF/AddingtonCF-LightItalic.otf") format("opentype");
+}
+@font-face {
+    font-family: "AddingtonCF-Regular";
+    src: url("../fonts/Addington-CF/AddingtonCF-Regular.ttf");
+    src: url("../fonts/Addington-CF/AddingtonCF-Regular.ttf") format("truetype"),
+        url("../fonts/Addington-CF/AddingtonCF-Regular.otf") format("opentype");
+}
+@font-face {
+    font-family: "AddingtonCF-Regularitalic";
+    src: url("../fonts/Addington-CF/AddingtonCF-RegularItalic.ttf");
+    src: url("../fonts/Addington-CF/AddingtonCF-RegularItalic.ttf") format("truetype"),
+        url("../fonts/Addington-CF/AddingtonCF-RegularItalic.otf") format("opentype");
+}

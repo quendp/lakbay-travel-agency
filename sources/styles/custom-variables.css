@@ -1,6 +1,13 @@
 :root {
     /* Font family */
     --ff-heading-primary: "Oranienbaum", serif;
+    --ff-heading-primary-2: "AddingtonCF-Regular", serif;
+    --ff-heading-primary-2-italic: "AddingtonCF-Regularitalic", serif;
+    --ff-heading-primary-2-bold: "AddingtonCF-Bold", serif;
+    --ff-heading-primary-2-extrabold: "AddingtonCF-Extrabold", serif;
+    --ff-heading-primary-2-light: "AddingtonCF-Light", serif;
+    --ff-heading-primary-2-light-italic: "AddingtonCF-Lightitalic", serif;
+
     --ff-heading-secondary: "onelove", "Brush Script MT", serif;
     --ff-body-bold: "Poppins-Bold", sans-serif;
     --ff-body-regular: "Poppins-Regular", sans-serif;
@@ -9,6 +16,7 @@
     /* Colors */
     --clr-primary-dark: #080808;
     --clr-primary-glass: rgba(0, 0, 0, 0.8);
+    --clr-secondary-000: #ffffff;
     --clr-secondary-100: #ecf1f7;
     --clr-secondary-200: #d4d3d3;
     --clr-secondary-300: #f2f0ec;
@@ -39,7 +47,65 @@
     --fz-main-secondary: clamp(2.5rem, 7vw, 7rem);
     --fz-main-p: clamp(0.8rem, 1.3vw, 1.5rem);
     --fz-main-text: clamp(0.7rem, 1vw, 1rem);
+    --fz-main-large: clamp(1rem, 5vw, 5rem);
     --fz-main-small: clamp(0.6rem, 0.9vw, 1.3rem);
+}
+
+/* Utilities */
+.m-heading-2-dark {
+    font-family: var(--ff-heading-primary-2-light);
+    color: var(--clr-primary-dark);
+    font-size: var(--fz-main-h2);
+    letter-spacing: 0.8px;
+}
+
+.m-heading-3-dark {
+    font-family: var(--ff-heading-primary-2);
+    color: var(--clr-primary-dark);
+    font-size: var(--fz-main-h3);
+}
+
+.m-heading-3-dark-2 {
+    font-family: var(--ff-heading-primary-2-bold);
+    color: var(--clr-primary-dark);
+    font-size: var(--fz-main-h3);
+}
+
+.m-paragraph-text-dark {
+    font-family: var(--ff-body-light);
+    color: var(--clr-secondary-700);
+    font-size: var(--fz-main-p);
+}
+
+.m-primary-btn-dark {
+    transition: background-color 400ms ease-in-out, box-shadow 400ms ease-in-out;
+    font-family: var(--ff-body-light);
+    color: var(--clr-secondary-100);
+    font-size: var(--fz-main-text);
+    background-color: var(--clr-primary-dark);
+    letter-spacing: 1px;
+    padding: 0.8rem 1.5rem;
+}
+
+.m-primary-btn-dark:hover, .m-primary-btn-dark:active {
+    border: none;
+    outline: none;
+    color: var(--clr-secondary-100);
+    background-color: var(--clr-secondary-500);
+}
+
+.m-primary-link-dark {
+    transition: background-color 400ms ease-in-out;
+    font-family: var(--ff-body-regular);
+    color: var(--clr-secondary-700);
+    font-size: var(--fz-main-p);
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+
+.m-primary-link-dark:hover, .m-primary-link-dark:active {
+    color: var(--clr-secondary-500);
 }
 
 /* Animations */

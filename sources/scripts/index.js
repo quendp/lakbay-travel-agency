@@ -31,7 +31,7 @@ const mCategories = [
     {
         category : "Cosmopolitan Lights",
         categoryTitle : "Visit the Lively <br> and Colorful Cities" ,
-        description : "Cosmopolitan ligths Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nesciunt vel non libero impedit sequi suscipit praesentium dicta exercitationem hic.",
+        description : "A trip to Star City Amusement Park, Manila Ocean Park, Chinatown, and Solaire Resort and Casino in Manila, and Mall of Asia and Cultural Center of the Philippines in Pasay.",
         buttonUrl : "#",
         backgroundUrl : "./sources/videos/city.mp4",
         poster : "./sources/images/hero-section-thumbnails/city-poster.jpg",
@@ -56,7 +56,7 @@ const mCategories = [
     }, {
         category : "Dive Under Water",
         categoryTitle : "Discover the Wonders <br> of the Deep Sea" ,
-        description : "Dive under water Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nesciunt vel non libero impedit sequi suscipit praesentium dicta exercitationem hic.",
+        description : "A trip towards places such as the Bantayan Island in Cebu, Boracay Beach in Aklan, El Nido in Palawan, Palaui Island in Santa Ana, Panglao Island in Bohol, and Siargao Island.",
         buttonUrl : "#",
         backgroundUrl : "./sources/videos/water.mp4",
         poster : "./sources/images/hero-section-thumbnails/water-poster.jpg",
@@ -81,7 +81,7 @@ const mCategories = [
     }, {
         category : "Explore the Summit",
         categoryTitle : "Look at the Sky on <br> Top of Mountain Peaks" ,
-        description : "Explore the summit Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nesciunt vel non libero impedit sequi suscipit praesentium dicta exercitationem hic.",
+        description : "Visit beautiful mountains such as Mt. Apo in Davao City, Mt. Guiting Guiting in Sibuyan, Mt. Pulag and Mt. Itogon in Benguet, Mt. Pinatubo in Zambales, and Mt. Ugo in Nueva Viscaya.",
         buttonUrl : "#",
         backgroundUrl : "./sources/videos/mountain.mp4",
         poster : "./sources/images/hero-section-thumbnails/mountain-poster.jpg",
@@ -106,7 +106,7 @@ const mCategories = [
     }, {
         category : "Look Back in History",
         categoryTitle : "Embrace the Great <br> Remnants of the Past" ,
-        description : "Look back in history Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nesciunt vel non libero impedit sequi suscipit praesentium dicta exercitationem hic.",
+        description : "Visit Historical Sites such as Calle Crisologo in Vigan, Fort Santiago in Intramuros, Magellan's Cross in Mactan, National Museum and Rizal Park in Manila, and Rizal Shrine in Dapitan.",
         buttonUrl : "#",
         backgroundUrl : "./sources/videos/history.mp4",
         poster : "./sources/images/hero-section-thumbnails/history-poster.jpg",
@@ -131,7 +131,7 @@ const mCategories = [
     }, {
         category : "Nature and Culture",
         categoryTitle : "Feel the Beauty of <br> the Untouched Lands" ,
-        description : "Nature and culture Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nesciunt vel non libero impedit sequi suscipit praesentium dicta exercitationem hic.",
+        description : "Visit the Chocolate Hills in Bohol, Barracuda Lake in Coron, Banaue Rice Terraces in Ifugao, Puerto Galera in Mindoro, Tagaytay in Cavite, and Masungi Georeserve in Tanay.",
         buttonUrl : "#",
         backgroundUrl : "./sources/videos/nature.mp4",
         poster : "./sources/images/hero-section-thumbnails/nature-poster.jpg",
@@ -151,7 +151,7 @@ const mCategories = [
             "Banaue Rice Terraces in Ifugao",
             "Puerto Galera in Mindoro oriental",
             "Tagaytay in Cavite",
-            "Hanging Bridge in Masungi Georeserve in Tanay, Rizal"
+            "Masungi Georeserve in Tanay, Rizal"
         ]
     }
 ];

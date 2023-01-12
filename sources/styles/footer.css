@@ -1,0 +1,59 @@
+/* footer */
+.f-footer-wrapper {
+    background-color: var(--clr-secondary-100);
+    min-height: 100vh;
+}
+
+.f-footer-wrapper h2 {
+    font-size: var(--fz-main-h2);
+    font-family: var(--ff-heading-primary-2-bold);
+}
+
+.f-footer-wrapper svg {
+    height: 100%;
+}
+
+.f-icon-wrap {
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid black;
+    background-color: var(--clr-secondary-100);
+    transition: background-color 400ms ease-in-out;
+}
+
+.f-icon-wrap:hover {
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid black;
+    background-color: var(--clr-secondary-200);
+}
+
+.f-footer-wrapper a {
+    text-decoration: none;
+    
+}
+
+.f-footer-wrapper form label {
+    font-family: var(--ff-body-light);
+    font-size: var(--fz-main-text);
+}
+
+.f-footer-wrapper form input.f-form-input, 
+.f-footer-wrapper form textarea {
+    font-family: var(--ff-body-light);
+    font-size: var(--fz-main-p);
+    color: var(--clr-secondary-700);
+    border-radius: 1rem;
+    border: 1px solid var(--clr-secondary-700);
+}
+
+.f-footer-submit {
+    width: clamp(7rem, 13vw, 10rem);
+    border: none;
+}
+
+.f-footer-bottom {
+    font-family: var(--ff-body-light);
+    font-size: var(--fz-main-small);
+    color: var(--clr-primary-dark);
+}
