@@ -245,10 +245,6 @@ catBookCancel.addEventListener("click", () => {
     catHeroImageWrapper.style.opacity = "1";
 });
 
-bookingSubmitForm.addEventListener("click", () => {
-
-})
-
 updateCatPage();
 for (let i of catHeroImages) {
     i.addEventListener('click', () => {
