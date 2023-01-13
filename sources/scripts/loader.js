@@ -11,9 +11,23 @@ const loaderText2Sub = document.getElementById("loaderText2Sub");
 
 let percentValue = 1;
 let documentLoaded = false;
+let fileId = hHeaderWrapper.dataset.file;
 
 window.addEventListener("load", (event) => {
     documentLoaded = true;
+    const anchors = document.querySelectorAll('a');
+    for (let i of anchors) {
+      i.addEventListener('click', e => {
+        e.preventDefault();
+        let targetLink = e.target.href;
+        console.log(targetLink)
+        console.log(window.location.href)
+        startLoader();
+        setTimeout(() => {
+          window.location.href = targetLink;
+        }, 1500);
+      })
+    }
 });
 
 const isLoaded = () => {
@@ -130,4 +144,72 @@ async function exitLoader () {
     }
 };
 
-animateLoader();
+async function finalLoader () {
+    try {
+        await animationDelay(0)
+        loaderTextSub.style.transition = "opacity 1000ms ease-in-out, transform 1000ms ease-in-out"
+        loaderTextSub.style.transform = "translateY(60px)"
+        loaderText2Sub.style.overflow = "visible"
+        loaderLogo.style.opacity = "1"
+        loaderText3.style.opacity = "1"
+        loaderText3.style.textAlign = "center"
+        loaderText3.textContent = "L A K B A Y"
+        loaderText3.style.fontSize = "clamp(0.6rem, 1.2vw, 1.2rem)"
+        loaderText3.style.transform = "translateY(0)"
+        loaderWrapper.style.clipPath = "circle(100%)"
+
+        await animationDelay(800)
+        loaderTextSub.style.opacity = "0"
+        document.body.classList.remove("overflow-hidden")
+        loaderWrapper.style.transition = "clip-path 1000ms cubic-bezier(0.14, 0.79, 0.18, 0.01)"
+        loaderWrapper.style.clipPath = "circle(0%)"
+
+        await animationDelay(1200)
+        loaderWrapper.style.display = "none"
+
+    } catch(err) {
+        console.log(err)
+    }
+};
+
+async function startLoader () {
+    try {
+        await animationDelay(0)
+        loaderWrapper.style.display = "flex"
+        loaderWrapper.style.transition = "clip-path 1000ms cubic-bezier(0.14, 0.79, 0.18, 0.01)"
+        loaderTextSub.style.transform = "translateY(60px)"
+        loaderTextSub.style.transition = "opacity 1000ms ease-in-out, transform 800ms ease-in-out"
+        loaderWrapper.style.clipPath = "circle(0%)"
+        loaderTextSub.style.opacity = "0"
+        loaderText2Sub.style.overflow = "visible"
+
+        await animationDelay(100)
+        loaderWrapper.style.clipPath = "circle(100%)"
+        loaderTextSub.style.opacity = "1"
+        loaderLogo.style.opacity = "1"
+        loaderText3.style.opacity = "1"
+
+        await animationDelay(500)
+        loaderTextSub.style.transform = "translateY(0px)"
+        loaderText3.style.textAlign = "center"
+        loaderText3.textContent = "L A K B A Y"
+        loaderText3.style.fontSize = "clamp(0.6rem, 1.2vw, 1.2rem)"
+        loaderText3.style.transform = "translateY(0)"
+        
+
+    } catch(err) {
+        console.log(err)
+    }
+};
+
+// On the first page load, set a value in the sessionStorage
+if (!sessionStorage.getItem(`pageLoaded${fileId}`)) {
+    if (fileId == "index") {
+        animateLoader();
+    } else {
+        finalLoader();
+    };
+    sessionStorage.setItem(`pageLoaded${fileId}`, 'true');
+} else {
+    finalLoader();
+}

@@ -22,8 +22,6 @@ if (pathDepth == "1") {
     pathDepth = ".";
 }
 
-console.log(pathDepth)
-
 const hCategories = [
     {
         category : "lights",
