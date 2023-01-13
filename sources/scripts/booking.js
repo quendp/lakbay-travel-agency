@@ -11,6 +11,8 @@ const catBookSubmit = document.getElementById("catBookSubmit");
 const catBookCancel = document.getElementById("catBookCancel");
 
 const bookingModalDestination = document.getElementById("bookingModalDestination");
+const bookingSubmitForm = document.getElementById("bookingSubmitForm");
+const bookingModal = document.getElementById("bookingModal");
 
 const catHeroImages = [
     document.getElementById("catHeroImage1"), 
@@ -92,7 +94,7 @@ const bookCategories = [
                 duration : "5 days",
                 price : "Php 17,500.00 / person"
             }, {
-                destination : "Siargao island",
+                destination : "Siargao Island",
                 details : "Named after a native mangrove, the surf capital of the Philippines is perfect for lovers of the great outdoors, whether you embrace adventure sports or gentler pursuits such as swimming in rock pools and caves.",
                 duration : "7 days",
                 price : "Php 25,000.00 / person"
@@ -241,6 +243,10 @@ const updateCatPage = () => {
 catBookCancel.addEventListener("click", () => {
     catBookInfo.style.transform = "translateY(150%)";
     catHeroImageWrapper.style.opacity = "1";
+});
+
+bookingSubmitForm.addEventListener("click", () => {
+
 })
 
 updateCatPage();

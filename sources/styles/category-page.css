@@ -26,6 +26,7 @@
 }
 
 .cat-image-holder img {
+    aspect-ratio: 5 / 3;
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -38,8 +39,8 @@
     background-color: var(--clr-primary-glass);
     background-image: url(../images/grain.png);
     border-radius: 0.8rem;
-    transform: translateY(150%);
-    transition: transform 400ms ease-in-out;
+    transform: translateY(120%);
+    transition: transform 500ms ease-in-out;
 }
 
 #catBookInfo p {
@@ -78,9 +79,4 @@
 
 #catBookSubmit:hover {
     background-color: var(--clr-secondary-300);
-}
-
-#catBookInfo, #catBookInfo * {
-    /* border: 1px solid red; */
-    
 }

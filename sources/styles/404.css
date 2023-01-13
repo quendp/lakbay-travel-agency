@@ -9,3 +9,10 @@
     object-fit: cover;
     transition: opacity 500ms ease-in-out;
 }
+
+h1 {
+    color: var(--clr-accent-lights-100);
+    text-shadow: 0 0 15px var(--clr-accent-lights-100);
+    font-family: var(--ff-body-bold);
+    font-size: var( --fz-main-h2);
+}
