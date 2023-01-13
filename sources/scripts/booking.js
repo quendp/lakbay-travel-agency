@@ -1,4 +1,4 @@
-const mCategories = [
+const bookCategories = [
     {
         category : "Cosmopolitan Lights",
         categoryTitle : "Visit the Lively <br> and Colorful Cities" ,
