@@ -19,9 +19,8 @@ window.addEventListener("load", (event) => {
     for (let i of anchors) {
       i.addEventListener('click', e => {
         e.preventDefault();
-        let targetLink = e.target.href;
-        console.log(targetLink)
-        console.log(window.location.href)
+        let targetLink = i.getAttribute("href");
+        // let targetLink = e.target.href;
         startLoader();
         setTimeout(() => {
           window.location.href = targetLink;

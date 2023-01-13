@@ -56,3 +56,8 @@ v1.0.0 - November 27, 2022
 - [Mount Pulag - Photo by Joanne Caselyn Unsplash](https://unsplash.com/@joannecaselyn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 - [Calle Crisologo - Photo by Adrian Enriquez from Pixabay](https://pixabay.com/users/adrianenriquez-691469/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=593843)
 - [Cambulo Ifugao - Photo by AR from Unsplash](https://unsplash.com/@ar__?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+---
+
+### 🪲 To Fix:
+-- none -- 

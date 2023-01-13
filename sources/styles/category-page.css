@@ -2,11 +2,85 @@
 .cat-hero-section {
     padding-top: 10vh;
     overflow: hidden;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.01) 100%), url(../images/grain.png);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.3) 100%), url(../images/grain.png);
 }
 
 .cat-hero-bg {
     z-index: -1;
     object-fit: cover;
     transition: opacity 500ms ease-in-out;
+}
+
+.cat-hero-title {
+    font-family: var(--ff-heading-primary);
+    font-size: var(--fz-main-h1);
+}
+
+#catHeroImageWrapper {
+    transition: opacity 400ms ease-in-out;
+}
+
+#catHeroChosen {
+    font-size: var(--fz-main-text);
+    transition: opacity 300ms ease-in-out;
+}
+
+.cat-image-holder img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.8rem;
+    box-shadow: 0 0 30px -5px var(--clr-primary-dark);
+    transition: box-shadow 400ms ease-in-out;
+}
+
+#catBookInfo {
+    background-color: var(--clr-primary-glass);
+    background-image: url(../images/grain.png);
+    border-radius: 0.8rem;
+    transform: translateY(150%);
+    transition: transform 400ms ease-in-out;
+}
+
+#catBookInfo p {
+    color: var(--clr-secondary-100);
+    font-family: var(--ff-body-bold);
+    font-size: var(--fz-main-text);
+    line-height: 1.5;
+}
+
+#catBookInfo p span {
+    color: var(--clr-secondary-200);
+    font-family: var(--ff-body-regular);
+}
+
+#catBookInfo button {
+    outline: none;
+    border: none;
+    font-size: var(--fz-main-text);
+    font-family: var(--ff-body-regular);
+}
+
+#catBookCancel {
+    background-color: transparent;
+    color: var(--clr-secondary-400);
+}
+
+#catBookCancel:hover {
+    color: var(--clr-secondary-500);
+}
+
+#catBookSubmit {
+    background-color: var(--clr-secondary-100);
+    color: var(--clr-primary-dark);
+    border-radius: 0.5rem;
+}
+
+#catBookSubmit:hover {
+    background-color: var(--clr-secondary-300);
+}
+
+#catBookInfo, #catBookInfo * {
+    /* border: 1px solid red; */
+    
 }
