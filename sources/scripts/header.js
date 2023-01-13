@@ -10,16 +10,16 @@ const hImageSummit = document.getElementById("hImageSummit");
 const hImageHistory = document.getElementById("hImageHistory");
 const hImageCulture = document.getElementById("hImageCulture");
 
-let pathPrefix = ".";
+let pathPrefix = "";
 let pathDepth = hHeaderWrapper.dataset.depth;
 if (pathDepth == "1") {
     pathPrefix = "..";
 } else if (pathDepth == "2") {
-    pathDepth = "../..";
+    pathPrefix = "../..";
 } else if (pathDepth == "3") {
-    pathDepth = "../../..";
+    pathPrefix = "../../..";
 } else {
-    pathDepth = ".";
+    pathPrefix = ".";
 }
 
 const hCategories = [
@@ -28,35 +28,35 @@ const hCategories = [
         title : "THE LIVELY MODERN CITIES",
         color : "var(--clr-accent-lights-100)",
         textShadow : "0 0 1rem var(--clr-accent-lights-100)",
-        url : `url(${pathDepth}/sources/images/cosmopolitan-lights/manila-city-skyline-david-milmont-3WX60TlLIdw-unsplash.jpg)`
+        url : `url(${pathPrefix}/sources/images/cosmopolitan-lights/manila-city-skyline-david-milmont-3WX60TlLIdw-unsplash.jpg)`
     },
     {
         category : "water",
         title : "THE WONDERS OF THE SEA",
         color : "var(--clr-accent-water-100)",
         textShadow : "0 0 1rem var(--clr-accent-water-100)",
-        url : `url(${pathDepth}/sources/images/dive-under-water/el-nido-eibner-saliba-3T9dDY0WqDI-unsplash.jpg)`
+        url : `url(${pathPrefix}/sources/images/dive-under-water/el-nido-eibner-saliba-3T9dDY0WqDI-unsplash.jpg)`
     },
     {
         category : "summit",
         title : "THE SKY ON MOUNTAIN PEAKS",
         color : "var(--clr-accent-summit-100)",
         textShadow : "0 0 1rem var(--clr-accent-summit-100)",
-        url : `url(${pathDepth}/sources/images/explore-the-summit/mount-pulag-joanne-caselyn-kCGhXLU32Bg-unsplash.jpg)`
+        url : `url(${pathPrefix}/sources/images/explore-the-summit/mount-pulag-joanne-caselyn-kCGhXLU32Bg-unsplash.jpg)`
     },
     {
         category : "history",
         title : "THE REMNANTS OF THE PAST",
         color : "var(--clr-accent-history-100)",
         textShadow : "0 0 1rem var(--clr-accent-history-100)",
-        url : `url(${pathDepth}/sources/images/look-back-in-history/calle-crisologo-593843_1920.jpg)`
+        url : `url(${pathPrefix}/sources/images/look-back-in-history/calle-crisologo-593843_1920.jpg)`
     },
     {
         category : "culture",
         title : "THE BREATH OF FRESH AIR",
         color : "var(--clr-accent-culture-100)",
         textShadow : "0 0 1rem var(--clr-accent-culture-100)",
-        url : `url(${pathDepth}/sources/images/nature-and-culture/ifugao-ar-2FsniOcLPj8-unsplash.jpg)`
+        url : `url(${pathPrefix}/sources/images/nature-and-culture/ifugao-ar-2FsniOcLPj8-unsplash.jpg)`
     }
 ];
 
@@ -83,7 +83,7 @@ hButtonHam.addEventListener("click", () => {
     hTitle.classList.toggle("d-none");
     document.body.classList.toggle("h-disable-scroll");
     hHeaderWrapper.style.backgroundColor = "var(--clr-primary-dark)";
-    hHeaderWrapper.style.backgroundImage = `url(${pathDepth}/sources/images/grain.png)`;
+    hHeaderWrapper.style.backgroundImage = `url(${pathPrefix}/sources/images/grain.png)`;
     if (hButtonHamMode) {
         hButtonHamMode = false;
         adjustHeader();
@@ -146,7 +146,7 @@ const adjustHeader = () => {
         hHeaderWrapper.style.transform = " translateY(-10vh)";
     } else {
         hHeaderWrapper.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-        hHeaderWrapper.style.backgroundImage = `url(${pathDepth}/sources/images/grain.png)`;
+        hHeaderWrapper.style.backgroundImage = `url(${pathPrefix}/sources/images/grain.png)`;
         hHeaderWrapper.style.backdropFilter = "blur(2px)";
         hHeaderWrapper.style.transform = " translateY(0)";
     };
