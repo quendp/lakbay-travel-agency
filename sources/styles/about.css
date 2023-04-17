@@ -1,11 +1,49 @@
 .about-hero-section {
-    padding-top: 10vh;
-    overflow: hidden;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.01) 100%), url(../images/grain.png);
+  padding-top: 10vh;
+  overflow: hidden;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.01) 100%
+    ),
+    url(../images/grain.png);
 }
 
 .about-hero-bg {
-    z-index: -1;
-    object-fit: cover;
-    transition: opacity 500ms ease-in-out;
+  z-index: -1;
+  object-fit: cover;
+  transition: opacity 500ms ease-in-out;
+}
+
+.about-hero-section h1 {
+  font-family: var(--ff-heading-primary-2);
+  font-size: var(--fz-main-h1);
+  color: var(--clr-accent-lights-100);
+}
+
+.about-hero-section p,
+.about-hero-section a {
+  font-family: var(--ff-body-light);
+  font-size: var(--fz-main-p);
+  color: var(--clr-secondary-000);
+}
+
+.about-hero-section label,
+.about-hero-section input,
+.about-hero-section button {
+  font-size: var(--fz-main-text) !important;
+  font-family: var(--ff-body-light);
+  color: var(--clr-secondary-000);
+}
+
+.about-hero-section button {
+  background-color: var(--clr-accent-lights-100) !important;
+  color: var(--clr-sprimary-dark);
+  border: none;
+  outline: none;
+}
+
+.about-hero-section button:hover {
+  background-color: var(--clr-accent-lights) !important;
+  color: var(--clr-sprimary-dark);
 }

@@ -1,18 +1,23 @@
 .notfound-hero-section {
-    padding-top: 10vh;
-    overflow: hidden;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.01) 100%), url(../images/grain.png);
+  padding-top: 10vh;
+  overflow: hidden;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.01) 100%
+    ),
+    url(../images/grain.png);
 }
 
 .notfound-hero-bg {
-    z-index: -1;
-    object-fit: cover;
-    transition: opacity 500ms ease-in-out;
+  z-index: -1;
+  object-fit: cover;
+  transition: opacity 500ms ease-in-out;
 }
 
-h1 {
-    color: var(--clr-accent-lights-100);
-    text-shadow: 0 0 15px var(--clr-accent-lights-100);
-    font-family: var(--ff-body-bold);
-    font-size: var( --fz-main-h2);
+.notfound-hero-bg h1 {
+  color: var(--clr-accent-lights-100);
+  text-shadow: 0 0 15px var(--clr-accent-lights-100);
+  font-family: var(--ff-body-bold);
+  font-size: var(--fz-main-h2);
 }
